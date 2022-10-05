@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
+
+
+	<div class="sec-container">
+		<div class="contact">
+			<h1>Как связаться</h1>
+			<table class="contact_box">
+				<tr>
+					<th>Полное официальное наименование библиотеки:</th>
+					<td>Научная библиотека Ошского Государственного университета</td>
+				</tr>
+				<tr>
+					<th>Сокращенное наименование:</th>
+					<td>НБ ОшГУ</td>
+				</tr>
+				<tr>
+					<th>Почтовый адрес:</th>
+					<td>Кыргызская Республика, 723500, г. Ош, ул. Ленина, 333</td>
+				</tr>
+				<tr>
+					<th>Телефон:</th>
+					<td>(03222) 7-07-59</td>
+				</tr>
+				<tr>
+					<th>Телефон/факс:</th>
+					<td>(03222) 7-09-15</td>
+				</tr>
+				<tr>
+					<th>Директор:</th>
+					<td>А. А. Эсекеева</td>
+				</tr>	  
+			  </table>
+			
+			  <h1>Карта</h1>
+			  <div class="map" id="map">
+				<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A962eeaecb1e6bd44fcbe5b93788e6329fc91c63e114d2036ffcc38e03305cdcf&amp;width=100%25&amp;height=510&amp;lang=ru_RU&amp;"></script>
+			  </div>
+
+		</div>
+	</div>
+
+{% include 'footer.html' %}
+
+{% endblock %}
+
+

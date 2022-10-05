@@ -1,0 +1,191 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+
+{% include 'header.html' %}
+
+
+
+
+
+
+	<!-- News -->
+
+	<div class="news">
+			<div class="news_inner">
+
+				<div class="news_item ">
+					<h1 class="news_title"><a href="{% url 'news' %}">Новости</a> </h1>
+					<div class="news_box">
+
+						{% for post in posts %}
+						<div class="news_view">
+							<div class="news_info">
+								<a href="#">
+								<img class="news_img" src="{{ post.image.url }}" alt="">
+								<div class="news_text"><p>{{post.title}}</p></div>
+								</a>
+							</div>
+							<div class="news_index">view 12 / 12-09-2022</div>
+						</div>
+						{% endfor %}
+						
+				</div>
+			</div>
+
+
+
+
+				<div class="news_item">
+					<h1 class="news_title"><a href="{% url 'adt' %}">Объявления</a></h1>
+					<div class="news_box">
+						<div class="news-info">
+							<div class="news_logo">
+							<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
+							<p>ОшГУ</p>
+							</div>
+							<div class="news_text-info">Урматтуу жетекчилер! 2022-жылдын 1-жарым жылдыгына жазылуу аяктап жатат</div>
+							<div class="news_index">view 12 / 12-09-2022</div>
+						</div>
+
+						<div class="news-info">
+							<div class="news_logo">
+							<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
+							<p>ОшГУ</p>
+							</div>
+							<div class="news_text-info">Урматтуу жетекчилер! 2022-жылдын 1-жарым жылдыгына жазылуу аяктап жатат</div>
+							<div class="news_index">view 12 / 12-09-2022</div>
+						</div>
+
+						<div class="news-info">
+							<div class="news_logo">
+								<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
+								<p>ОшГУ</p>
+								</div>
+							<div class="news_text-info">Не забудьте подать заявки на электронные учебники</div>
+							<div class="news_index">view 12 / 12-09-2022</div>
+						</div>
+
+						<div class="news-info">
+							<div class="news_logo">
+								<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
+								<p>ОшГУ</p>
+								</div>
+							<div class="news_text-info">Не забудьте подать заявки на электронные учебники</div>
+							<div class="news_index">view 12 / 12-09-2022</div>
+						</div>
+					</div>
+					<div class="static">
+					<h1 class="static_title">Статистика</h1>
+					<p></p>
+					</div>
+				</div>
+			</div>
+	</div>
+
+
+
+	<!-- Info -->
+
+	<div class="info">
+		<div class="container">
+			<div class="info_inner">
+
+				<div class="info_grand info_grand-line">
+					<h1 class="info_title">Фото</h1>
+					<div class="info_item">
+
+						<div class="info_box">
+							<a href="#">
+								<div class="info_bg">
+									<img src="{% static 'img/news/1.jpg' %}" alt="">
+								</div>
+								<p class="info_text">Название</p>
+							</a>
+						</div>
+						<div class="info_box">
+							<a href="#">
+								<div class="info_bg">
+									<img src="{% static 'img/news/2.jpg' %}" alt="">
+								</div>
+								<p class="info_text">Название</p>
+
+							</a>
+						</div>
+						<div class="info_box">
+							<a href="#">
+								<div class="info_bg">
+									<img src="{% static 'img/news/3.jpg' %}" alt="">
+								</div>
+								<p class="info_text">Название</p>
+							</a>
+						</div>
+						<div class="info_box">
+							<a href="#">
+								<div class="info_bg">
+									<img src="{% static 'img/news/4.jpg' %}" alt="">
+								</div>
+								<p class="info_text">Название</p>
+							</a>
+						</div>
+					</div>
+					<h2 class="info_sub"><a href="{% static 'page/photo.html">Все</a>
+						<div class="info_line"></div>
+					</h2>
+				</div>
+
+				<div class="info_grand">
+					<h1 class="info_title">Видео</h1>
+					<div class="info_item">
+
+						<div class="info_box">
+							<a href="#">
+								<div class="info_bg">
+									<img src="{% static 'img/news/1.jpg' %}" alt="">
+								</div>
+								<p class="info_text">Название</p>
+							</a>
+						</div>
+						<div class="info_box">
+							<a href="#">
+								<div class="info_bg">
+									<img src="{% static 'img/news/2.jpg' %}" alt="">
+								</div>
+								<p class="info_text">Название</p>
+							</a>
+						</div>
+						<div class="info_box">
+							<a href="#">
+								<div class="info_bg">
+									<img src="{% static 'img/news/3.jpg' %}" alt="">
+								</div>
+								<p class="info_text">Название</p>
+							</a>
+						</div>
+						<div class="info_box">
+							<a href="#">
+								<div class="info_bg">
+									<img src="{% static 'img/news/4.jpg' %}" alt="">
+								</div>
+								<p class="info_text">Название</p>
+							</a>
+						</div>
+					</div>
+					<h2 class="info_sub"><a href="assets/page/video.html">Все</a>
+						<div class="info_line"></div>
+					</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Partner -->
+
+
+{% include 'footer.html' %}
+
+
+{% endblock %}

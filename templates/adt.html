@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
+
+	<!-- News -->
+<div class="sec-container">
+	<div class="news">
+			<div class="news_inner">
+				<div class="news_item">
+					<h1 class="news_title">Объявления</h1>
+					<div class="news_box">
+						<div class="news-info">
+							<div class="news_logo">
+							<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
+							<p>ОшГУ</p> 
+							</div>
+							<div class="news_text-info">Урматтуу жетекчилер! 2022-жылдын 1-жарым жылдыгына жазылуу аяктап жатат</div>
+							<div class="news_index">view 12 / 12-09-2022</div>
+						</div>
+
+						<div class="news-info">
+							<div class="news_logo">
+							<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
+							<p>ОшГУ</p> 
+							</div>
+							<div class="news_text-info">Урматтуу жетекчилер! 2022-жылдын 1-жарым жылдыгына жазылуу аяктап жатат</div>
+							<div class="news_index">view 12 / 12-09-2022</div>
+						</div>
+
+						<div class="news-info">
+							<div class="news_logo">
+								<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
+								<p>ОшГУ</p> 
+								</div>
+							<div class="news_text-info">Не забудьте подать заявки на электронные учебники</div>
+							<div class="news_index">view 12 / 12-09-2022</div>
+						</div>
+
+						<div class="news-info">
+							<div class="news_logo">
+								<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
+								<p>ОшГУ</p> 
+								</div>
+							<div class="news_text-info">Не забудьте подать заявки на электронные учебники</div>
+							<div class="news_index">view 12 / 12-09-2022</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+
+
+{% include 'footer.html' %}
+
+{% endblock %}
+
+
+

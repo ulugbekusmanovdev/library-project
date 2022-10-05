@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
+
+
+	<div class="sec-container">
+		<h1 class="photo_title">Фото</h1>
+		<div class="photo">
+			
+			<div class="photo_inner">
+				<div class="photo_box">
+				<div class="photo_item">
+					<img src="../img/news/1.jpg" alt="">
+				</div>
+				<p>Name</p>
+			</div>
+			</div>
+			<div class="photo_inner">
+				<div class="photo_box">
+				<div class="photo_item">
+					<img src="../img/news/2.jpg" alt="">
+				</div>
+				<p>Name</p>
+			</div>
+			</div>
+			<div class="photo_inner">
+				<div class="photo_box">
+				<div class="photo_item">
+					<img src="../img/news/3.jpg" alt="">
+				</div>
+				<p>Name</p>
+			</div>
+			</div>
+			<div class="photo_inner">
+				<div class="photo_box">
+				<div class="photo_item">
+					<img src="../img/news/4.jpg" alt="">
+				</div>
+				<p>Name</p>
+			</div>
+			</div>
+	
+		</div>
+	</div>
+
+
+{% include 'footer.html' %}
+
+{% endblock %}

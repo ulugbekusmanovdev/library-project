@@ -1,0 +1,204 @@
+body{
+	font-family: 'Roboto', sans-serif;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+.container{
+	width: 85%;
+	margin: 0 auto;
+}
+
+// HAMBURGER
+.hamburger{
+	display: none;
+}
+
+
+
+/* HEADER */
+
+.nav_logo{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 10px;
+}
+
+.nav_box{
+	width: 100%;
+	padding: 30px;
+}
+
+.nav_item{
+	position: relative;
+ 	text-align: center;
+	color: #3769B0;
+}
+
+.logo{
+	
+	position: absolute;
+	top: 0;
+	left: 8%;
+	z-index: 1;
+	width: 240px;
+}
+
+.nav_title{
+	font-size: 54px;
+	padding: {
+        bottom: 10px;
+    }
+}
+
+.nav_title a{
+    text-decoration: none;
+    color: #3769B0;
+    
+}
+
+.nav_text{
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.nav{
+	display: flex;
+	justify-content: space-around;
+	padding: 0 0 20px; 
+	align-items: center;
+}
+
+.navbar{
+	transition: 0.4s linear;
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+	border: {
+        top: 1px solid #333 ;
+	    bottom: 1px solid #999;
+}
+	padding: 30px;
+}
+
+.navbar li{
+	list-style: none;
+}
+
+.navbar_title{
+	margin: {
+		right: 20px;
+	}
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 500;
+	transition: 0.2s linear;
+    position: relative;
+}
+
+.navbar_title:hover{
+	color: #309AAC;
+}
+
+.navbar_sub{
+    font-size: 14px;
+    background-color: #fff;
+	position: absolute;
+	z-index: 10;
+	padding: 10px 0;
+	display: none;
+}
+
+.navbar_sub li{
+	padding: 5px 0;
+}
+
+.navbar li:hover .navbar_sub{
+	display: block;
+}
+
+
+.sticky{
+	padding: 1px 0 ;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	background: #EDEBEB url(../img/bg/1.jpg) center/cover no-repeat;
+	width: 100%;
+	transition: 0.4s linear;
+} 
+
+.sticky .navbar_title:hover{
+	color: #84C87D;
+}
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+.footer{
+	padding: 20px;
+	width: 100%;
+	background-color: #EDEBEB;
+}
+
+.footer_item{
+    text-align: center;
+	display: flex;
+	justify-content: space-around;
+}
+
+.footer_box{
+    margin: {
+        top: 20px;
+        right: 15px;
+    }
+}
+
+.footer_title{
+    color: #309AAC;
+	font-size: 24px;
+	text-transform: uppercase;
+	padding: 15px;
+}
+
+.footer_text{
+    padding: 10px;
+	font-size: 16px;
+	line-height: 1.5em;
+}
+
+
+
+
+
+/* COPYRIGHT */
+.copyright{
+	background-color: #333;
+	text-align: center;
+	padding: 20px;
+}
+
+.copyright_title{
+	color: #fff;
+	font-size: 14px;
+}
+
+.copyright_text{
+	color: #999;
+	font-size: 16px;
+}
+

@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
+	<!-- News -->
+
+	<div class="news">
+			<div class="news_inner">
+				<div class="news_item ">
+					<h1 class="news_title">Новости</h1>
+					<div class="news_box">
+
+						
+						{% for post in posts %}
+						<div class="news_view">
+							
+							<div class="news_info">
+								<div class="news_index">view 12 / 12-09-2022</div>
+								<a href="#">
+								<img class="news_img" src="{{post.image.url}}" alt="">
+								</a>
+								<div class="news_text"><p>{{post.title}}</p></div>
+							</div>
+							
+						</div>
+
+						{% endfor %}
+
+						
+				</div>
+			</div>
+			</div>
+	</div>
+
+{% include 'footer.html' %}
+
+{% endblock %}
+
+
