@@ -4,9 +4,7 @@
 {% block content %}
 
 {% include 'header.html' %}
-
-
-
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
 
@@ -16,16 +14,16 @@
 			<div class="news_inner">
 
 				<div class="news_item ">
-					<h1 class="news_title"><a href="{% url 'news' %}">Новости</a> </h1>
+					<h1 class="news_title"><a href="{% url 'news' %}">Новости </a></h1>
 					<div class="news_box">
 
 						{% for post in posts %}
 						<div class="news_view">
 							<div class="news_info">
-								<a href="#">
 								<img class="news_img" src="{{ post.image.url }}" alt="">
-								<div class="news_text"><p>{{post.title}}</p></div>
-								</a>
+								<div class="news_data"><p>окт</p><p>17</p></div> 
+								<h4 class="news_sub-title">{{post.title}}</h4>	
+								<p class="news_text">{{post.title}}</p>	
 							</div>
 							<div class="news_index">view 12 / 12-09-2022</div>
 						</div>
@@ -40,6 +38,7 @@
 				<div class="news_item">
 					<h1 class="news_title"><a href="{% url 'adt' %}">Объявления</a></h1>
 					<div class="news_box">
+						<a href="#">
 						<div class="news-info">
 							<div class="news_logo">
 							<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
@@ -48,7 +47,9 @@
 							<div class="news_text-info">Урматтуу жетекчилер! 2022-жылдын 1-жарым жылдыгына жазылуу аяктап жатат</div>
 							<div class="news_index">view 12 / 12-09-2022</div>
 						</div>
+					  </a>
 
+					  <a href="#">
 						<div class="news-info">
 							<div class="news_logo">
 							<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
@@ -57,7 +58,10 @@
 							<div class="news_text-info">Урматтуу жетекчилер! 2022-жылдын 1-жарым жылдыгына жазылуу аяктап жатат</div>
 							<div class="news_index">view 12 / 12-09-2022</div>
 						</div>
+					</a>
 
+
+						<a href="#">
 						<div class="news-info">
 							<div class="news_logo">
 								<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
@@ -66,7 +70,9 @@
 							<div class="news_text-info">Не забудьте подать заявки на электронные учебники</div>
 							<div class="news_index">view 12 / 12-09-2022</div>
 						</div>
+					</a>
 
+					<a href="#">
 						<div class="news-info">
 							<div class="news_logo">
 								<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
@@ -75,10 +81,15 @@
 							<div class="news_text-info">Не забудьте подать заявки на электронные учебники</div>
 							<div class="news_index">view 12 / 12-09-2022</div>
 						</div>
+					</a>
 					</div>
 					<div class="static">
 					<h1 class="static_title">Статистика</h1>
-					<p></p>
+					<table>
+						<tr><th>Общий фонд:</th><td>892 237 книг</td></tr>
+					
+						<tr><th>Электронные книги:</th><td>36 520 pdf</td></tr>
+					</table>
 					</div>
 				</div>
 			</div>
@@ -130,7 +141,7 @@
 							</a>
 						</div>
 					</div>
-					<h2 class="info_sub"><a href="{% static 'page/photo.html">Все</a>
+					<h2 class="info_sub"><a href="{% static 'page/photo.html' %}" >Все</a>
 						<div class="info_line"></div>
 					</h2>
 				</div>
@@ -183,9 +194,67 @@
 
 
 	<!-- Partner -->
-
+	<div class="partner">
+		<h1 class="partner_title">Ресурсы библиотеки</h1>
+		<div class="partner_inner">
+			<div class="partner_item">
+				<a href="https://lib.oshsu.kg/CGI/irbis64r_plus/cgiirbis_64_ft.exe?C21COM=F&I21DBN=OSU_FULLTEXT&P21DBN=OSU&Z21ID=&S21CNR=5"
+					target="_blank">
+					<img src="{% static 'img/partner/logo_ilbirs.png' %}" alt="">
+				</a>
+			</div>
+			<div class="partner_item">
+				<a href="https://www.gov.kg/ru" target="_blank">
+					<img src="{% static 'img/partner/logo_KR.png' %}" alt="">
+				</a>
+			</div>
+			<div class="partner_item">
+				<a href="https://www.oshsu.kg/ru" target="_blank">
+					<img src="{% static 'img/partner/logo_oshsu.png' %}" alt="">
+				</a>
+			</div>
+			<div class="partner_item">
+				<a href="http://window.edu.ru" target="_blank">
+					<img src="{% static 'img/partner/logo_window.png' %}" alt="">
+				</a>
+			</div>
+			<div class="partner_item">
+				<a href="http://neb.kg/index.php/ru/" target="_blank">
+					<img src="{% static 'img/partner/logo_neb.png' %}" alt="">
+				</a>
+			</div>
+			<div class="partner_item">
+				<a href="https://www.okuma.kg" target="_blank">
+					<img src="{% static 'img/partner/logo_okuma.png' %}" alt="">
+				</a>
+			</div>
+			<div class="partner_item">
+				<a href="http://library.manas.edu.kg/index.php/ru/" target="_blank">
+					<img src="{% static 'img/partner/logo_lib.png' %}" alt="">
+				</a>
+			</div>
+			<div class="partner_item">
+				<a href="https://www.wiley.com/customer-success/wiley-online-library-russian" target="_blank">
+					<img src="{% static 'img/partner/logo_wiley.png' %}" alt="">
+				</a>
+			</div>
+			<div class="partner_item">
+				<a href="https://www.wiley.com/customer-success/cochrane-library-training-hub" target="_blank">
+					<img src="{% static 'img/partner/logo_cochraneLibrary.png' %}" alt="">
+				</a>
+			</div>
+			<div class="partner_item">
+			<a href="https://ibooks.oshsu.kg/" target="_blank">
+				<img src="{% static 'img/partner/logo_ibook.png' %}" alt="">
+			</a>
+		</div>
+		<div class="partner_item">
+			<a href="https://kyrlibnet.kg/ru/" target="_blank">
+				<img src="{% static 'img/partner/logo_kirlibnet.png' %}" alt="">
+			</a>
+		</div>
+		</div>
+	</div>
 
 {% include 'footer.html' %}
-
-
 {% endblock %}

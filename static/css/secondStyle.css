@@ -80,7 +80,7 @@ body {
 }
 
 .navbar_title {
-  margin-right: 20px;
+  padding-right: 10px;
   color: #000;
   text-decoration: none;
   text-transform: uppercase;
@@ -89,21 +89,39 @@ body {
   position: relative;
 }
 
+.navbar_title::before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 50%;
+  right: 0;
+  border: rotate(90deg) 1px solid #000;
+  border: rotate(-90deg) 1px solid #000;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-family: "icomoon";
+}
+
 .navbar_title:hover {
   color: #309AAC;
 }
 
 .navbar_sub {
+  width: 15%;
   font-size: 14px;
   background-color: #fff;
+  box-shadow: 5px 5px 7px #333, -5px -5px 7px #333;
   position: absolute;
   z-index: 10;
-  padding: 10px 0;
+  padding: 5px 0 0;
   display: none;
+  text-align: center;
 }
 
 .navbar_sub li {
   padding: 5px 0;
+  border-bottom: 1px solid #333;
 }
 
 .navbar li:hover .navbar_sub {
@@ -111,18 +129,41 @@ body {
 }
 
 .sticky {
-  padding: 1px 0;
+  padding: 1px 0 0;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
-  background: #EDEBEB url(../img/bg/1.jpg) center/cover no-repeat;
+  background: #EBECF0;
   width: 100%;
   transition: 0.4s linear;
+  box-shadow: -5px -5px 20px #333, 5px 5px 20px #333;
+}
+
+.sticky .navbar {
+  border: none;
 }
 
 .sticky .navbar_title:hover {
   color: #84C87D;
+}
+
+.select {
+  text-align: center;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #333;
+  transition: 0.3s;
 }
 
 /* FOOTER */
@@ -182,13 +223,18 @@ span {
   font-weight: bold;
 }
 
+.bg {
+  background: #EBECF0;
+}
+
 .sec-container {
   width: 80%;
   margin: 0 auto;
 }
 
+/* ABOUT */
 .about {
-  margin: 50px 0;
+  margin: 50px 0 100px;
 }
 .about .about_title {
   color: #309AAC;
@@ -359,7 +405,7 @@ span {
 }
 
 .contact {
-  margin-bottom: 100px;
+  margin: 50px 0 100px;
 }
 .contact .map {
   margin-bottom: 100px;
@@ -383,7 +429,8 @@ span {
 
 .direction {
   width: 100%;
-  padding-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 .direction .direction_title {
   color: #309AAC;
@@ -404,7 +451,7 @@ span {
 
 .good_know {
   text-align: center;
-  margin: 50px auto;
+  margin: 50px auto 100px;
   width: 70%;
 }
 .good_know .good_title {
@@ -420,7 +467,7 @@ span {
 }
 
 .history {
-  margin: 10px 0 100px;
+  margin: 50px 0 100px;
 }
 .history h1 {
   text-align: center;
@@ -567,6 +614,12 @@ span {
   .news_hidden {
     display: none;
   }
+  .form {
+    width: 100%;
+  }
+  .form_logo {
+    width: 40%;
+  }
 }
 @media (max-width: 1200px) {
   .container {
@@ -607,8 +660,39 @@ span {
   .partner_item img {
     height: 100px;
   }
+  .history_box {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  .his {
+    width: 100% !important;
+  }
+  .history_img {
+    width: 100% !important;
+  }
+  .history_img img {
+    width: 50%;
+  }
+  .history_img p {
+    padding: 0 !important;
+  }
+  .catalog_img, .direction_img, .library_entry-title, .library_entry-title img, .direction_img img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .good_know, .good {
+    display: none;
+  }
 }
 @media (max-width: 1000px) {
+  tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  tr td {
+    width: 100%;
+    text-align: center;
+  }
   .nav_box {
     padding: 10px;
   }
@@ -639,14 +723,25 @@ span {
   }
 }
 @media (max-width: 850px) {
-  .over {
-    display: block;
+  .navbar_sub {
+    width: 100%;
   }
   .nav, .logo {
     display: none;
   }
   .nav {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    z-index: 3000;
     flex-wrap: wrap;
+  }
+  .navbar {
+    flex-direction: column;
+    border: none;
+  }
+  .navbar li {
+    padding: 10px;
   }
   /* hamburger */
   .hamburger {
@@ -669,20 +764,6 @@ span {
     text-align: center;
     cursor: pointer;
   }
-  .button2 {
-    position: relative;
-    background-color: white;
-    height: 3rem;
-    width: 3rem;
-    border-radius: 50%;
-    position: fixed;
-    top: 4vh;
-    right: 4vw;
-    z-index: 2000;
-    box-shadow: 0 1rem 3rem black;
-    text-align: center;
-    cursor: pointer;
-  }
   .background {
     height: 2.5rem;
     width: 2.5rem;
@@ -690,7 +771,7 @@ span {
     position: fixed;
     top: 4.5vh;
     right: 4.5vw;
-    background-image: radial-gradient(#3769B0, black);
+    background-image: radial-gradient(#666, #fff);
     z-index: 1000;
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
   }
@@ -779,6 +860,12 @@ span {
   }
   .copyright_text {
     font-size: 14px;
+  }
+  .form {
+    height: 80%;
+  }
+  .form_logo {
+    width: 60%;
   }
 }
 @media (max-width: 520px) {

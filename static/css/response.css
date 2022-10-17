@@ -12,6 +12,12 @@
   .news_hidden {
     display: none;
   }
+  .form {
+    width: 100%;
+  }
+  .form_logo {
+    width: 40%;
+  }
 }
 @media (max-width: 1200px) {
   .container {
@@ -52,8 +58,39 @@
   .partner_item img {
     height: 100px;
   }
+  .history_box {
+    flex-wrap: wrap;
+    padding: 20px;
+  }
+  .his {
+    width: 100% !important;
+  }
+  .history_img {
+    width: 100% !important;
+  }
+  .history_img img {
+    width: 50%;
+  }
+  .history_img p {
+    padding: 0 !important;
+  }
+  .catalog_img, .direction_img, .library_entry-title, .library_entry-title img, .direction_img img {
+    width: 100% !important;
+    height: auto !important;
+  }
+  .good_know, .good {
+    display: none;
+  }
 }
 @media (max-width: 1000px) {
+  tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  tr td {
+    width: 100%;
+    text-align: center;
+  }
   .nav_box {
     padding: 10px;
   }
@@ -84,14 +121,25 @@
   }
 }
 @media (max-width: 850px) {
-  .over {
-    display: block;
+  .navbar_sub {
+    width: 100%;
   }
   .nav, .logo {
     display: none;
   }
   .nav {
+    position: absolute;
+    top: 0;
+    left: 5%;
+    z-index: 3000;
     flex-wrap: wrap;
+  }
+  .navbar {
+    flex-direction: column;
+    border: none;
+  }
+  .navbar li {
+    padding: 10px;
   }
   /* hamburger */
   .hamburger {
@@ -114,20 +162,6 @@
     text-align: center;
     cursor: pointer;
   }
-  .button2 {
-    position: relative;
-    background-color: white;
-    height: 3rem;
-    width: 3rem;
-    border-radius: 50%;
-    position: fixed;
-    top: 4vh;
-    right: 4vw;
-    z-index: 2000;
-    box-shadow: 0 1rem 3rem black;
-    text-align: center;
-    cursor: pointer;
-  }
   .background {
     height: 2.5rem;
     width: 2.5rem;
@@ -135,7 +169,7 @@
     position: fixed;
     top: 4.5vh;
     right: 4.5vw;
-    background-image: radial-gradient(#3769B0, black);
+    background-image: radial-gradient(#666, #fff);
     z-index: 1000;
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
   }
@@ -224,6 +258,12 @@
   }
   .copyright_text {
     font-size: 14px;
+  }
+  .form {
+    height: 80%;
+  }
+  .form_logo {
+    width: 60%;
   }
 }
 @media (max-width: 520px) {

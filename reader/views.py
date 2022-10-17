@@ -29,3 +29,6 @@ def work_schedule(request):
 
 def readers(request):
     return render(request, 'readers.html')
+
+def register(request):
+    return render(request, "register.html")

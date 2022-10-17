@@ -11,21 +11,33 @@
 					<h1 class="news_title">Новости</h1>
 					<div class="news_box">
 
-						
-						{% for post in posts %}
+
+						<div class="news_only">
+				
+							<div class="news_only-info">
+								<div class="news_index">view 12 / 12-09-2022</div>
+								
+								<img class="news_only-img" src="{{post.image.url}}" alt="">
+							
+								<div class="news_only-text"><p>{{post.title}}</p></div>
+							</div>
+							
+						</div>
+
+
+					
 						<div class="news_view">
 							
 							<div class="news_info">
 								<div class="news_index">view 12 / 12-09-2022</div>
-								<a href="{% url 'snews' post.id %}">
+							
 								<img class="news_img" src="{{post.image.url}}" alt="">
-								</a>
 								<div class="news_text"><p>{{post.title}}</p></div>
 							</div>
 							
 						</div>
 
-						{% endfor %}
+					
 
 						
 				</div>

@@ -1,5 +1,6 @@
 @import "./normalize.scss";
 
+
 p{
 	padding: 15px;
 }
@@ -9,13 +10,19 @@ span{
 }
 
 
+.bg{
+	background: #EBECF0;
+}
+
 .sec-container{
 	width: 80%;
 	margin: 0 auto;
 }
 
+/* ABOUT */
+
 .about{
-	margin: 50px 0;
+	margin: 50px 0 100px;
 	.about_title{
 		color: #309AAC;
 		padding: 20px;
@@ -139,6 +146,10 @@ span{
 }
 
 
+// NEWS_ONLY
+
+
+
 // CATALOG
 .catalog{
 	width: 100%;
@@ -212,7 +223,7 @@ span{
 // CONTACT
 
 .contact{
-	margin-bottom: 100px;
+	margin: 50px 0 100px;
 	.map{
 		margin-bottom: 100px;
 	}
@@ -239,7 +250,8 @@ span{
 
 .direction{
 	width: 100%;
-	padding: {
+	margin: {
+		top: 50px;
 		bottom: 100px;
 	} 
 
@@ -265,7 +277,7 @@ span{
 // GOOD TO KNOW
  .good_know{
 	text-align: center;
-	margin: 50px auto;
+	margin: 50px auto 100px;
 	width: 70%;
 
 	.good_title{
@@ -290,7 +302,7 @@ span{
 
 // HISTORY
 .history{
-	margin: 10px 0 100px;
+	margin: 50px 0 100px;
 	h1{
 		text-align: center;
 		color: #309AAC;
@@ -443,5 +455,8 @@ span{
 	}
 	
 }
+
+
+
 
 @import "./response.scss"; 

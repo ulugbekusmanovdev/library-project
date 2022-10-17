@@ -1,5 +1,5 @@
 	{% load static %}
-
+	
 
 <!-- hamburger -->
 	<div class="hamburger">
@@ -13,63 +13,75 @@
 <nav class="nav" id="nav">
 	<ul class="navbar menu__box" id="menu">
 		<li>
-			<a class="navbar_title" href="{% url 'home' %}" >Главная</a>
+			<a class="navbar_title" data-scroll="home" href="{% url 'home' %}" >Главная</a>
 		</li>
 		<li>
-			<a class="navbar_title" href="{% url 'about' %}">О библиотеке</a>
+			<div class="select">
+				<a class="navbar_title" data-scroll="about_us" href="{% url 'about' %}" >О библиотеке</a>
+					<div class="caret"></div>
+			</div>
 			<ul class="navbar_sub">
 				<li>
-					<a class="navbar_title" href="{% url 'mission' %}">Миссия</a>
+					<a class="navbar_title" data-scroll="mission" href="{% url 'about' %}#mission" >Миссия</a>
 				</li>
 				<li>
-					<a class="navbar_title" href="{% url 'history' %}">История</a>
+					<a class="navbar_title" data-scroll="history" href="{% url 'about' %}#history">История</a>
 				</li>
 				<li>
-					<a class="navbar_title" href="{% url 'structure' %}">Структура</a>
+					<a class="navbar_title" data-scroll="structure" href="{% url 'about' %}#structure">Структура</a>
+				</li>
+				<!-- <li>
+					<a class="navbar_title" data-scroll="collection" href="{% url 'about' %}">Коллекция</a>
 				</li>
 				<li>
-					<a class="navbar_title" href="{% url 'collection' %}">Коллекция</a>
-				</li>
-				<li>
-					<a class="navbar_title" href="{% url 'vacancy' %}">Ваканссия</a>
-				</li>
+					<a class="navbar_title" data-scroll="vacancy" href="{% url 'about' %}">Ваканссия</a>
+				</li>  -->
 			</ul>
 		</li>
 		<li>
 			<a class="navbar_title" href="{% url 'catalogs' %}">Каталоги</a>
 		</li>
-		<li>
-			<a class="navbar_title" href="{% url 'forReaders' %}">Читателям</a>
+		<li>	
+			<div class="select">
+				<a class="navbar_title" href="{% url 'forReaders' %}">Читателям</a>
+					<div class="caret"></div>
+			</div>
 			<ul class="navbar_sub">
 				<li>
-					<a class="navbar_title" href="{% url 'direction' %}">Правила пользования</a>
+					<a class="navbar_title" data-scroll="direction" href="{% url 'forReaders' %}#direction">Правила пользования</a>
+				</li>
+				 <!-- <li>
+					<a class="navbar_title" data-scroll="reading_rooms" href="{% url 'forReaders' %}#reading_rooms">Читальные залы</a>
+				</li>  -->
+				<li>
+					<a class="navbar_title" data-scroll="library_entry" href="{% url 'forReaders' %}#library_entry">Запись в библиотеку</a>
 				</li>
 				<li>
-					<a class="navbar_title" href="{% url 'library_entry' %}">Запись в библиотеку</a>
+					<a class="navbar_title" data-scroll="subscription" href="{% url 'forReaders' %}#subscription">Абонемент</a>
 				</li>
 				<li>
-					<a class="navbar_title" href="{% url 'work_schedule' %}">Расписание работы</a>
+					<a class="navbar_title" data-scroll="workSchedule" href="{% url 'forReaders' %}#workSchedule">Режим работы</a>
 				</li>
 				<li>
-					<a class="navbar_title" href="{% url 'subscription' %}">Абонемент</a>
-				</li>
-				<li>
-					<a class="navbar_title" href="{% url 'reading_rooms' %}">Читальные залы</a>
-				</li>
-				<li>
-					<a class="navbar_title" href="{% url 'good_to_know' %}">Полезно знать</a>
+					<a class="navbar_title good" data-scroll="good_to_know" href="{% url 'forReaders' %}#good_to_know">Полезно знать</a>
 				</li>
 			</ul>
 		</li>
-		<li>
-			<a class="navbar_title" href="{% url 'forLibrarists' %}">Библиотекарям</a>
+		 <li>
+			<a class="navbar_title" href="{% url 'login' %}">Библиотекарям</a>
 			<ul class="navbar_sub">
 				<li>
 					<a class="navbar_title" href="http://avn.oshsu.kg/AVN_search_st.html" target="_blank">Проверка задолжности студента</a>
 				</li>
+				<li>
+					<a class="navbar_title" href="{% url '404' %}" target="_blank">404</a>
+				</li>
+				<li>
+					<a class="navbar_title" href="{% url 'register' %}" target="_blank">log</a>
+				</li>
 			</ul>
 		</li>
-		<li>
+		<li> 
 			<a class="navbar_title" href="{% url 'contact' %}">Как связаться</a>
 		</li>
 	</ul>
@@ -80,17 +92,16 @@
 	<header class="header">
 		<div class="nav_logo">
 			<div class="nav_box">
-				<div class="nav_item"><a href="#">
+				<div class="nav_item"><a href="{% url 'home' %}">
 					<img class="logo" src="{% static 'img/logo_ru.svg' %}" alt="">
 				</a>
 				</div>
 
 				<div class="nav_item">
-					<h1 class="nav_title"><a href="#">Научная библиотека</a></h1>
-					<!-- <h3 class="nav_text">Ошский государственный университет электронная билиотека</h3> -->
+					<h1 class="nav_title"><a href="{% url 'home' %}">Научная библиотека</a></h1>
 				</div>
 			</div>
 		</div>
 	</header>
-
 	
+	<script src="{% static '/js/app.js' %}"></script>

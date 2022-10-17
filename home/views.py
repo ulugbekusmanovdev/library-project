@@ -46,3 +46,14 @@ def mission(request):
 
 def video(request):
     return render(request, 'video.html')
+
+def loginUser(request):
+    return render(request, 'login.html')
+
+def error404(request):
+    return render(request, '404.html')
+
+def register(request):
+    return render(request, 'register.html')    
+
+  
