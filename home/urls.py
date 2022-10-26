@@ -8,7 +8,6 @@ urlpatterns = [
     path('catalogs', views.catalogs, name='catalogs'),
     path('collection', views.collection, name='collection'),
     path('contact', views.contact, name='contact'),
-    path('forLibrarists', views.forLibrarists, name='forLibrarists'),
     path('structure', views.structure, name='structure'),
     path('photo', views.photo, name='photo'),
     path('mission', views.mission, name='mission'),

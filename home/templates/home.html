@@ -21,11 +21,11 @@
 						<div class="news_view">
 							<div class="news_info">
 								<img class="news_img" src="{{ post.image.url }}" alt="">
-								<div class="news_data"><p>окт</p><p>17</p></div> 
+<!--								<div class="news_data"><p>окт</p><p>17</p></div> -->
 								<h4 class="news_sub-title">{{post.title}}</h4>	
-								<p class="news_text">{{post.title}}</p>	
+<!--								<p class="news_text">{{post.title}}</p>	-->
 							</div>
-							<div class="news_index">view 12 / 12-09-2022</div>
+							<div class="news_index">view 12 / {{post.create_date|timesince}} назад</div>
 						</div>
 						{% endfor %}
 						

@@ -29,8 +29,6 @@ def contact(request):
 def history(request):
     return render(request, 'history.html')
 
-def forLibrarists(request):
-    return render(request, 'forLibrarists.html')
 
 def vacancy(request):
     return render(request, 'vacancy.html')

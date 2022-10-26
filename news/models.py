@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 # Create your models here.
 
@@ -6,7 +7,7 @@ class News(models.Model):
     title = models.CharField(max_length=200, verbose_name='Заголовок')
     text = models.TextField(verbose_name='Текст')
     image = models.ImageField(upload_to='images',verbose_name='Картинки')
-    create_date = models.DateTimeField(auto_now=True, verbose_name='Дата')
+    create_date = models.DateTimeField(auto_now=True,verbose_name='Дата')
     news_view = models.IntegerField(default=0)
 
     class Meta:
