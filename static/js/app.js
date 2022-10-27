@@ -17,6 +17,3 @@ const setScrollListebner = () => {
 window.addEventListener("scroll", setScrollListebner)
 
 
-
-
-

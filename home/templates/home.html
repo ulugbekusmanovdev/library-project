@@ -13,25 +13,25 @@
 	<div class="news">
 			<div class="news_inner">
 
-				<div class="news_item ">
-					<h1 class="news_title"><a href="{% url 'news' %}">Новости </a></h1>
-					<div class="news_box">
+			<div class="news_item ">
+				<h1 class="news_title"><a href="{% url 'news' %}">Новости </a></h1>
+				<div class="news_box">
 
-						{% for post in posts %}
-						<div class="news_view">
-							<div class="news_info">
-								<img class="news_img" src="{{ post.image.url }}" alt="">
-<!--								<div class="news_data"><p>окт</p><p>17</p></div> -->
-								<h4 class="news_sub-title">{{post.title}}</h4>	
-<!--								<p class="news_text">{{post.title}}</p>	-->
-							</div>
-							<div class="news_index">view 12 / {{post.create_date|timesince}} назад</div>
+					{% for post in posts %}
+					<div class="news_view">
+						<div class="news_info">
+							<a href="{% url 'snews' post.id %}">
+							<img class="news_img" src="{{post.image.url}}" alt="">
+							</a>
+							
+							<div class="news_text"><p>{{post.title}}</p></div>
 						</div>
-						{% endfor %}
-						
-				</div>
+						<div class="news_index">view 12 / {{post.create_date|timesince}} назад</div>
+					</div>
+					{% endfor %}
+					
 			</div>
-
+		</div>
 
 
 
@@ -154,6 +154,7 @@
 							<a href="#">
 								<div class="info_bg">
 									<img src="{% static 'img/news/1.jpg' %}" alt="">
+									<img class="info_player" src="{% static 'img/png/play_video.png '%}" alt="">
 								</div>
 								<p class="info_text">Название</p>
 							</a>
@@ -162,6 +163,7 @@
 							<a href="#">
 								<div class="info_bg">
 									<img src="{% static 'img/news/2.jpg' %}" alt="">
+									<img class="info_player" src="{% static 'img/png/play_video.png '%}" alt="">
 								</div>
 								<p class="info_text">Название</p>
 							</a>
@@ -170,6 +172,7 @@
 							<a href="#">
 								<div class="info_bg">
 									<img src="{% static 'img/news/3.jpg' %}" alt="">
+									<img class="info_player" src="{% static 'img/png/play_video.png '%}" alt="">
 								</div>
 								<p class="info_text">Название</p>
 							</a>
@@ -178,6 +181,7 @@
 							<a href="#">
 								<div class="info_bg">
 									<img src="{% static 'img/news/4.jpg' %}" alt="">
+									<img class="info_player" src="{% static 'img/png/play_video.png '%}" alt="">
 								</div>
 								<p class="info_text">Название</p>
 							</a>
