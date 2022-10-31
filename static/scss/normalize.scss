@@ -9,8 +9,6 @@ body{
 	padding: 0;
 	box-sizing: border-box;
 }
-
-
 .container{
 	width: 85%;
 	margin: 0 auto;
@@ -144,7 +142,7 @@ body{
 }
 
 .sticky{
-	padding: 1px 0 0; 
+	padding: 0; 
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -157,6 +155,7 @@ body{
 
 .sticky .navbar{
 	border: none;
+	padding: 20px;
 }
 
 .sticky .navbar_title:hover{

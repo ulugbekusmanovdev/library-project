@@ -3,111 +3,94 @@
 {% block content %}
 {% include 'header.html' %}
 <link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
-	<!-- News -->
 
+	<!-- News -->
 	<div class="container">
-	<div class="news">
-			<div class="news_inner">
-				<div class="news_item ">
+		<div class="news_only">
+			<div class="news_inner_only">
+				<div class="news_item_only">
 					<h1 class="news_title">Новости</h1>
+
 					<div class="news_box-only">
 
-
-
 						<div class="news_block-1">
-						<div class="news_only">
-				
-							<div class="news_only-info">
-								
-								
-								<img class="news_only-img" src="{{post.image.url}}" alt="">
-
-								<div class="news_index-only">view 12 / 12-09-2022</div>
-							
-								<div class="news_only-text"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea libero fugiat quasi harum mollitia iste doloremque eos corrupti quis velit! Impedit illo consectetur officia, aliquam voluptatum possimus magnam rem sed accusamus deserunt. Maxime quibusdam impedit inventore aut debitis rem harum, accusamus, sapiente nulla, quo fugit itaque modi eveniet maiores libero ex sequi! Consequatur sit at nesciunt placeat molestias obcaecati odio. Laudantium corrupti vero inventore quam accusantium nihil doloremque eligendi! Atque amet cumque nobis quam reiciendis quidem quisquam vitae cum odio assumenda nesciunt, aperiam suscipit eos libero molestiae porro hic modi quos quasi labore illo. Perferendis amet ad fugiat. Expedita deserunt voluptas perferendis laborum, eveniet voluptate quos provident deleniti rem fuga beatae placeat. Ex error dignissimos deleniti esse vero id vel quaerat optio expedita, voluptatibus qui, necessitatibus accusamus rem dolorum mollitia dolor. Aliquam, harum nam totam placeat debitis animi? Doloremque animi quidem excepturi facilis provident officia nobis tenetur debitis quibusdam facere magni maiores, minus voluptatibus a recusandae quisquam non in ducimus porro nihil aperiam sunt laborum aliquid? Praesentium repellendus, animi est molestias dolorem quaerat eaque modi, culpa reprehenderit voluptas ut voluptates nemo quia fuga nobis iure placeat fugiat. Velit saepe maxime facere, numquam eligendi distinctio, beatae et, veniam provident necessitatibus animi id odit eius voluptate? Sint quae tenetur, eum quo repellat facere aspernatur voluptatem magnam at porro, commodi, aliquam esse. Ut, voluptatum tempora! Cum quis voluptas obcaecati vero rem dignissimos qui! Nesciunt placeat nostrum, incidunt iusto alias quod totam nulla voluptates eaque est quidem atque voluptas itaque. Voluptatum officia distinctio error eveniet veniam harum ad, suscipit aspernatur aperiam? In, rem? Adipisci dolore iure expedita qui laborum, aspernatur consectetur saepe iusto molestiae ut nam odit nemo ipsa unde, natus accusamus. Quas sed cupiditate quis itaque, officia eum voluptates placeat sunt aliquid in, suscipit adipisci saepe molestiae nulla mollitia deserunt enim porro voluptatum!{{post.title}}</p></div>
+							<div class="news_block-only">
+								<div class="news_info-only">
+										<img class="news_img-only" src="{% static 'img/news/1.jpg' %}" alt="">					
+										<div class="news_index-only"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
+									<div class="news_text-only">
+										<p class="news_title-only">Lorem, ipsum.</p>
+										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure assumenda nam repudiandae placeat id exercitationem officiis impedit quae unde neque.</p>
+									</div>
+								</div>
 							</div>
-							
 						</div>
-					</div>
-
-					<div class="news_block-2">
-					
-						<div class="news_several">
-							<a href="#">
-							<div class="news_info news_in">
-								<div class="news_index">view 12 / 12-09-2022</div>
-							
-								<img class="news_img" src="{{post.image.url}}" alt="">
-								<div class="news_text"><p>{{post.title}}</p></div>
-							</a>
-							</div>
-							
-						</div>
-
-						<div class="news_several">
-							<a href="#">
-							<div class="news_info news_in">
-								<div class="news_index">view 12 / {{post.create_date|timesince}} назад</div>
-								
-								<img class="news_img" src="{{post.image.url}}" alt="">
-										
-								<div class="news_text"><p>{{post.title}}</p></div>
-								
-							</div>
-						</a>
-							
-						</div>
-						<div class="news_several">
-							<a href="#">
-							<div class="news_info news_in">
-								<div class="news_index">view 12 / {{post.create_date|timesince}} назад</div>
-								
-								<img class="news_img" src="{{post.image.url}}" alt="">
-										
-								<div class="news_text"><p>{{post.title}}</p></div>
-								
-							</div>
-						</a>
-							
-						</div>
-						<div class="news_several">
-							<a href="#">
-							<div class="news_info news_in">
-								<div class="news_index">view 12 / {{post.create_date|timesince}} назад</div>
-								
-								<img class="news_img" src="{{post.image.url}}" alt="">
-										
-								<div class="news_text"><p>{{post.title}}</p></div>
-								
-							</div>
-						</a>
-							
-						</div>
-						<div class="news_several">
-							<a href="#">
-							<div class="news_info news_in">
-								<div class="news_index">view 12 / {{post.create_date|timesince}} назад</div>
-								
-								<img class="news_img" src="{{post.image.url}}" alt="">
-										
-								<div class="news_text"><p>{{post.title}}</p></div>
-								
-							</div>
-						</a>
-							
-						</div>
-
-					
-					</div>
 						
+						<div class="news_block-2">
+							
+							<div class="news_several">
+								<div class="news_hidden-only">
+									<div class="news_in-only">
+										<a href="#">
+										<img class="news_img-only2" src="{% static 'img/news/1.jpg' %}" alt="">
+										</a>
+									</div>
+									</div>
+									<div class="news_text">
+										<div class="news_index-only2"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
+										<a href="#"><p>Lorem ipsum dolor sit amet.</p></a>
+									</div>
+							</div>
+
+							<div class="news_several">
+								<div class="news_hidden-only">
+									<div class="news_in-only">
+										
+										<img class="news_img-only2" src="{% static 'img/news/1.jpg' %}" alt="">
+									</div>
+									</div>
+									<div class="news_text">
+										<div class="news_index-only2"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
+										<a href="#"><p>Lorem ipsum dolor sit amet.</p></a>
+									</div>
+							</div>
+
+							<div class="news_several">
+								<div class="news_hidden-only">
+									<div class="news_in-only">
+										
+										<img class="news_img-only2" src="{% static 'img/news/1.jpg' %}" alt="">
+									</div>
+									</div>
+									<div class="news_text">
+										<div class="news_index-only2"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
+										<a href="#"><p>Lorem ipsum dolor sit amet.</p></a>
+									</div>
+							</div>
+
+							<div class="news_several">
+								<div class="news_hidden-only">
+									<div class="news_in-only">
+										
+										<img class="news_img-only2" src="{% static 'img/news/1.jpg' %}" alt="">
+									</div>
+									</div>
+									<div class="news_text">
+										<div class="news_index-only2"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
+										<a href="#"><p>Lorem ipsum dolor sit amet.</p></a>
+									</div>
+							</div>
+						
+						</div>
+						
+					</div>
+	
 				</div>
 			</div>
-			</div>
+		</div>
 	</div>
-</div>
+	</div>
 
 {% include 'footer.html' %}
 
 {% endblock %}
-
-
