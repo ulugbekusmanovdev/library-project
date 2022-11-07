@@ -12,7 +12,7 @@
 <form action="" method="POST">
 		{% csrf_token %}
 	<div class="segment">
-	  <h1 style="color: blue">Регистрация</h1>
+	  <h1>Регистрация</h1>
 	</div>
 
 	<label>
@@ -40,8 +40,8 @@
 				{{form.password2}}
 	</label>
 
-	<input type="submit" value="Создать" class="red" />
-<!--	<button class="red" type="submit"><i class="icon ion-md-lock"></i> Создать</button>-->
+	<input type="submit" value="Создать" class="red"/>
+	<button class="red" type="submit"><i class="icon ion-md-lock"></i>Создать</button>
 
 	{% comment %} <div class="segment">
 		<button class="unit" type="button"><i class="icon ion-md-arrow-back"></i></button>

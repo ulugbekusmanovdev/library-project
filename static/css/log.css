@@ -36,6 +36,10 @@ form {
   text-align: center;
 }
 
+.segment h1 {
+  color: #309AAC;
+}
+
 button, input {
   border: 0;
   outline: 0;

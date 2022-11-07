@@ -17,7 +17,8 @@ urlpatterns = [
     path('register', views.register, name='register'),
     path('login', views.loginUser, name='login'),
     path('404', views.error404, name='404'),
-
+    path('photoOnly', views.photoOnly, name='photoOnly'),
+    path('videoOnly', views.videoOnly, name='videoOnly'),
 ]
 # login adminlib
 # password adminadmin

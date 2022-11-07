@@ -39,11 +39,17 @@ def structure(request):
 def photo(request):
     return render(request, 'photo.html')
 
+def photoOnly(request):
+    return render(request, 'photoOnly.html')
+
 def mission(request):
     return render(request, 'mission.html')
 
 def video(request):
     return render(request, 'video.html')
+
+def videoOnly(request):
+    return render(request, 'videoOnly.html')
 
 def loginUser(request):
     return render(request, 'login.html')

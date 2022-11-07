@@ -1,6 +1,7 @@
 
 body{
 	font-family: 'Roboto', sans-serif;
+	
 }
 
 
@@ -101,20 +102,6 @@ body{
     position: relative;
 }
 
-.navbar_title::before{
-	position: absolute;
-	display: block;
-    content: "";
-    top: 50%;
-    right: 0;
-	border: rotate(90deg) 1px solid #000 ;
-	border: rotate(-90deg) 1px solid #000 ;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    font-family: 'icomoon';
-}
-
 
 .navbar_title:hover{
 	color: #309AAC;
@@ -155,7 +142,7 @@ body{
 
 .sticky .navbar{
 	border: none;
-	padding: 20px;
+	padding: 25px;
 }
 
 .sticky .navbar_title:hover{
@@ -163,12 +150,12 @@ body{
 }
 
 .select{
-	
+	position: bottom;
+	align-items: center;
 	text-align: center;
 	color: #fff;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 	cursor: pointer;
 }
 
