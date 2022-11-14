@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
-    'reader.apps.ReaderConfig',
+    'libraries.apps.LibraryConfig',
     'news.apps.NewsConfig',
 ]
 

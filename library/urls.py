@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    path('reader/', include('reader.urls')),
+    path('libraries/', include('libraries.urls')),
     path('news/', include('news.urls')),
 ]
 

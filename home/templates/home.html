@@ -38,19 +38,19 @@
 					</div>
 					
 					<div class="news_view">
-						{% for post in posts %}
+						{% for new in posts %}
 						
 						<div class="news_views">
-							<a href="{% url 'snews' post.id %}">
+							<a href="{% url 'single-news' new.id %}">
 							<div class="news_info">
 								
-									<img class="news_img" src="{{post.image.url}}" alt="">
+									<img class="news_img" src="{{new.image.url}}" alt="">
 								
 							</div>
 
 							<div class="news_info2">
 								<div class="news_title">
-									<p>{{post.title}}</p>
+									<p>{{new.title}}</p>
 								</div>
 								
 							</div>

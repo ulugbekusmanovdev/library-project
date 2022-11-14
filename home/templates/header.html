@@ -74,9 +74,6 @@
 					<a class="navbar_title" href="http://avn.oshsu.kg/AVN_search_st.html" target="_blank">Проверка задолжности студента</a>
 				</li>
 				<li>
-					<a class="navbar_title" href="{% url '404' %}" target="_blank">404</a>
-				</li>
-				<li>
 					<a class="navbar_title" href="{% url 'register' %}" target="_blank">Регистрация</a>
 				</li>
 			</ul>
@@ -84,6 +81,13 @@
 		<li> 
 			<a class="navbar_title" href="{% url 'contact' %}">Как связаться</a>
 		</li>
+
+		{% if user.is_authenticated %}
+		<li>
+			<p class="">Привет, {{request.user|title}}</p>
+		</li>
+		{% endif %}
+
 	</ul>
 </nav>
 

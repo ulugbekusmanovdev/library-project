@@ -14,9 +14,7 @@ urlpatterns = [
     path('video', views.video, name='video'),
     path('history', views.video, name='history'),
     path('vacancy', views.video, name='vacancy'),
-    path('register', views.register, name='register'),
-    path('login', views.loginUser, name='login'),
-    path('404', views.error404, name='404'),
+
     path('photoOnly', views.photoOnly, name='photoOnly'),
     path('videoOnly', views.videoOnly, name='videoOnly'),
 ]
