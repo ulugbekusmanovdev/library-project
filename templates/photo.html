@@ -8,52 +8,19 @@
 	<div class="sec-container">
 		<h1 class="photo_title">Фото</h1>
 		<div class="photo">
-			
+			{% for foto in photos %}
 			<div class="photo_inner">
 				<div class="photo_box">
 				<div class="photo_item">
-					<a href="{% url 'photoOnly' %}">
-						<div class="photo_img" style="background-image: url({% static 'img/news/1.jpg' %})"></div>
+					<a href="{% url 'photo-Only' foto.id %}">
+						<div class="photo_img" style="background-image: url({{ foto.image.url }})"></div>
 					</a>
 				</div>
 				<div class="photo_index"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
-				<h2>Name</h2>
-			</div>
-			</div>
-			<div class="photo_inner">
-				<div class="photo_box">
-				<div class="photo_item">
-					<a href="{% url 'photoOnly' %}">
-						<div class="photo_img" style="background-image: url({% static 'img/news/2.jpg' %})"></div>
-					</a>
+				<h2>{{ foto.title }}</h2>
 				</div>
-				<div class="photo_index"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
-				<h2>Name</h2>
 			</div>
-			</div>
-			<div class="photo_inner">
-				<div class="photo_box">
-				<div class="photo_item">
-					<a href="{% url 'photoOnly' %}">
-						<div class="photo_img" style="background-image: url({% static 'img/news/3.jpg' %})"></div>
-					</a>
-				</div>
-				<div class="photo_index"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
-				<h2>Name</h2>
-			</div>
-			</div>
-			<div class="photo_inner">
-				<div class="photo_box">
-				<div class="photo_item">
-					<a href="{% url 'photoOnly' %}">
-						<div class="photo_img" style="background-image: url({% static 'img/news/4.jpg' %})"></div>
-					</a>
-				</div>
-				<div class="photo_index"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
-				<h2>Name</h2>
-			</div>
-			</div>
-	
+				{% endfor %}
 		</div>
 	</div>
 

@@ -16,70 +16,34 @@
 						<div class="news_block-1">
 							<div class="news_block-only">
 								<div class="news_info-only">
-										<img class="news_img-only" src="{% static 'img/news/1.jpg' %}" alt="">					
-										<div class="news_index-only"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
+										<img class="news_img-only" src="{{ post.image.url }}" alt="">
+
+										<div class="news_index-only"><i class="bi bi-eye"></i> 12 /{{post.create_date|timesince}}</div>
 									<div class="news_text-only">
-										<p class="news_title-only">Lorem, ipsum.</p>
-										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure assumenda nam repudiandae placeat id exercitationem officiis impedit quae unde neque.</p>
+										<p class="news_title-only">{{post.title}}</p>
+										<p>{{post.text|linebreaks}}</p>
 									</div>
 								</div>
 							</div>
 						</div>
 						
 						<div class="news_block-2">
-							
-							<div class="news_several">
-								<div class="news_hidden-only">
-									<div class="news_in-only">
-										<a href="#">
-										<img class="news_img-only2" src="{% static 'img/news/1.jpg' %}" alt="">
-										</a>
-									</div>
-									</div>
-									<div class="news_text">
-										<div class="news_index-only2"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
-										<a href="#"><p>Lorem ipsum dolor sit amet.</p></a>
-									</div>
-							</div>
 
+							{% for post in posts %}
 							<div class="news_several">
 								<div class="news_hidden-only">
 									<div class="news_in-only">
 										
-										<img class="news_img-only2" src="{% static 'img/news/1.jpg' %}" alt="">
+										<img class="news_img-only2" src="{{post.image.url}}" alt="">
 									</div>
 									</div>
 									<div class="news_text">
-										<div class="news_index-only2"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
-										<a href="#"><p>Lorem ipsum dolor sit amet.</p></a>
+										<div class="news_index-only2"><i class="bi bi-eye"></i> 12 / {{post.create_date}}</div>
+										<a href="{% url 'single-news' post.id %}"><p>{{post.title}}</p></a>
 									</div>
 							</div>
 
-							<div class="news_several">
-								<div class="news_hidden-only">
-									<div class="news_in-only">
-										
-										<img class="news_img-only2" src="{% static 'img/news/1.jpg' %}" alt="">
-									</div>
-									</div>
-									<div class="news_text">
-										<div class="news_index-only2"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
-										<a href="#"><p>Lorem ipsum dolor sit amet.</p></a>
-									</div>
-							</div>
-
-							<div class="news_several">
-								<div class="news_hidden-only">
-									<div class="news_in-only">
-										
-										<img class="news_img-only2" src="{% static 'img/news/1.jpg' %}" alt="">
-									</div>
-									</div>
-									<div class="news_text">
-										<div class="news_index-only2"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
-										<a href="#"><p>Lorem ipsum dolor sit amet.</p></a>
-									</div>
-							</div>
+							{% endfor %}
 						
 						</div>
 						
@@ -88,6 +52,12 @@
 				</div>
 			</div>
 		</div>
+			{% if request.user.is_staff %}
+			<div class="post-right">
+				<a href="{% url 'delete-post' post.id %}"><img src="{% static 'img/news/bin.png' %}" alt="Delete"></a>
+				<a href="{% url 'update-post' post.id %}"><img src="{% static 'img/news/pencil.png' %}" alt="Update"></a>
+			</div>
+			{% endif %}
 	</div>
 	</div>
 

@@ -1,13 +1,16 @@
 from django.shortcuts import render
+from .models import Ads, Photo
 from news.models import News
-from news.models import News
+from libraries.decorators import allowed_users
 
 
 # Create your views here.
-
+# @allowed_users(allowed_roles=['admin'])
 def home(request):
     posts = News.objects.order_by('-create_date')[0:3]
-    context = {'posts': posts}
+    ads = Ads.objects.order_by('-id')[0:4]
+    photos = Photo.objects.order_by('-id')[0:4]
+    context = {'posts': posts, 'ads': ads, 'photos': photos}
     return render(request, 'home.html', context)
 
 
@@ -16,7 +19,9 @@ def about(request):
 
 
 def adt(request):
-    return render(request, 'adt.html')
+    ads = Ads.objects.all()
+    context = {'ads': ads}
+    return render(request, 'adt.html', context)
 
 
 def catalogs(request):
@@ -44,11 +49,16 @@ def structure(request):
 
 
 def photo(request):
-    return render(request, 'photo.html')
+    photos = Photo.objects.all()
+    context = {'photos': photos}
+    return render(request, 'photo.html', context)
 
 
-def photoOnly(request):
-    return render(request, 'photoOnly.html')
+def photoOnly(request, pk):
+    photos = Photo.objects.all()
+    photo = Photo.objects.get(id=pk)
+    context = {'photo': photo, 'photos': photos}
+    return render(request, 'photoOnly.html', context)
 
 
 def mission(request):

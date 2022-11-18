@@ -68,54 +68,22 @@
 
 				<div class="news_item-2">
 					<h1 class="news_name"><a href="{% url 'adt' %}">Объявления</a></h1>
+					{% for a in ads %}
 					<div class="news_box">
+
 						<a href="#">
 						<div class="news-info">
 							<div class="news_logo">
 							<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
-							<p>ОшГУ</p>
+							<p>{{a.title}}</p>
 							</div>
-							<div class="news_text-info">Урматтуу жетекчилер! 2022-жылдын 1-жарым жылдыгына жазылуу аяктап жатат</div>
+							<div class="news_text-info">{{a.text}}</div>
 							<div class="news_index-info"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
 						</div>
 					  </a>
 
-					  <a href="#">
-						<div class="news-info">
-							<div class="news_logo">
-							<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
-							<p>ОшГУ</p>
-							</div>
-							<div class="news_text-info">Урматтуу жетекчилер! 2022-жылдын 1-жарым жылдыгына жазылуу аяктап жатат</div>
-							<div class="news_index-info"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
-						</div>
-					</a>
-
-
-						<a href="#">
-						<div class="news-info">
-							<div class="news_logo">
-								<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
-								<p>ОшГУ</p>
-								</div>
-							<div class="news_text-info">Не забудьте подать заявки на электронные учебники</div>
-							<div class="news_index-info"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
-						</div>
-					</a>
-
-					<a href="#">
-						<div class="news-info">
-							<div class="news_logo">
-								<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
-								<p>ОшГУ</p>
-								
-								</div>
-							<div class="news_text-info">Не забудьте подать заявки на электронные учебники</div>
-							<div class="news_index-info"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
-						</div>
-					</a>
 					</div>
-
+					{% endfor %}
 					<!-- <div class="static">
 					<h1 class="static_title">Статистика</h1>
 					<table>
@@ -140,39 +108,17 @@
 					<h1 class="info_title"><a href="{% url 'photo' %}">Фото</a></h1>
 					<div class="info_item">
 
+						{% for foto in photos %}
 						<div class="info_box">
-							<a href="{% url 'photoOnly' %}">
+							<a href="{% url 'photo-Only' foto.id %}">
 								<div class="info_bg">
-									<img  src="{% static 'img/news/1.jpg' %}" alt="">
+									<img src="{{foto.image.url}}" alt="">
 								</div>
-								<p class="info_text">Название</p>
+								<p class="info_text">{{foto.title}}</p>
 							</a>
 						</div>
-						<div class="info_box">
-							<a href="{% url 'photoOnly' %}">
-								<div class="info_bg">
-									<img src="{% static 'img/news/2.jpg' %}" alt="">
-								</div>
-								<p class="info_text">Название</p>
+						{% endfor %}
 
-							</a>
-						</div>
-						<div class="info_box">
-							<a href="{% url 'photoOnly' %}">
-								<div class="info_bg">
-									<img src="{% static 'img/news/3.jpg' %}" alt="">
-								</div>
-								<p class="info_text">Название</p>
-							</a>
-						</div>
-						<div class="info_box">
-							<a href="{% url 'photoOnly' %}">
-								<div class="info_bg">
-									<img src="{% static 'img/news/4.jpg' %}" alt="">
-								</div>
-								<p class="info_text">Название</p>
-							</a>
-						</div>
 					</div>
 					<h2 class="info_sub"><a href="{% url 'photo' %}" >Все</a>
 						<div class="info_line"></div>

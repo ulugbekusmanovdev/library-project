@@ -17,14 +17,15 @@
 						<div class="news_view">
 							
 							<div class="news_info">
-								<a href="{% url 'snews' post.id %}">
+								<a href="{% url 'single-news' post.id %}">
 								<img class="news_img" src="{{post.image.url}}" alt="">
 							</a>
 							</div>
 							<div class="news_content">
-							<a href="{% url 'snews' post.id %}">
+							<a href="{% url 'single-news' post.id %}">
 							<div class="news_text"><p>{{post.title}} </p></div>
 							</a>
+								<div><p>{{ post.text|truncatewords:"10" }}</p></div>
 							<div class="news_index"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
 						    </div>
 							
@@ -37,6 +38,10 @@
 			</div>
 			</div>
 	</div>
+
+{% if request.user.is_staff %}
+<a href="{% url 'create-post' %}">create post</a>
+{% endif %}
 
 {% include 'footer.html' %}
 

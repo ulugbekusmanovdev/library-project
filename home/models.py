@@ -1,13 +1,17 @@
 from django.db import models
 
+
 # Create your models here.
 class Ads(models.Model):
-    title = models.CharField(max_length=200,blank=True, null=True, verbose_name='Заголовок')
+    title = models.CharField(max_length=200, blank=True, null=True, verbose_name='Заголовок')
     text = models.TextField(verbose_name='Текст')
 
     class Meta:
         verbose_name = 'Объявления'
         verbose_name_plural = 'Объявления'
+
+    def __str__(self):
+        return self.title
 
 
 class Library(models.Model):
@@ -21,8 +25,22 @@ class Library(models.Model):
     history_body = models.TextField(blank=True, null=True, verbose_name='Текст история')
     history_image = models.ImageField(blank=True, null=True, verbose_name='Картинки история')
 
-
     class Meta:
         verbose_name = 'О Библиотеке'
         verbose_name_plural = 'О Библиотеке'
 
+    def __str__(self):
+        return self.l_title
+
+
+class Photo(models.Model):
+    image = models.ImageField(blank=True, null=True, verbose_name='Картинки')
+    title = models.CharField(max_length=200, blank=True, null=True, verbose_name='Заголовок')
+    text = models.TextField(verbose_name='Текст')
+
+    class Meta:
+        verbose_name = 'Картинки'
+        verbose_name_plural = 'Картинки'
+
+    def __str__(self):
+        return self.title
