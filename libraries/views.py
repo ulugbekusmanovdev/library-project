@@ -3,7 +3,7 @@ from django.contrib.auth.models import Group
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import CreateUserForm
+from .forms import CreateUserForm, CustomerForm
 from .decorators import unauthenticated_user, allowed_users
 
 
@@ -15,9 +15,6 @@ def registerUser(request):
         if form.is_valid():
             user = form.save()
             username = form.cleaned_data.get('username')
-
-            group = Group.objects.get(name='customer')
-            user.groups.add(group)
 
             messages.success(request, 'Аккаунт создан для ' + username)
 
@@ -54,7 +51,16 @@ def logoutUser(request):
 @login_required(login_url='login')
 @allowed_users(allowed_roles=['customer'])
 def forLibrarists(request):
-    return render(request, 'forLibrarists.html')
+    customer = request.user.customer
+    form = CustomerForm(instance=customer)
+
+    if request.method == 'POST':
+        form = CustomerForm(request.POST, request.FILES, instance=customer)
+        if form.is_valid():
+            form.save()
+
+    context = {'form': form}
+    return render(request, 'forLibrarists.html', context)
 
 
 def direction(request):

@@ -82,6 +82,10 @@
 			<a class="navbar_title" href="{% url 'contact' %}">Как связаться</a>
 		</li>
 
+		<li>
+			<a class="navbar_title" href="{% url 'logout' %}">logout</a>
+		</li>
+
 		{% if user.is_authenticated %}
 		<li>
 			<p class="">Привет, {{request.user|title}}</p>

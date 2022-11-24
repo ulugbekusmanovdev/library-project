@@ -13,22 +13,26 @@
 		<div class="personal">
 			<div class="personal_box">
 				<div class="personal_photo">
-					<img src="{% static 'img/news/1.jpg' %}" alt="">
+					<img src="{{request.user.customer.profile_pic.url}}" alt="">
 					<div class="personal_icon">
 						<i class="bi bi-pencil-fill"></i>
 						<i class="bi bi-trash3-fill"></i>
 					</div>
 				</div>
-				<form class="personal_info">
+				<form class="personal_info" method="POST" action="" enctype="multipart/form-data">
+					{% csrf_token %}
 					<div class="personal_item">
-						<p>ФИО:</p><input type="text">
+						<p>ФИО:</p> {{form.name}}
 					</div>
 					<div class="personal_item">
-						<p>Номер:</p><input type="text">
+						<p>Номер:</p>{{form.phone}}
 					</div>
 					<div class="personal_item">
-						<p>Факультет:</p><input type="text">
+						<p>email:</p>{{form.email}}
 					</div>
+<!--					<div class="personal_item">-->
+<!--						<p>Факультет:</p>{{form.name}}-->
+<!--					</div>-->
 					<button class="personal_btn" type="submit">Сохранить</button>
 				</form>
 			</div>
