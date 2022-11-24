@@ -1,0 +1,65 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+
+<link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
+
+
+
+<div class="sec-container">
+		<div class="info_lib">
+			<table>
+				<tr>
+				  <th>№</th>
+				  <th>ФИО</th>
+				  <th>Телефон</th>
+				  <th>Факультет</th>
+				</tr>
+				<tr>
+				  <td>1</td>
+				  <td>Alfreds Futterkiste</td>
+				  <td>+99677777777</td>
+				  <td>Медфак</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Alfreds Futterkiste</td>
+					<td>+99677777777</td>
+					<td>Медфак</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Alfreds Futterkiste</td>
+					<td>+99677777777</td>
+					<td>Мит</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Alfreds Futterkiste</td>
+					<td>+99677777777</td>
+					<td>Инфак</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Alfreds Futterkiste</td>
+					<td>+99677777777</td>
+					<td>Теофак</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Alfreds Futterkiste</td>
+					<td>+99677777777</td>
+					<td>Биофак</td>
+				</tr>
+			  </table>
+		</div>
+
+</div>
+
+
+
+
+{% include 'footer.html' %}
+
+{% endblock %}

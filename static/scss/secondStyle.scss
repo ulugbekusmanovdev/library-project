@@ -799,16 +799,56 @@ iframe{
 
 // PERSONAL
 .personal{
-	position: absolute;
-	right: 5%;
-	top: 14%;
-	z-index: 1;
-	width: 230px;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
 	height: auto;
-	border: 1px solid #333 ;
-	border-bottom: none;
 
+	.personal_icon{
+		padding: 20px 10px 0;
+	}
+	.personal_icon i {
+		padding-left: 20px;
+		cursor: pointer;
+	}
+	.personal_box{
+		display: flex;
+		width: 50%;
+		.personal_photo{
+			margin-top: 20px;
+			width: 150px;
+			height: 120px;
+		}
+		img{
+			border-radius: 50%;
+			width: 100%;
+			height: 100%;
+		}
+		.personal_info{
+			padding: 20px;
+			p{
+				width: 100px;
+			}
+			.personal_btn{
+				margin: 10px 0 0 10px;
+				background-color: #309AAC;
+				color: #fff;
+				padding: 10px;
+				border-radius: 10px;
+				border: none;
+				cursor: pointer;
+			}
+		}
+		.personal_item{
+			display: flex;
+			padding: 10px;
+		}
+	}
+	
 	.personal_inner{
+		width: 30%;
+		border: 1px solid #333 ;
+	border-bottom: none;
 		text-align: center;
 		h3{
 			padding: 10px;
@@ -831,6 +871,27 @@ iframe{
 		padding: 2px 0;
 		
 	}
+}
+
+
+.info_lib{
+	margin: 100px 0;
+	width: 100%;
+	table {
+		font-family: arial, sans-serif;
+		border-collapse: collapse;
+		width: 100%;
+	  }
+	  
+	  td, th {
+		border: 1px solid #dddddd;
+		text-align: left;
+		padding: 8px;
+	  }
+	  
+	  tr:nth-child(even) {
+		background-color: #dddddd;
+	  }
 }
 
 @import "./response.scss"; 

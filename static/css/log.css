@@ -1,3 +1,13 @@
+#messages {
+  background-color: #0b8e0b;
+  padding: 20px;
+  color: #dfe3df;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 1;
+}
+
 .form_box {
   padding: 30px 0;
   width: 100%;
@@ -82,23 +92,6 @@ button:hover {
 }
 button:active {
   box-shadow: inset 1px 1px 2px #BABECC, inset -1px -1px 2px #FFF;
-}
-button .icon {
-  margin-right: 8px;
-}
-button.unit {
-  border-radius: 8px;
-  line-height: 0;
-  width: 48px;
-  height: 48px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 8px;
-  font-size: 19.2px;
-}
-button.unit .icon {
-  margin-right: 0;
 }
 button.red {
   display: block;

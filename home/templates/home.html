@@ -7,84 +7,84 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
-  </svg>
-	<!-- News -->
 
-	<div class="news">
-			<div class="news_inner">
+<!-- News -->
 
-			<div class="news_item">
-				<h1 class="news_name"><a href="{% url 'news' %}">Новости </a></h1>
-				
-				
-				<div class="news_box">
-					
-					<div class="news_view-home">
-					
-						<div class="news_info-home">
-							<div class="news_views-home">
-								<a href="#">
-									<img class="news_img" src="{% static 'img/news/1.jpg' %}" alt="">
-								</a>
-							</div>
+<div class="news">
+	<div class="news_inner">
+
+		<div class="news_item">
+			<h1 class="news_name"><a href="{% url 'news' %}">Новости </a></h1>
+
+			<div class="news_block">
+
+				<div class="news_view-home">
+					<div class="news_info-home">
+						<div class="news_views-home">
+							<a href="#">
+								<img class="news_img" src="{% static 'img/news/1.jpg' %}" alt="">
+							</a>
 						</div>
-						<div class="news_index-home "><i class="bi bi-eye"></i> 12 / назад</div>
-						<div class="news_title-home">
-							<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut repudiandae impedit expedita deserunt quos.</p>
-						</div>
-						<p class="news_text-home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto consectetur voluptas
-							dignissimos voluptatem. Molestiae eveniet maiores obcaecati alias sint dolorem blanditiis impedit maxime
-							asperiores excepturi, voluptatibus non consequatur nisi porro...</p>
 					</div>
-					
-					<div class="news_view">
-						{% for new in posts %}
-						
-						<div class="news_views">
-							<a href="{% url 'single-news' new.id %}">
+					<div class="news_index-home "><i class="bi bi-eye"></i> 12 / назад</div>
+					<div class="news_title-home">
+						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut repudiandae impedit expedita
+							deserunt quos.</p>
+					</div>
+					<p class="news_text-home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto consectetur
+						voluptas
+						dignissimos voluptatem. Molestiae eveniet maiores obcaecati alias sint dolorem blanditiis
+						impedit maxime
+						asperiores excepturi, voluptatibus non consequatur nisi porro...</p>
+				</div>
+
+				<div class="news_view">
+					{% for new in posts %}
+
+					<div class="news_views">
+						<a href="{% url 'single-news' new.id %}">
 							<div class="news_info">
-								
-									<img class="news_img" src="{{new.image.url}}" alt="">
-								
+								<img class="news_img" src="{{new.image.url}}" alt="">
 							</div>
 
 							<div class="news_info2">
 								<div class="news_title">
 									<p>{{new.title}}</p>
 								</div>
-								
 							</div>
-							<div class="news_index"><i class="bi bi-eye"></i> 12 / {{post.create_date|timesince}} назад</div>
+
+							<div class="news_index"><i class="bi bi-eye"></i> 12 / {{post.create_date|timesince}} назад
+							</div>
 						</a>
-						</div>
-					
-						{% endfor %}
-					</div>
-					
-					</div>
 					</div>
 
+					{% endfor %}
+				</div>
+
+			</div>
+		</div>
 
 
-				<div class="news_item-2">
-					<h1 class="news_name"><a href="{% url 'adt' %}">Объявления</a></h1>
-					{% for a in ads %}
-					<div class="news_box">
 
-						<a href="#">
-						<div class="news-info">
-							<div class="news_logo">
+		<div class="news_item-2">
+			<h1 class="news_name"><a href="{% url 'adt' %}">Объявления</a></h1>
+			{% for a in ads %}
+			<div class="news_box">
+
+				<a href="#">
+					<div class="news-info">
+						<div class="news_logo">
 							<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
 							<p>{{a.title}}</p>
-							</div>
-							<div class="news_text-info">{{a.text}}</div>
-							<div class="news_index-info"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
 						</div>
-					  </a>
-
+						<div class="news_text-info">{{a.text}}</div>
+						<div class="news_index-info"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
 					</div>
-					{% endfor %}
-					<!-- <div class="static">
+				</a>
+				
+			</div>
+			{% endfor %}
+			<!-- <div class="static">
 					<h1 class="static_title">Статистика</h1>
 					<table>
 						<tr><th>Общий фонд:</th><td>892 237 книг</td></tr>
@@ -92,141 +92,141 @@
 						<tr><th>Электронные книги:</th><td>36 520 pdf</td></tr>
 					</table>
 					</div> -->
-				</div>
-			</div>
+		</div>
 	</div>
+</div>
 
 
 
-	<!-- Info -->
+<!-- Info -->
 
-	<div class="info">
-		<div class="container">
-			<div class="info_inner">
+<div class="info">
+	<div class="container">
+		<div class="info_inner">
 
-				<div class="info_grand info_grand-line">
-					<h1 class="info_title"><a href="{% url 'photo' %}">Фото</a></h1>
-					<div class="info_item">
+			<div class="info_grand info_grand-line">
+				<h1 class="info_title"><a href="{% url 'photo' %}">Фото</a></h1>
+				<div class="info_item">
 
-						{% for foto in photos %}
-						<div class="info_box">
-							<a href="{% url 'photo-Only' foto.id %}">
-								<div class="info_bg">
-									<img src="{{foto.image.url}}" alt="">
-								</div>
-								<p class="info_text">{{foto.title}}</p>
-							</a>
-						</div>
-						{% endfor %}
-
+					{% for foto in photos %}
+					<div class="info_box">
+						<a href="{% url 'photo-Only' foto.id %}">
+							<div class="info_bg">
+								<img src="{{foto.image.url}}" alt="">
+							</div>
+							<p class="info_text">{{foto.title}}</p>
+						</a>
 					</div>
-					<h2 class="info_sub"><a href="{% url 'photo' %}" >Все</a>
-						<div class="info_line"></div>
-					</h2>
+					{% endfor %}
+
 				</div>
+				<h2 class="info_sub"><a href="{% url 'photo' %}">Все</a>
+					<div class="info_line"></div>
+				</h2>
+			</div>
 
-				<div class="info_grand">
-					<h1 class="info_title"><a href="{% url 'video' %}"> Видео</a></h1>
-					<div class="info_item">
+			<div class="info_grand">
+				<h1 class="info_title"><a href="{% url 'video' %}"> Видео</a></h1>
+				<div class="info_item">
 
-						<div class="info_box">
-							<a href="{% url 'videoOnly' %}">
-								<div class="info_bg">
-									<img src="https://i.ytimg.com/vi/Uc59ulnJI2o/maxresdefault.jpg" alt="">
-									<img class="info_player" src="{% static 'img/png/play_video.png '%}" alt="">
-								</div>
-								<p class="info_text">Название</p>
-							</a>
-						</div>
-						<div class="info_box">
-							<a href="{% url 'videoOnly' %}">
-								<div class="info_bg">
-									<img src="https://i.ytimg.com/vi/W2TE0DjdNqI/maxresdefault.jpg" alt="">
-									<img class="info_player" src="{% static 'img/png/play_video.png '%}" alt="">
-								</div>
-								<p class="info_text">Название</p>
-							</a>
-						</div>
-						<div class="info_box">
-							<a href="{% url 'videoOnly' %}">
-								<div class="info_bg">
-									<img src="https://i.ytimg.com/vi/cMg8KaMdDYo/maxresdefault.jpg" alt="">
-									<img class="info_player" src="{% static 'img/png/play_video.png '%}" alt="">
-								</div>
-								<p class="info_text">Название</p>
-							</a>
-						</div>
-						<div class="info_box">
-							<a href="{% url 'videoOnly' %}">
-								<div class="info_bg">
-									<img src="https://i.ytimg.com/vi/gzbLODUb1sA/maxresdefault.jpg" alt="">
-									<img class="info_player" src="{% static 'img/png/play_video.png '%}" alt="">
-								</div>
-								<p class="info_text">Название</p>
-							</a>
-						</div>
+					<div class="info_box">
+						<a href="{% url 'videoOnly' %}">
+							<div class="info_bg">
+								<img src="https://i.ytimg.com/vi/Uc59ulnJI2o/maxresdefault.jpg" alt="">
+								<img class="info_player" src="{% static 'img/png/play_video.png '%}" alt="">
+							</div>
+							<p class="info_text">Название</p>
+						</a>
 					</div>
-					<h2 class="info_sub"><a href="{% url 'video' %}">Все</a>
-						<div class="info_line"></div>
-					</h2>
+					<div class="info_box">
+						<a href="{% url 'videoOnly' %}">
+							<div class="info_bg">
+								<img src="https://i.ytimg.com/vi/W2TE0DjdNqI/maxresdefault.jpg" alt="">
+								<img class="info_player" src="{% static 'img/png/play_video.png '%}" alt="">
+							</div>
+							<p class="info_text">Название</p>
+						</a>
+					</div>
+					<div class="info_box">
+						<a href="{% url 'videoOnly' %}">
+							<div class="info_bg">
+								<img src="https://i.ytimg.com/vi/cMg8KaMdDYo/maxresdefault.jpg" alt="">
+								<img class="info_player" src="{% static 'img/png/play_video.png '%}" alt="">
+							</div>
+							<p class="info_text">Название</p>
+						</a>
+					</div>
+					<div class="info_box">
+						<a href="{% url 'videoOnly' %}">
+							<div class="info_bg">
+								<img src="https://i.ytimg.com/vi/gzbLODUb1sA/maxresdefault.jpg" alt="">
+								<img class="info_player" src="{% static 'img/png/play_video.png '%}" alt="">
+							</div>
+							<p class="info_text">Название</p>
+						</a>
+					</div>
 				</div>
+				<h2 class="info_sub"><a href="{% url 'video' %}">Все</a>
+					<div class="info_line"></div>
+				</h2>
 			</div>
 		</div>
 	</div>
+</div>
 
 
 
-	<!-- Partner -->
-	<div class="partner">
-		<h1 class="partner_title">Ресурсы библиотеки</h1>
-		<div class="partner_inner">
-			<div class="partner_item">
-				<a href="https://lib.oshsu.kg/CGI/irbis64r_plus/cgiirbis_64_ft.exe?C21COM=F&I21DBN=OSU_FULLTEXT&P21DBN=OSU&Z21ID=&S21CNR=5"
-					target="_blank">
-					<img src="{% static 'img/partner/logo_ilbirs.png' %}" alt="">
-				</a>
-			</div>
-			<div class="partner_item">
-				<a href="https://www.gov.kg/ru" target="_blank">
-					<img src="{% static 'img/partner/logo_KR.png' %}" alt="">
-				</a>
-			</div>
-			<div class="partner_item">
-				<a href="https://www.oshsu.kg/ru" target="_blank">
-					<img src="{% static 'img/partner/logo_oshsu.png' %}" alt="">
-				</a>
-			</div>
-			<div class="partner_item">
-				<a href="http://window.edu.ru" target="_blank">
-					<img src="{% static 'img/partner/logo_window.png' %}" alt="">
-				</a>
-			</div>
-			<div class="partner_item">
-				<a href="http://neb.kg/index.php/ru/" target="_blank">
-					<img src="{% static 'img/partner/logo_neb.png' %}" alt="">
-				</a>
-			</div>
-			<div class="partner_item">
-				<a href="https://www.okuma.kg" target="_blank">
-					<img src="{% static 'img/partner/logo_okuma.png' %}" alt="">
-				</a>
-			</div>
-			<div class="partner_item">
-				<a href="http://library.manas.edu.kg/index.php/ru/" target="_blank">
-					<img src="{% static 'img/partner/logo_lib.png' %}" alt="">
-				</a>
-			</div>
-			<div class="partner_item">
-				<a href="https://www.wiley.com/customer-success/wiley-online-library-russian" target="_blank">
-					<img src="{% static 'img/partner/logo_wiley.png' %}" alt="">
-				</a>
-			</div>
-			<div class="partner_item">
-				<a href="https://www.wiley.com/customer-success/cochrane-library-training-hub" target="_blank">
-					<img src="{% static 'img/partner/logo_cochraneLibrary.png' %}" alt="">
-				</a>
-			</div>
-			<div class="partner_item">
+<!-- Partner -->
+<div class="partner">
+	<h1 class="partner_title">Ресурсы библиотеки</h1>
+	<div class="partner_inner">
+		<div class="partner_item">
+			<a href="https://lib.oshsu.kg/CGI/irbis64r_plus/cgiirbis_64_ft.exe?C21COM=F&I21DBN=OSU_FULLTEXT&P21DBN=OSU&Z21ID=&S21CNR=5"
+				target="_blank">
+				<img src="{% static 'img/partner/logo_ilbirs.png' %}" alt="">
+			</a>
+		</div>
+		<div class="partner_item">
+			<a href="https://www.gov.kg/ru" target="_blank">
+				<img src="{% static 'img/partner/logo_KR.png' %}" alt="">
+			</a>
+		</div>
+		<div class="partner_item">
+			<a href="https://www.oshsu.kg/ru" target="_blank">
+				<img src="{% static 'img/partner/logo_oshsu.png' %}" alt="">
+			</a>
+		</div>
+		<div class="partner_item">
+			<a href="http://window.edu.ru" target="_blank">
+				<img src="{% static 'img/partner/logo_window.png' %}" alt="">
+			</a>
+		</div>
+		<div class="partner_item">
+			<a href="http://neb.kg/index.php/ru/" target="_blank">
+				<img src="{% static 'img/partner/logo_neb.png' %}" alt="">
+			</a>
+		</div>
+		<div class="partner_item">
+			<a href="https://www.okuma.kg" target="_blank">
+				<img src="{% static 'img/partner/logo_okuma.png' %}" alt="">
+			</a>
+		</div>
+		<div class="partner_item">
+			<a href="http://library.manas.edu.kg/index.php/ru/" target="_blank">
+				<img src="{% static 'img/partner/logo_lib.png' %}" alt="">
+			</a>
+		</div>
+		<div class="partner_item">
+			<a href="https://www.wiley.com/customer-success/wiley-online-library-russian" target="_blank">
+				<img src="{% static 'img/partner/logo_wiley.png' %}" alt="">
+			</a>
+		</div>
+		<div class="partner_item">
+			<a href="https://www.wiley.com/customer-success/cochrane-library-training-hub" target="_blank">
+				<img src="{% static 'img/partner/logo_cochraneLibrary.png' %}" alt="">
+			</a>
+		</div>
+		<div class="partner_item">
 			<a href="https://ibooks.oshsu.kg/" target="_blank">
 				<img src="{% static 'img/partner/logo_ibook.png' %}" alt="">
 			</a>
@@ -236,8 +236,8 @@
 				<img src="{% static 'img/partner/logo_kirlibnet.png' %}" alt="">
 			</a>
 		</div>
-		</div>
 	</div>
+</div>
 
 
 {% include 'footer.html' %}

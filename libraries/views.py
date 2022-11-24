@@ -19,7 +19,7 @@ def registerUser(request):
             group = Group.objects.get(name='customer')
             user.groups.add(group)
 
-            messages.success(request, 'Account was created for ' + username)
+            messages.success(request, 'Аккаунт создан для ' + username)
 
             return redirect('login')
 
@@ -40,7 +40,7 @@ def loginUser(request):
                 login(request, user)
                 return redirect('forLibrarists')
             else:
-                messages.error(request, 'Username or password is incorrect')
+                messages.error(request, 'Логин или пароль неверeн')
 
     context = {}
     return render(request, 'login.html', context)
@@ -83,4 +83,10 @@ def work_schedule(request):
 
 def readers(request):
     return render(request, 'readers.html')
+
+def infoLib(request):
+    return render(request, 'infoLib.html')
+
+def videoLib(request):
+    return render(request, 'videoLib.html')
 

@@ -34,7 +34,7 @@
 	color: #309AAC;
 }
 
-.news_box{
+.news_block{
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -66,6 +66,8 @@
 .news_views a{
 	width: 100%;
 	display: flex;
+	text-decoration: none;
+	color: #000;
 }
 
 .news_info{
@@ -80,7 +82,7 @@
 	margin: 10px 0;
 	border: 1px solid #dee2e6;
 	border-radius: 20px;
-	
+	padding: 0 5px;
 	width: 320px;
 	height: auto;
 }
