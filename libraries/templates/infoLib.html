@@ -13,45 +13,21 @@
 				<tr>
 				  <th>№</th>
 				  <th>ФИО</th>
-				  <th>Телефон</th>
+				  <th>Телефон</th>`
+				  <th>Email</th>
 				  <th>Факультет</th>
 				</tr>
+
+				{% for customer in customers %}
 				<tr>
-				  <td>1</td>
-				  <td>Alfreds Futterkiste</td>
-				  <td>+99677777777</td>
-				  <td>Медфак</td>
+				  <td>{{customer.id}}</td>
+				  <td>{{customer.name}}</td>
+				  <td>{{customer.phone}}</td>
+				  <td>{{customer.email}}</td>
+				  <td>{{customer.faculty}}</td>
 				</tr>
-				<tr>
-					<td>2</td>
-					<td>Alfreds Futterkiste</td>
-					<td>+99677777777</td>
-					<td>Медфак</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>Alfreds Futterkiste</td>
-					<td>+99677777777</td>
-					<td>Мит</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>Alfreds Futterkiste</td>
-					<td>+99677777777</td>
-					<td>Инфак</td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td>Alfreds Futterkiste</td>
-					<td>+99677777777</td>
-					<td>Теофак</td>
-				</tr>
-				<tr>
-					<td>6</td>
-					<td>Alfreds Futterkiste</td>
-					<td>+99677777777</td>
-					<td>Биофак</td>
-				</tr>
+				{% endfor %}
+
 			  </table>
 		</div>
 

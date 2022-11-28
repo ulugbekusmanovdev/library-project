@@ -14,6 +14,8 @@ def news(request):
 
 def newsOnly(request, pk):
     post = News.objects.get(id=pk)
+    post.news_view = post.news_view + 1
+    post.save()
     posts = News.objects.all()
     context = {'post': post, 'posts': posts}
     return render(request, 'newsOnly.html', context)

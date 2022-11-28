@@ -10,7 +10,9 @@ def home(request):
     posts = News.objects.order_by('-create_date')[0:3]
     ads = Ads.objects.order_by('-id')[0:4]
     photos = Photo.objects.order_by('-id')[0:4]
-    context = {'posts': posts, 'ads': ads, 'photos': photos}
+    h_news = News.objects.all().last()
+    post = News.objects.all()
+    context = {'posts': posts, 'ads': ads, 'photos': photos, 'h_news': h_news, 'post': post}
     return render(request, 'home.html', context)
 
 

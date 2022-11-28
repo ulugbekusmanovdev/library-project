@@ -1455,4 +1455,9 @@ iframe {
   }
 }
 
+
+.post-right img {
+    height: 30px;
+    cursor: pointer;
+}
 /*# sourceMappingURL=secondStyle.css.map */

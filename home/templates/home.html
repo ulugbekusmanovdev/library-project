@@ -22,20 +22,15 @@
 					<div class="news_info-home">
 						<div class="news_views-home">
 							<a href="#">
-								<img class="news_img" src="{% static 'img/news/1.jpg' %}" alt="">
+								<img class="news_img" src="{{h_news.image.url}}" alt="">
 							</a>
 						</div>
 					</div>
-					<div class="news_index-home "><i class="bi bi-eye"></i> 12 / назад</div>
+					<div class="news_index-home "><i class="bi bi-eye"></i> 12 / {{post.create_date|date:"d.m.Y"}}</div>
 					<div class="news_title-home">
-						<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut repudiandae impedit expedita
-							deserunt quos.</p>
+						<p>{{h_news.title}}.</p>
 					</div>
-					<p class="news_text-home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto consectetur
-						voluptas
-						dignissimos voluptatem. Molestiae eveniet maiores obcaecati alias sint dolorem blanditiis
-						impedit maxime
-						asperiores excepturi, voluptatibus non consequatur nisi porro...</p>
+					<p class="news_text-home">{{h_news.text|truncatewords:"18" }}</p>
 				</div>
 
 				<div class="news_view">
