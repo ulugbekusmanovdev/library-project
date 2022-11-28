@@ -1,4 +1,4 @@
-@import "./normalize.scss";
+	@import "./normalize.scss";
 
 span{
 	color: #000;
@@ -251,6 +251,7 @@ span{
 
 	.catalog_box {
 		.catalog_img{
+			padding: 20px 0;
 			height: 400px;
 		}
 	}
@@ -475,11 +476,14 @@ span{
 		margin: 30px 20px;
 	}
 	.photo_item{
-		width: 400px;
+		width: 100%;
 		height: 200px;
 		overflow: hidden;
 		border-radius: 20px;
 		
+	}
+	.photo_box{
+		width: 100%;
 	}
 	.photo_img{
 		background-repeat: no-repeat;
@@ -621,6 +625,7 @@ span{
 	.video_index{
 		color: #666;
 		padding: 10px 0;
+		font-size: 16px;
 	}
 	a{
 		text-decoration: none;

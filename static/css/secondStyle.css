@@ -533,6 +533,7 @@ span {
   width: 500px;
 }
 .catalog .catalog_box .catalog_img {
+  padding: 20px 0;
   height: 400px;
 }
 .catalog .catalog_link a {
@@ -719,10 +720,13 @@ span {
   margin: 30px 20px;
 }
 .photo .photo_item {
-  width: 400px;
+  width: 100%;
   height: 200px;
   overflow: hidden;
   border-radius: 20px;
+}
+.photo .photo_box {
+  width: 100%;
 }
 .photo .photo_img {
   background-repeat: no-repeat;
@@ -852,6 +856,7 @@ span {
 .video .video_index {
   color: #666;
   padding: 10px 0;
+  font-size: 16px;
 }
 .video a {
   text-decoration: none;
@@ -1093,6 +1098,14 @@ iframe {
   background-color: #dddddd;
 }
 
+@media (max-width: 1550px) {
+  .photo_inner {
+    width: 29% !important;
+  }
+  .video_box {
+    width: 29% !important;
+  }
+}
 @media (max-width: 1450px) {
   .logo {
     left: 5%;
@@ -1192,11 +1205,36 @@ iframe {
   .good_know, .good {
     display: none;
   }
+  .photo_box .photo_index {
+    font-size: 14px;
+  }
+  .photo_box h2 {
+    font-size: 16px;
+  }
+  .photo_box .video .video_index {
+    font-size: 12px !important;
+  }
+  .photo_box .video h2 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1100px) {
+  .photo_inner {
+    width: 28% !important;
+  }
+  .video_box {
+    width: 28% !important;
+  }
 }
 @media (max-width: 1000px) {
   tr {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+  }
+  tr th {
+    text-align: center;
+    width: 100% !important;
   }
   tr td {
     width: 100%;
@@ -1250,10 +1288,25 @@ iframe {
   .partner_item img {
     height: 80px;
   }
+  .photo_box .photo_index {
+    font-size: 13px;
+  }
+  .photo_box h2 {
+    font-size: 12px;
+  }
 }
 @media (max-width: 900px) {
   .footer_item {
     flex-wrap: wrap;
+  }
+  .photo {
+    justify-content: space-around;
+  }
+  .photo_inner {
+    width: 40% !important;
+  }
+  .video_box {
+    width: 40% !important;
   }
 }
 @media (max-width: 850px) {
@@ -1300,6 +1353,12 @@ iframe {
   }
   .partner_item {
     width: 240px;
+  }
+  .photo_box .photo_index {
+    font-size: 14px;
+  }
+  .photo_box h2 {
+    font-size: 18px;
   }
 }
 @media (max-width: 720px) {
@@ -1363,6 +1422,12 @@ iframe {
   }
   .form_logo {
     width: 60%;
+  }
+  .photo_inner {
+    width: 100% !important;
+  }
+  .video_box {
+    width: 100% !important;
   }
 }
 @media (max-width: 520px) {
