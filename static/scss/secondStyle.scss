@@ -878,6 +878,7 @@ iframe{
 	}
 }
 
+//INFO LIB
 
 .info_lib{
 	margin: 100px 0;
@@ -897,6 +898,71 @@ iframe{
 	  tr:nth-child(even) {
 		background-color: #dddddd;
 	  }
+}
+
+// BOOKS
+.books{
+	margin: 50px 0;
+	width: 100%;
+	.books_category{
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+	.books_box{
+		width: 20%;
+		padding: 10px;
+		border-right: 1px #333 solid;
+		
+		h2{
+			padding: 20px;
+			text-align: center;
+			color: #309AAC;
+		}
+	}
+	.books_info{
+		width: 80%;
+
+		.books_inner{
+			width: 100%;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.books_content{
+			width: 33%;
+			padding: 20px;
+
+			.books_img{
+				margin: 0 auto;
+				width: 150px;
+				height: 200px;
+				img{
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.books_item{
+				h4{
+					
+					padding: 5px;
+				}
+				p{
+					font-size: 14px;
+					padding: 5px
+				}
+				button{
+					margin-left: 40%;
+					a{
+						font-size: 14px;
+						color: #309AAC;
+						text-decoration: none
+					}
+				}
+			}
+		}
+	}
+
 }
 
 @import "./response.scss"; 
