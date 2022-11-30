@@ -1101,6 +1101,7 @@ iframe {
 .books {
   margin: 50px 0;
   width: 100%;
+  padding: 20px;
 }
 .books .books_category {
   display: flex;
@@ -1117,6 +1118,17 @@ iframe {
   text-align: center;
   color: #309AAC;
 }
+.books .books_box p {
+  margin: 10px;
+  padding: 5px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.books .books_box p:hover {
+  background-color: #EBECF0;
+  box-shadow: -2px -3px 3px #dee2e6, 2px 3px 3px #dee2e6, -2px 3px 3px #dee2e6, 2px -3px 3px #dee2e6;
+}
 .books .books_info {
   width: 80%;
 }
@@ -1126,12 +1138,13 @@ iframe {
   flex-wrap: wrap;
 }
 .books .books_info .books_content {
-  width: 33%;
-  padding: 20px;
+  background-color: #fff;
+  margin: 15px;
+  width: 22%;
 }
 .books .books_info .books_content .books_img {
-  margin: 0 auto;
-  width: 150px;
+  margin: 0 0 10px;
+  width: 100%;
   height: 200px;
 }
 .books .books_info .books_content .books_img img {
@@ -1146,11 +1159,15 @@ iframe {
   padding: 5px;
 }
 .books .books_info .books_content .books_item button {
+  padding: 10px;
   margin-left: 40%;
+  border: none;
+  border-radius: 15px;
+  background-color: #309AAC;
 }
 .books .books_info .books_content .books_item button a {
   font-size: 14px;
-  color: #309AAC;
+  color: #fff;
   text-decoration: none;
 }
 
