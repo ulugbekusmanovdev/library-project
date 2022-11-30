@@ -1,4 +1,4 @@
-	@import "./normalize.scss";
+@import "./normalize.scss";
 
 span{
 	color: #000;
@@ -807,7 +807,7 @@ iframe{
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	height: auto;
+	margin: 50px 0;
 
 	.personal_icon{
 		padding: 20px 10px 0;
@@ -818,7 +818,7 @@ iframe{
 	}
 	.personal_box{
 		display: flex;
-		width: 50%;
+		width: 70%;
 		.personal_photo{
 			margin-top: 20px;
 			width: 150px;
@@ -831,8 +831,12 @@ iframe{
 		}
 		.personal_info{
 			padding: 20px;
-			p{
-				width: 100px;
+			width: 100%;
+			h4{
+				width: 90px;
+			}
+			input{
+				padding: 5px;
 			}
 			.personal_btn{
 				margin: 10px 0 0 10px;
@@ -842,17 +846,34 @@ iframe{
 				border-radius: 10px;
 				border: none;
 				cursor: pointer;
+				font-size: 18px;
+				transition: .3s linear;
+			}
+			.personal_btn:hover{
+				background-color: #3dc6de;
+				box-shadow: 4px 3px 2px #dee2e6, -4px 3px 2px #dee2e6;
 			}
 		}
 		.personal_item{
 			display: flex;
-			padding: 10px;
+			padding: 10px 0;
+			h4{
+				font-weight: 500;
+				font-size: 16px;
+			}
+			p{
+				font-size: 14px;
+			}
 		}
 	}
 	
 	.personal_inner{
 		width: 30%;
-		border: 1px solid #333 ;
+		.personal_block{
+			border: 1px solid;
+			border-bottom: none;
+		}
+		
 	border-bottom: none;
 		text-align: center;
 		h3{
@@ -944,13 +965,13 @@ iframe{
 		.books_content{
 			background-color: #fff;
 			margin: 15px;
-			width: 22%;
+			width: 20%;
 			
 
 			.books_img{
 				margin: 0 0 10px;
 				width: 100%;
-				height: 200px;
+				height: 250px;
 				img{
 					width: 100%;
 					height: 100%;
@@ -984,6 +1005,45 @@ iframe{
 		}
 	}
 
+}
+
+
+// LIB
+.lib{
+		width: 100%;
+	.lib_inner{
+		margin: 20px auto;
+		width: 50%;
+		h1{
+			color: #309AAC;
+			padding: 20px;
+			text-align: center
+		}
+		.lib_form{
+			padding: 20px;
+			border: 1px solid;
+			border-radius: 20px;
+			.form-group{
+				padding: 10px;
+				input{
+					padding: 5px;
+				}
+				.form_btn{
+					padding: 10px;
+					border-radius: 10px;
+					font-size: 16px;
+					background-color: #309AAC;
+					border: none;
+					cursor: pointer;
+					color: #fff;
+					transition: .3s linear;
+				}
+				.form_btn:hover{
+					background-color: #3fc4db;
+				}
+			}
+		}
+	}
 }
 
 @import "./response.scss"; 

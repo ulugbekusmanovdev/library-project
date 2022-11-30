@@ -22,34 +22,36 @@
 				<form class="personal_info" method="POST" action="" enctype="multipart/form-data">
 					{% csrf_token %}
 					<div class="personal_item">
-						<p>ФИО:</p> {{form.name}}
+						<h4>ФИО:</h4> {{form.name}}
 					</div>
 					<div class="personal_item">
-						<p>Номер:</p>{{form.phone}}
+						<h4>Номер:</h4>{{form.phone}}
 					</div>
 					<div class="personal_item">
-						<p>email:</p>{{form.email}}
+						<h4>Email:</h4>{{form.email}}
 					</div>
 					<div class="personal_item">
-						<p>Фото:</p> {{form.profile_pic}}
+						<h4>Фото:</h4> {{form.profile_pic}}
 					</div>
 					<div class="personal_item">
-						<p>Факультет:</p>{{form.faculty}}
+						<h4>Факультет:</h4>{{form.faculty}}
 					</div>
 					<button class="personal_btn" type="submit">Сохранить</button>
 				</form>
 			</div>
 			<div class="personal_inner">
+				<div class="personal_block">
 				<h3>Личный кабинет</h3>
 				<ul>
 					<li><a class="personal_title" target="_blank" href="http://avn.oshsu.kg/AVN_search_st.html">Проверка задолжности студента</a></li>
 					<li><a class="personal_title" href="{% url 'videoLib' %}">Видеоуроки</a></li>
-					<li><a class="personal_title" href="{% url 'add-book' %}">Фото</a></li>
+					<li><a class="personal_title" href="{% url 'add-book' %}">Добавление книги</a></li>
 					<li><a class="personal_title" href="#">Чат</a></li>
 					<li><a class="personal_title" href="{% url 'logout' %}">Выход</a></li>
 				</ul>
 			</div>
 		</div>
+	</div>
 
 		<h2 class="catalog_irbis">ИРБИС 64 <br> Автоматизированная библиотечная система</h2>
 
