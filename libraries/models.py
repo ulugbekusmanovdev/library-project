@@ -20,3 +20,19 @@ class Customer(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    author = models.CharField(max_length=100)
+    year = models.CharField(max_length=100)
+    pdf = models.FileField(upload_to='book/pdfs/')
+    photo = models.ImageField(upload_to='book/photos/', null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+    def delete(self, *args, **kwargs):
+        self.pdf.delete()
+        self.photo.delete()
+        super().delete(*args, **kwargs)

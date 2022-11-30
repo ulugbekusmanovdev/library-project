@@ -1,27 +1,44 @@
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, User
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import CreateUserForm, CustomerForm
+from .forms import CustomerForm
+from .models import Book
 from .decorators import unauthenticated_user, allowed_users
+from django.contrib.auth.hashers import make_password
 
 
 @unauthenticated_user
 def registerUser(request):
-    form = CreateUserForm()
     if request.method == 'POST':
-        form = CreateUserForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            username = form.cleaned_data.get('username')
+        username = request.POST['username']
+        password = request.POST['password']
+        password = make_password(password)
 
-            messages.success(request, 'Аккаунт создан для ' + username)
+        a = User(username=username, password=password)
+        a.save()
+        messages.success(request, 'Аккаунт создан для ' + username)
+        return redirect('login')
+    else:
+        messages.error(request, 'Registration fail, try again later')
+        return render(request, 'register.html')
 
-            return redirect('login')
 
-    context = {'form': form}
-    return render(request, 'register.html', context)
+# def registerUser(request):
+#     form = CreateUserForm()
+#     if request.method == 'POST':
+#         form = CreateUserForm(request.POST)
+#         if form.is_valid():
+#             user = form.save()
+#             username = form.cleaned_data.get('username')
+#
+#             messages.success(request, 'Аккаунт создан для ' + username)
+#
+#             return redirect('login')
+#
+#     context = {'form': form}
+#     return render(request, 'register.html', context)
 
 
 @unauthenticated_user
@@ -88,11 +105,26 @@ def work_schedule(request):
 
 
 def readers(request):
-    return render(request, 'readers.html')
+    books = Book.objects.all()
+    context = {'books': books}
+    return render(request, 'readers.html', context)
+
 
 def infoLib(request):
     return render(request, 'infoLib.html')
 
+
 def videoLib(request):
     return render(request, 'videoLib.html')
 
+
+def addBook(request):
+    if request.method == 'POST':
+        title = request.POST['title']
+        author = request.POST['author']
+        year = request.POST['year']
+        pdf = request.FILES['pdf']
+        photo = request.FILES['photo']
+        a = Book(title=title, author=author, year=year, photo=photo, pdf=pdf)
+        a.save()
+    return render(request, 'addbook.html')

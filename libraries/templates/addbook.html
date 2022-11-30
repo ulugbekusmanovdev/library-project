@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+
+<link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
+
+
+
+<div class="sec-container">
+	<div class="lib">
+		<div class="lib_inner">
+
+
+			<form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+			<div class="form-group">
+					<div class="col"><input type="text" class="form-control" name="title" placeholder="Book Title" required="required"></div>
+			</div>
+			<div class="form-group">
+					<div class="col"><input type="text" class="form-control" name="author" placeholder="Author" required="required"></div>
+			</div>
+
+			<div class="form-group">
+					<div class="col"><input type="text" class="form-control" name="year" placeholder="Publication Year" required="required"></div>
+			</div>
+
+			<div class="form-group">
+					<div class="col"><label>Choose Book photo</label>
+						<input type="file" id="myFile" name="photo" placeholder="Report Attachment"
+							   enctype="multipart/form-data"></div>
+			</div>
+
+			<div class="form-group">
+					<div class="col"><label>Choose PDF Book</label>
+						<input type="file" id="myFile" name="pdf" placeholder="Report Attachment" enctype="multipart/form-data"></div>
+			</div>
+
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary btn-lg btn-block" href="">Add Now</button>
+			</div>
+    </form>
+
+
+		</div>
+	</div>
+</div>
+
+
+
+
+{% include 'footer.html' %}
+
+{% endblock %}

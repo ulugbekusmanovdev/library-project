@@ -15,6 +15,7 @@ urlpatterns = [
     path('logout', views.logoutUser, name='logout'),
     path('infoLib', views.infoLib, name='infoLib'),
     path('videoLib', views.videoLib, name='videoLib'),
+    path('add-book', views.addBook, name='add-book'),
 
 ]
 
