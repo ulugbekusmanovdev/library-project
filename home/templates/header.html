@@ -1,19 +1,127 @@
 	{% load static %}
 	
 
-<!-- hamburger -->
-	<!-- <div class="hamburger">
-	<input type="checkbox" id="navi-toggle" class="checkbox" />
-	<label for="navi-toggle" class="button">
-	  <span class="icon">&nbsp;</span>
-	</label>
-	<div class="background">&nbsp;</div>
-</div> -->
+	<nav class="menu_hamburger">
+		<div class="menu_navbar">
+		  <div class="menu_container menu_nav-container">
+			  <input class="menu_checkbox" type="checkbox" name="" id="" />
+			  <div class="menu_hamburger-lines">
+				<span class="menu_line menu_line1"></span>
+				<span class="menu_line menu_line2"></span>
+				<span class="menu_line menu_line3"></span>
+			  </div>  
+			  <div class="menu_item">
+				<h1 class="nav_title"><a href="{% url 'home' %}">Научная библиотека</a></h1>
+			</div>
+			<div class="menu_logo">
+				<img src="{% static 'img/logo_ru.svg' %}" alt="">
+			</div>
+			<div class="menu_menu-items">
+				<li>
+					<div class="menu_select">
+					<a class="navbar_title" data-scroll="home" href="{% url 'home' %}" >Главная</a>
+				</div>
+				</li>
+				<li>
+					<div class="menu_select">
+						<a class="navbar_title" data-scroll="about_us" href="{% url 'about' %}" >О библиотеке</a>
+							<div class="caret"></div>
+					</div>
+					<ul class="navbar_sub">
+						<li>
+							<a class="navbar_title" data-scroll="mission" href="{% url 'about' %}#mission" >Миссия</a>
+						</li>
+						<li>
+							<a class="navbar_title" data-scroll="history" href="{% url 'about' %}#history">История</a>
+						</li>
+						<li>
+							<a class="navbar_title" data-scroll="structure" href="{% url 'about' %}#structure">Структура</a>
+						</li>
+						<!-- <li>
+							<a class="navbar_title" data-scroll="collection" href="{% url 'about' %}">Коллекция</a>
+						</li>
+						<li>
+							<a class="navbar_title" data-scroll="vacancy" href="{% url 'about' %}">Ваканссия</a>
+						</li>  -->
+					</ul>
+				</li>
+				<li>
+					<div class="menu_select">
+					<a class="navbar_title" href="{% url 'catalogs' %}">Каталоги</a>
+					</div>
+				</li>
+				<li>	
+					<div class="menu_select">
+						<a class="navbar_title" href="{% url 'forReaders' %}">Читателям</a>
+							<div class="caret"></div>
+					</div>
+					<ul class="navbar_sub">
+						<li>
+							<a class="navbar_title" data-scroll="books" href="{% url 'forReaders' %}#books">Каталог книг</a>
+						</li>
+						<li>
+							<a class="navbar_title" data-scroll="direction" href="{% url 'forReaders' %}#direction">Правила пользования</a>
+						</li>
+						 <!-- <li>
+							<a class="navbar_title" data-scroll="reading_rooms" href="{% url 'forReaders' %}#reading_rooms">Читальные залы</a>
+						</li>  -->
+						<li>
+							<a class="navbar_title" data-scroll="library_entry" href="{% url 'forReaders' %}#library_entry">Запись в библиотеку</a>
+						</li>
+						<li>
+							<a class="navbar_title" data-scroll="subscription" href="{% url 'forReaders' %}#subscription">Абонемент</a>
+						</li>
+						<li>
+							<a class="navbar_title" data-scroll="workSchedule" href="{% url 'forReaders' %}#workSchedule">Режим работы</a>
+						</li>
+						<li>
+							<a class="navbar_title" data-scroll="good_to_know" href="{% url 'forReaders' %}#good_to_know">Полезно знать</a>
+						</li>
+					</ul>
+				</li>
+				 <li>
+					<div class="menu_select">
+					<a class="navbar_title" href="{% url 'forLibrarists' %}">Библиотекарям</a>
+				</div>
+					<ul class="navbar_sub">
+						<li>
+							<a class="navbar_title" href="{% url 'register' %}">Регистрация</a>
+						</li>
+						<li>
+							<a class="navbar_title" href="{% url 'infoLib' %}">Информация о пользователи</a>
+						</li>
+					</ul>
+					
+				</li>
+				<li> 
+					<div class="menu_select">
+					<a class="navbar_title" href="{% url 'contact' %}">Как связаться</a>
+					</div>
+				</li>
+		
+				<li>
+					<div class="menu_select">
+					<a class="navbar_title" href="{% url 'logout' %}">Выйти</a>
+					</div>
+				</li>
+		
+				{% if user.is_authenticated %}
+				<li>
+					<p class="">Привет, {{request.user|title}}</p>
+				</li>
+				{% endif %}
+			</div>
+		  </div>
+		</div>
+	  </nav>
+
 
 <nav class="nav" id="nav">
 	<ul class="navbar menu__box" id="menu">
 		<li>
+			<div class="select">
 			<a class="navbar_title" data-scroll="home" href="{% url 'home' %}" >Главная</a>
+		</div>
 		</li>
 		<li>
 			<div class="select">
@@ -39,7 +147,9 @@
 			</ul>
 		</li>
 		<li>
+			<div class="select">
 			<a class="navbar_title" href="{% url 'catalogs' %}">Каталоги</a>
+			</div>
 		</li>
 		<li>	
 			<div class="select">
@@ -66,12 +176,14 @@
 					<a class="navbar_title" data-scroll="workSchedule" href="{% url 'forReaders' %}#workSchedule">Режим работы</a>
 				</li>
 				<li>
-					<a class="navbar_title good" data-scroll="good_to_know" href="{% url 'forReaders' %}#good_to_know">Полезно знать</a>
+					<a class="navbar_title" data-scroll="good_to_know" href="{% url 'forReaders' %}#good_to_know">Полезно знать</a>
 				</li>
 			</ul>
 		</li>
 		 <li>
+			<div class="select">
 			<a class="navbar_title" href="{% url 'forLibrarists' %}">Библиотекарям</a>
+		</div>
 			<ul class="navbar_sub">
 				<li>
 					<a class="navbar_title" href="{% url 'register' %}">Регистрация</a>
@@ -80,13 +192,18 @@
 					<a class="navbar_title" href="{% url 'infoLib' %}">Информация о пользователи</a>
 				</li>
 			</ul>
+			
 		</li>
 		<li> 
+			<div class="select">
 			<a class="navbar_title" href="{% url 'contact' %}">Как связаться</a>
+			</div>
 		</li>
 
 		<li>
+			<div class="select">
 			<a class="navbar_title" href="{% url 'logout' %}">Выйти</a>
+			</div>
 		</li>
 
 		{% if user.is_authenticated %}
