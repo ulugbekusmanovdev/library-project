@@ -921,6 +921,49 @@ iframe{
 	  }
 }
 
+
+
+// LIB
+.lib{
+		width: 100%;
+	.lib_inner{
+		margin: 20px auto;
+		width: 50%;
+		h1{
+			color: #309AAC;
+			padding: 20px;
+			text-align: center
+		}
+		.lib_form{
+			padding: 20px;
+			border: 1px solid;
+			border-radius: 20px;
+			.form-group{
+				padding: 10px;
+				input{
+					padding: 5px;
+				}
+				.form_btn{
+					padding: 10px;
+					border-radius: 10px;
+					font-size: 16px;
+					background-color: #309AAC;
+					border: none;
+					cursor: pointer;
+					color: #fff;
+					transition: .3s linear;
+				}
+				.form_btn:hover{
+					background-color: #3fc4db;
+				}
+			}
+		}
+	}
+}
+
+
+
+
 // BOOKS
 .books{
 	margin: 50px 0;
@@ -941,6 +984,46 @@ iframe{
 			text-align: center;
 			color: #309AAC;
 		}
+
+		.books_dropbtn {
+			background-color: #3498DB;
+			color: white;
+			padding: 16px;
+			font-size: 16px;
+			border: none;
+			cursor: pointer;
+		  }
+		  
+		  .books_dropbtn:hover, .books_dropbtn:focus {
+			background-color: #2980B9;
+		  }
+		  
+		  .books_dropdown {
+			position: relative;
+			display: inline-block;
+		  }
+		  
+		  .books_dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: #f1f1f1;
+			min-width: 160px;
+			overflow: auto;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			z-index: 1;
+		  }
+		  
+		  .books_dropdown-content a {
+			color: black;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+		  }
+		  
+		  .books_dropdown a:hover {background-color: #ddd;}
+		  
+		  .show {display: block;}
+
 		p{
 			margin: 10px;
 			padding: 5px;
@@ -1008,42 +1091,6 @@ iframe{
 }
 
 
-// LIB
-.lib{
-		width: 100%;
-	.lib_inner{
-		margin: 20px auto;
-		width: 50%;
-		h1{
-			color: #309AAC;
-			padding: 20px;
-			text-align: center
-		}
-		.lib_form{
-			padding: 20px;
-			border: 1px solid;
-			border-radius: 20px;
-			.form-group{
-				padding: 10px;
-				input{
-					padding: 5px;
-				}
-				.form_btn{
-					padding: 10px;
-					border-radius: 10px;
-					font-size: 16px;
-					background-color: #309AAC;
-					border: none;
-					cursor: pointer;
-					color: #fff;
-					transition: .3s linear;
-				}
-				.form_btn:hover{
-					background-color: #3fc4db;
-				}
-			}
-		}
-	}
-}
+// SLIDER
 
 @import "./response.scss"; 

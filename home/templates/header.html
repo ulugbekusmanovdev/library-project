@@ -107,7 +107,9 @@
 		
 				{% if user.is_authenticated %}
 				<li>
-					<p class="">Привет, {{request.user|title}}</p>
+					<div class="menu_select">
+					<p class="navbar_title">Привет, {{request.user|title}}</p>
+					</div>
 				</li>
 				{% endif %}
 			</div>
@@ -187,7 +189,7 @@
 			<ul class="navbar_sub">
 				<li>
 					<a class="navbar_title" href="{% url 'register' %}">Регистрация</a>
-				</li>
+				</li> 	
 				<li>
 					<a class="navbar_title" href="{% url 'infoLib' %}">Информация о пользователи</a>
 				</li>
@@ -199,16 +201,18 @@
 			<a class="navbar_title" href="{% url 'contact' %}">Как связаться</a>
 			</div>
 		</li>
-
+		{% if user.is_staff %}
 		<li>
 			<div class="select">
 			<a class="navbar_title" href="{% url 'logout' %}">Выйти</a>
 			</div>
 		</li>
-
+		{% endif %}
 		{% if user.is_authenticated %}
 		<li>
-			<p class="">Привет, {{request.user|title}}</p>
+			<div class="select">
+			<p class="navbar_title">Привет, {{request.user|title}}</p>
+			</div>
 		</li>
 		{% endif %}
 
@@ -235,3 +239,5 @@
 
 	
 	<script src="{% static '/js/app.js' %}"></script>
+
+	

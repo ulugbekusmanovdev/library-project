@@ -1200,6 +1200,43 @@ iframe {
   background-color: #dddddd;
 }
 
+.lib {
+  width: 100%;
+}
+.lib .lib_inner {
+  margin: 20px auto;
+  width: 50%;
+}
+.lib .lib_inner h1 {
+  color: #309AAC;
+  padding: 20px;
+  text-align: center;
+}
+.lib .lib_inner .lib_form {
+  padding: 20px;
+  border: 1px solid;
+  border-radius: 20px;
+}
+.lib .lib_inner .lib_form .form-group {
+  padding: 10px;
+}
+.lib .lib_inner .lib_form .form-group input {
+  padding: 5px;
+}
+.lib .lib_inner .lib_form .form-group .form_btn {
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #309AAC;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s linear;
+}
+.lib .lib_inner .lib_form .form-group .form_btn:hover {
+  background-color: #3fc4db;
+}
+
 .books {
   margin: 50px 0;
   width: 100%;
@@ -1219,6 +1256,42 @@ iframe {
   padding: 20px;
   text-align: center;
   color: #309AAC;
+}
+.books .books_box .books_dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.books .books_box .books_dropbtn:hover, .books .books_box .books_dropbtn:focus {
+  background-color: #2980B9;
+}
+.books .books_box .books_dropdown {
+  position: relative;
+  display: inline-block;
+}
+.books .books_box .books_dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.books .books_box .books_dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.books .books_box .books_dropdown a:hover {
+  background-color: #ddd;
+}
+.books .books_box .show {
+  display: block;
 }
 .books .books_box p {
   margin: 10px;
@@ -1271,43 +1344,6 @@ iframe {
   font-size: 14px;
   color: #fff;
   text-decoration: none;
-}
-
-.lib {
-  width: 100%;
-}
-.lib .lib_inner {
-  margin: 20px auto;
-  width: 50%;
-}
-.lib .lib_inner h1 {
-  color: #309AAC;
-  padding: 20px;
-  text-align: center;
-}
-.lib .lib_inner .lib_form {
-  padding: 20px;
-  border: 1px solid;
-  border-radius: 20px;
-}
-.lib .lib_inner .lib_form .form-group {
-  padding: 10px;
-}
-.lib .lib_inner .lib_form .form-group input {
-  padding: 5px;
-}
-.lib .lib_inner .lib_form .form-group .form_btn {
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 16px;
-  background-color: #309AAC;
-  border: none;
-  cursor: pointer;
-  color: #fff;
-  transition: 0.3s linear;
-}
-.lib .lib_inner .lib_form .form-group .form_btn:hover {
-  background-color: #3fc4db;
 }
 
 @media (max-width: 1550px) {

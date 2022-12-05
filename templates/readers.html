@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
 
 
+
 <!-- BOOKS-->
 <div class="bg" id="books">
 <div class="sec-container">
@@ -13,8 +14,14 @@
 
             <div class="books_box">
                 <h2>Категория</h2>
-                <p>физика</p>
-                <p>математика</p>
+                <div class="books_dropdown">
+                    <button onclick="myFunction()" class="books_dropbtn"> Выпадающий</button>
+                    <div id="books_myDropdown" class="books_dropdown-content">
+                      <a href="#">математика</a>
+                      <a href="#">физика</a>
+                      <a href="#">психология</a>
+                    </div>
+            </div>
             </div>
 
             <div class="books_info">
@@ -35,8 +42,8 @@
                     {% endfor %}
 
                 </div>
+                </div>
 
-            </div>
 
         </div>
     </div>
@@ -148,8 +155,8 @@
 
 
 <!-- subscription-->
-<div class="sec-container">
-    <div class="subscription" id="subscription">
+<div class="sec-container" id="subscription">
+    <div class="subscription" >
         <h1>Абонемент</h1>
         <div class="subscription_img">
             <img src="{% static 'img/subscription/1.jpg' %}" alt="">
@@ -196,19 +203,8 @@
         <h2 class="good_title">Республиканские газеты и журналы</h2>
 
         <table class="good_box">
-            <tr>
-                <td>
-                    <p>
-                        <b>№</b>
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        <b>индекс</b>
-                    </p>
-                </td>
-
+            <tr><td><p><b>№</b></p></td>
+                <td><p><b>индекс</b></p></td>
                 <td>
                     <p>
                         <b>Наименование</b>
@@ -1056,6 +1052,9 @@
         </table>
     </div>
 </div>
+
+
+
 
 {% include 'footer.html' %}
 
