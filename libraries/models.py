@@ -14,7 +14,7 @@ class Customer(models.Model):
     name = models.CharField(max_length=200, null=True)
     phone = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
-    profile_pic = models.ImageField(default="profile1.png", null=True, blank=True)
+    profile_pic = models.ImageField(default="profile1.png")
     faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE, blank=True, null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
@@ -22,7 +22,16 @@ class Customer(models.Model):
         return self.name
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=100, null=False, blank=False)
+
+    def __str__(self):
+        return self.name
+
+
 class Book(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, blank=True)
+    customer = models.ForeignKey(Customer, on_delete=models.SET_NULL, null=True, blank=True)
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)
     year = models.CharField(max_length=100)

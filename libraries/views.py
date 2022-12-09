@@ -4,9 +4,11 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import CustomerForm
-from .models import Book
+from .models import Book, Category, Customer
+from django.db.models import Q
 from .decorators import unauthenticated_user, allowed_users
 from django.contrib.auth.hashers import make_password
+from .utils import searchBooks
 
 
 @unauthenticated_user
@@ -105,13 +107,28 @@ def work_schedule(request):
 
 
 def readers(request):
-    books = Book.objects.all()
-    context = {'books': books}
+    category = request.GET.get('category')
+    if category == None:
+        books = Book.objects.all()
+    else:
+        books = Book.objects.filter(category__name=category)
+
+    categories = Category.objects.all()
+    context = {'books': books, 'categories': categories}
     return render(request, 'readers.html', context)
 
 
+def search(request):
+    search = request.GET.get('q')
+    books = Book.objects.all()
+    if search:
+        books = books.filter(title__icontains=search)
+    return render(request, 'readers.html', {"books": books})
+
+
 def infoLib(request):
-    return render(request, 'infoLib.html')
+    customers = Customer.objects.all()
+    return render(request, 'infoLib.html', {'customers': customers})
 
 
 def videoLib(request):
@@ -119,12 +136,35 @@ def videoLib(request):
 
 
 def addBook(request):
+    books = request.user.customer.book_set.all()
+    total_books = books.count()
+    books_count = Book.objects.all().count()
+
+    categories = Category.objects.all()
+
     if request.method == 'POST':
-        title = request.POST['title']
-        author = request.POST['author']
-        year = request.POST['year']
-        pdf = request.FILES['pdf']
-        photo = request.FILES['photo']
-        a = Book(title=title, author=author, year=year, photo=photo, pdf=pdf)
-        a.save()
-    return render(request, 'addbook.html')
+        data = request.POST
+        title = request.POST.get('title')
+        author = request.POST.get('author')
+        year = request.POST.get('year')
+        pdf = request.FILES.get('pdf')
+        photo = request.FILES.get('photo')
+
+        if data['category'] != 'none':
+            category = Category.objects.get(id=data['category'])
+        elif data['category_new'] != '':
+            category, created = Category.objects.get_or_create(name=data['category_new'])
+        else:
+            category = None
+
+        book = Book.objects.create(
+            category=category,
+            photo=photo,
+            title=title,
+            author=author,
+            year=year,
+            pdf=pdf,
+        )
+        return redirect('readers')
+    context = {'categories': categories, 'books_count': books_count, 'books': books, 'total_books': total_books}
+    return render(request, 'addbook.html', context)

@@ -18,12 +18,19 @@
 								<div class="news_info-only">
 										<img class="news_img-only" src="{{ post.image.url }}" alt="">
 
-										<div class="news_index-only"><i class="bi bi-eye"></i>12/{{post
-											.create_date|date:"d.m.Y"}}</div>
+										<div class="news_index-only"><i class="bi bi-eye"></i>12/{{post.create_date|date:"d.m.Y"}}</div>
 									<div class="news_text-only">
 										<p class="news_title-only">{{post.title}}</p>
 										<p>{{post.text|linebreaks}}</p>
 									</div>
+
+			{% if request.user.is_staff %}
+			<div class="post-right">
+				<a href="{% url 'delete-post' post.id %}"><img src="{% static 'img/news/bin.png' %}" alt="Delete"></a>
+				<a href="{% url 'update-post' post.id %}"><img src="{% static 'img/news/pencil.png' %}" alt="Update"></a>
+			</div>
+			{% endif %}
+
 								</div>
 							</div>
 						</div>
@@ -53,12 +60,7 @@
 				</div>
 			</div>
 		</div>
-			{% if request.user.is_staff %}
-			<div class="post-right">
-				<a href="{% url 'delete-post' post.id %}"><img src="{% static 'img/news/bin.png' %}" alt="Delete"></a>
-				<a href="{% url 'update-post' post.id %}"><img src="{% static 'img/news/pencil.png' %}" alt="Update"></a>
-			</div>
-			{% endif %}
+
 	</div>
 	</div>
 

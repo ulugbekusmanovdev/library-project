@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
 	<!-- News -->
 
-
 	<div class="news">
 			<div class="news_inner">
 				<div class="news_item ">
@@ -13,7 +12,7 @@
 					<div class="news_box">
 
 						
-						{% for post in posts %}
+						{% for post in posts.object_list %}
 						<div class="news_view">
 							
 							<div class="news_info">
@@ -33,11 +32,29 @@
 
 						{% endfor %}
 
-						
 				</div>
 			</div>
 			</div>
 	</div>
+
+
+				<div style="text-align:center">
+			{% if posts.has_previous %}
+				<a href="{% url 'news' %}?page={{posts.previous_page_number}}">Previous</a>
+			{% endif %}
+				{% for num_page in posts.paginator.page_range %}
+					{% if posts.number == num_page %}
+						<a href="{% url 'news' %}?page={{num_page}}">{{num_page}}</a>
+					{% else %}
+						<a href="{% url 'news' %}?page={{num_page}}">{{num_page}}</a>
+					{% endif %}
+				{% endfor %}
+			{% if posts.has_next %}
+				<a href="{% url 'news' %}?page={{posts.next_page_number}}">Next</a>
+			{% endif %}
+				</div>
+		<p style="text-align:center; margin: 30px 30px;">page number: {{posts.number}}/{{posts.paginator.num_pages}}</p>
+
 
 {% if request.user.is_staff %}
 <a href="{% url 'create-post' %}">create post</a>

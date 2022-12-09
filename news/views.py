@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import News
 from .forms import NewsForm
+from django.core.paginator import Paginator, EmptyPage
 from django.contrib.auth.decorators import login_required
 from libraries.decorators import allowed_users, admin_only
 
@@ -8,7 +9,10 @@ from libraries.decorators import allowed_users, admin_only
 
 def news(request):
     posts = News.objects.all()
-    context = {'posts': posts}
+    postlar = Paginator(posts, 4)
+    page_list = request.GET.get('page')
+    page = postlar.get_page(page_list)
+    context = {'posts': page}
     return render(request, 'news.html', context)
 
 

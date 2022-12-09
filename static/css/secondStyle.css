@@ -13,6 +13,11 @@ body {
   margin: 0 auto;
 }
 
+.post-right img{
+    width:24px;
+    margin: 20px 0 0 5px;
+}
+
 .menu_hamburger {
   display: none;
   position: fixed;

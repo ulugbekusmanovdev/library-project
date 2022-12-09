@@ -4,6 +4,13 @@
 {% include 'header.html' %}
 <link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
 
+        <form action="{% url 'search' %}" method="GET">
+			<div class="input-group search_box">
+				<input type="text" class="form-control" placeholder="Search Book"
+					   name="q">
+				<button class="btn btn-primary" type="submit"><i class="fa fa-search"></i>поиск</button>
+			</div>
+		</form>
 
 
 <!-- BOOKS-->
@@ -17,9 +24,12 @@
                 <div class="books_dropdown">
                     <button onclick="myFunction()" class="books_dropbtn"> Выпадающий</button>
                     <div id="books_myDropdown" class="books_dropdown-content">
-                      <a href="#">математика</a>
-                      <a href="#">физика</a>
-                      <a href="#">психология</a>
+                        <a href="{% url 'readers' %}">Все книги</a>
+
+                        {% for category in categories %}
+                      <a href="{% url 'readers' %}?category={{category.name}}">{{category.name}}</a>
+                        {%endfor%}
+
                     </div>
             </div>
             </div>
@@ -36,6 +46,7 @@
                         <div class="books_item">
                             <h4>Название: {{book.title}}</h4>
                             <p>Автор: {{book.author}}</p>
+                            <p>Категория: {{book.category.name}}</p>
                             <button><a href="{{ book.pdf.url }}">Читать...</a></button>
                         </div>
                     </div>
