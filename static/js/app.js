@@ -23,8 +23,6 @@ const menuH = menuHeigt - 240;
 
 
 
-
-
 const setScrollListebner = () => {
 	const { scrollY } = window;
 

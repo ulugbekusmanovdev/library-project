@@ -3,58 +3,62 @@
 {% block content %}
 {% include 'header.html' %}
 <link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
-	<!-- News -->
+<!-- News -->
 
-	<div class="news">
-			<div class="news_inner">
-				<div class="news_item ">
-					<h1 class="news_title">Новости</h1>
-					<div class="news_box">
+<div class="news">
+	<div class="news_inner">
+		<div class="news_item ">
+			<h1 class="news_title">Новости</h1>
+			<div class="news_box">
 
-						
-						{% for post in posts.object_list %}
-						<div class="news_view">
-							
-							<div class="news_info">
-								<a href="{% url 'single-news' post.id %}">
-								<img class="news_img" src="{{post.image.url}}" alt="">
-							</a>
+
+				{% for post in posts.object_list %}
+				<div class="news_view">
+
+					<div class="news_info">
+						<a href="{% url 'single-news' post.id %}">
+							<img class="news_img" src="{{post.image.url}}" alt="">
+						</a>
+					</div>
+					<div class="news_content">
+						<a href="{% url 'single-news' post.id %}">
+							<div class="news_text">
+								<p>{{post.title}} </p>
 							</div>
-							<div class="news_content">
-							<a href="{% url 'single-news' post.id %}">
-							<div class="news_text"><p>{{post.title}} </p></div>
-							</a>
-								<div><p>{{ post.text|truncatewords:"10" }}</p></div>
-							<div class="news_index"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
-						    </div>
-							
+						</a>
+						<div>
+							<p>{{ post.text|truncatewords:"10" }}</p>
 						</div>
-
-						{% endfor %}
+						<div class="news_index"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
+					</div>
 
 				</div>
-			</div>
-			</div>
-	</div>
 
-
-				<div style="text-align:center">
-			{% if posts.has_previous %}
-				<a href="{% url 'news' %}?page={{posts.previous_page_number}}">Previous</a>
-			{% endif %}
-				{% for num_page in posts.paginator.page_range %}
-					{% if posts.number == num_page %}
-						<a href="{% url 'news' %}?page={{num_page}}">{{num_page}}</a>
-					{% else %}
-						<a href="{% url 'news' %}?page={{num_page}}">{{num_page}}</a>
-					{% endif %}
 				{% endfor %}
-			{% if posts.has_next %}
-				<a href="{% url 'news' %}?page={{posts.next_page_number}}">Next</a>
-			{% endif %}
-				</div>
-		<p style="text-align:center; margin: 30px 30px;">page number: {{posts.number}}/{{posts.paginator.num_pages}}</p>
 
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="pogination">
+<div class="pogination_block">
+		{% if posts.has_previous %}
+		<a  href="{% url 'news' %}?page={{posts.previous_page_number}}"><i class="bi bi-chevron-left"></i></a>
+		{% endif %}
+		{% for num_page in posts.paginator.page_range %}
+		{% if posts.number == num_page %}
+		<a href="{% url 'news' %}?page={{num_page}}">{{num_page}}</a>
+		{% else %}
+		<a href="{% url 'news' %}?page={{num_page}}">{{num_page}}</a>
+		{% endif %}
+		{% endfor %}
+		{% if posts.has_next %}
+		<a  href="{% url 'news' %}?page={{posts.next_page_number}}"><i class="bi bi-chevron-right"></i></a>
+		{% endif %}
+	<p>Страницы: {{posts.number}}/{{posts.paginator.num_pages}}</p>
+</div>
+</div>
 
 {% if request.user.is_staff %}
 <a href="{% url 'create-post' %}">create post</a>
@@ -63,5 +67,3 @@
 {% include 'footer.html' %}
 
 {% endblock %}
-
-

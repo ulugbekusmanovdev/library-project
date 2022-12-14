@@ -9,6 +9,10 @@
 
 <div class="sec-container">
 	<div class="lib">
+		<div class="lib_info">
+			<p>Добавленные книги: {{books_count}}</p>
+			<p>Добавленные книги вами: {{total_books}}</p>
+		</div>
 		<div class="lib_inner">
 			<h1>Добавление книги</h1>
 			<form class="lib_form" method="POST" enctype="multipart/form-data">
@@ -65,10 +69,7 @@
 	</div>
 </div>
 
-<div>
-	<p>books: {{books_count}}</p>
-	<p>book: {{total_books}}</p>
-</div>
+
 
 
 {% include 'footer.html' %}

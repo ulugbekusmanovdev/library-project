@@ -14,7 +14,7 @@ urlpatterns = [
     path('video', views.video, name='video'),
     path('history', views.video, name='history'),
     path('vacancy', views.video, name='vacancy'),
-
+    
     path('photoOnly/<str:pk>', views.photoOnly, name='photo-Only'),
     path('videoOnly', views.videoOnly, name='videoOnly'),
 ]

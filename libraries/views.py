@@ -122,8 +122,12 @@ def search(request):
     search = request.GET.get('q')
     books = Book.objects.all()
     if search:
-        books = books.filter(title__icontains=search)
-    return render(request, 'readers.html', {"books": books})
+        books = books.filter(
+            Q(title__icontains=search) |
+            Q(author__icontains=search) |
+            Q(category__name__icontains=search)
+        )
+    return render(request, 'books.html', {"books": books})
 
 
 def infoLib(request):
@@ -133,6 +137,17 @@ def infoLib(request):
 
 def videoLib(request):
     return render(request, 'videoLib.html')
+
+def books(request):
+    category = request.GET.get('category')
+    if category == None:
+        books = Book.objects.all()
+    else:
+        books = Book.objects.filter(category__name=category)
+
+    categories = Category.objects.all()
+    context = {'books': books, 'categories': categories}
+    return render(request, 'books.html', context)
 
 
 def addBook(request):

@@ -71,5 +71,7 @@ def video(request):
     return render(request, 'video.html')
 
 
+
+
 def videoOnly(request):
     return render(request, 'videoOnly.html')
