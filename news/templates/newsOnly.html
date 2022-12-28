@@ -18,10 +18,10 @@
 								<div class="news_info-only">
 										<img class="news_img-only" src="{{ post.image.url }}" alt="">
 
-										<div class="news_index-only"><i class="bi bi-eye"></i>12/{{post.create_date|date:"d.m.Y"}}</div>
+										<div class="news_index-only"><i class="bi bi-eye"></i>{{post.news_view}}/{{post.create_date|date:"d.m.Y"}}</div>
 									<div class="news_text-only">
 										<p class="news_title-only">{{post.title}}</p>
-										<p>{{post.text|linebreaks}}</p>
+										<p>{{post.text|safe}}</p>
 									</div>
 
 			{% if request.user.is_staff %}

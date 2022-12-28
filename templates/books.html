@@ -65,6 +65,25 @@
 	</div>
 
 
+	<div class="pogination">
+		<div class="pogination_block">
+				{% if categories.has_previous %}
+				<a  href="{% url 'books' %}?page={{posts.previous_page_number}}"><i class="bi bi-chevron-left"></i></a>
+				{% endif %}
+				{% for num_page in categories.paginator.page_range %}
+				{% if categories.number == num_page %}
+				<a href="{% url 'books' %}?page={{num_page}}">{{num_page}}</a>
+				{% else %}
+				<a href="{% url 'books' %}?page={{num_page}}">{{num_page}}</a>
+				{% endif %}
+				{% endfor %}
+				{% if categories.has_next %}
+				<a  href="{% url 'books' %}?page={{posts.next_page_number}}"><i class="bi bi-chevron-right"></i></a>
+				{% endif %}
+			<p>Страницы: {{categories.number}}/{{categories.paginator.num_pages}}</p>
+		</div>
+	</div>
+
 {% include 'footer.html' %}
 
 {% endblock %}

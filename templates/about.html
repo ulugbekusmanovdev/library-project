@@ -4,13 +4,16 @@
 {% include 'header.html' %}
 <link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
 
-
+{% for lib in library %}
 	<!-- About -->
 	<div class="sec-container" id="about">
 		<div class="about">
-			<h1 class="about_title">О Библиотеке</h1>
-			<p class="about_text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla adipisci delectus, accusantium animi consectetur consequuntur quod aspernatur dolore accusamus deleniti provident, sed recusandae corporis doloribus porro velit blanditiis debitis laboriosam temporibus? Nesciunt excepturi quis ipsam, consequuntur quaerat praesentium facilis, eveniet placeat tempore tempora architecto libero fugiat quisquam labore necessitatibus unde debitis explicabo voluptas blanditiis possimus nostrum fuga sed! Minus quam assumenda dignissimos ex praesentium nobis, dicta nihil est unde soluta eveniet amet ratione doloribus, quidem magnam enim. Perferendis iste omnis architecto quis laudantium dolorum exercitationem commodi tempora unde, at voluptate magnam ducimus dignissimos dolorem earum quasi ex sit alias doloribus. <br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae consequatur ipsum ipsam odit, praesentium labore non suscipit nisi minus ex.</p>
+
+			<h1 class="about_title">{{lib.l_title}}</h1>
+			<p class="about_text">{{lib.l_body}}</p>
+
 		</div>
+
 	</div>
 
 
@@ -18,53 +21,46 @@
 <div class="bg" id="mission">
 <div class="sec-container">
 	<div class="mission">
-		<h1 class="mission_title">Миссия</h1>
-		<p>Научная библиотека Ошского государственного университета, открытая одновременно с университетом в 1939 г., исторически видит свое призвание в содействии Миссии ОшГУ и удовлетворении информационных потребностей университетского сообщества.</p>
-		<p>Научная библиотека Ошского государственного университета видит свою миссию в содействии повышению качества образования и науки в ОшГУ посредством предоставления инновационных библиотечно-информационных продуктов и услуг исследователям, преподавателям, студентам университета и его партнерам.</p>
-		<h2 class="mission_title">Основные задачи</h2>
+		<h1 class="mission_title">{{lib.m_title}}</h1>
+		<p>{{ lib.m_body }}</p>
 
-		<p>Формировать библиотечно-информационные ресурсы, расширяя взаимодействие с факультетами и научно-исследовательскими подразделениями Университета. Обеспечивать развитие библиотеки как ресурсного центра, гарантируя исследователям, преподавателям и студентам получение необходимой им информации.</p>
-		<p>Создавать и предлагать современные информационные продукты и услуги, поддерживающие исследовательскую и преподавательскую деятельность на каждом этапе; обеспечивать доступность всех ресурсов НБ, в том числе публикаций Ош ГУ, в мировом информационном пространстве.</p>
-		<p>Содействовать развитию информационной культуры и совершенствовать исследовательские компетенции студентов, аспирантов, преподавателей.</p>
-		<p>Быть открытой инновациям. Обеспечивать лидирующие позиции в области библиотечного обслуживания и технологий; транслировать передовой опыт в профессиональное сообщество университетских библиотек Кыргызстана.</p>
-		<p>Обеспечивать сохранность уникальных книжных коллекций НБ Ош ГУ для будущих поколений и их доступность в мировом информационном пространстве</p>
+		<h2 class="mission_title">{{ lib.os_title }}</h2>
+
+		<p>{{lib.os_body}}</p>
 
 	</div>
 </div>
 </div>
 
-
 <!--History-->
 <div class="sec-container" id="history">
 	<div class="history">
-		<h1>История</h1>
-		<p>Научная библиотека Ошского Государственного университета активно и плодотворно функционирует с 1939 года со дня основания данного учебного заведения.</p>
-		<p>На основе постановления №1142 совета народных комиссаров Кыргызстана от 10 августа 1939 года была образована Ошская школа учителей, в 1951 году постановлением №1759 правительства СССР – Ошский Государственный педагогический институт, с 17 июня 1992 года согласно постановлению №202 президента КР был создан Ошский Государственный Университет.</p>
+		<h1>{{lib.history_title}}</h1>
+		<p>{{lib.history_body}}</p>
 		<div class="history_img">
-		<img src="{% static 'img/history/1.jpg' %}" alt="">
+		<img src="{{lib.history_image.url}}" alt="">
 		</div>
-		<p>Люди, руководящие и внесшие большой вклад в создание научной библиотеки университета: А.И. Федова, Ф.Х. Дауранова, К. Турсунова, А.В. Ильяева, М.Ю. Клебанова.</p>
-		<p>1947–1996 годы под руководством М.Ю. Клебановой фонд библиотеки был переписан в инвентарные журналы, были составлены алфавитные, системные и рабочие каталоги.</p>
-		<p>1996–2005 годы А. Г. Ибрагимова работала директором научной библиотеки. В эти годы фонд библиотеки пополнился учебниками, научно–методическими пособиями, диссертациями, словарями и другими книгами, общее количество, которых превысило 730 тысяч. Фонд библиотеки достиг 812661 единиц.</p>
-		<p>2005–2009 годы С. С. Токтомамбетова работала в качестве директора научной библиотеки.</p>
+		{% endfor %}
+
+		{% for lib2 in library2 %}
+		<p>{{ lib2.history_body|linebreaks }}</p>
 		<div class="history_img">
-		<img src="{% static 'img/history/2.jpg' %}" alt="">
+		<img src="{{lib2.history_image.url}}" alt="">
 		</div>
-		<p>2009–2011 годы научная библиотека университета находилась под руководством департамента инвестиции и новых технологий ОшГУ; она состояла из четырех центральных библиотек и трех отделений. Директором департамента был кандидат биологических наук, доцент Т. К. Эркебаев, затем департаментом руководил кандидат педагогических наук, доцент, депутат городского совета Т.А. Жоробеков.</p>
+		{% endfor %}
+
+		{% for lib3 in library4 %}
+		<p>{{ lib3.history_body|linebreaks }}</p>
+		{% endfor %}
+
+		{% for lib5 in library5 %}
 		<div class="history_box">
 			<div class="history_img his">
-			<p>
-				Решением ученного совета ОшГУ и на основе приказа ректора №652 от 25 ноября 2011 года была принята новая структура библиотеки; директором библиотеки была назначена и работает по сегодняшний день Мамбетова Сайраш Сатындиевна.</p>
-				<img src="{% static 'img/history/3.jpg' %}" alt="">
+			<p>{{ lib5.history_body|linebreaks }}</p>
+				<img src="{{lib5.history_image.url}}" alt="">
 			</div>
-			<div class="history_img his">
-
-
-				<img src="{% static 'img/history/4.jpg' %}" alt="">
-				<p>4 отделения, 16 абонементов, 15 читальных залов на 1210 мест, 4 кафедральных читальных залов, 57 опытных сотрудников НБ ОшГУ оказывают услуги студентам, аспирантам, магистрантам и другим читателям. Общая площадь научной библиотеки составляет 3262.85 м.кв.</p>
-			</div>
-
 		</div>
+		{% endfor %}
 	</div>
 </div>
 

@@ -1,4 +1,5 @@
 {% extends 'index.html' %}
+{% load embed_video_tags %}
 {% load static %}
 {% block content %}
 {% include 'header.html' %}
@@ -11,66 +12,25 @@
 			<h1 class="video_title">Видео</h1>
 	
 			<div class="video_inner">
-	
+
+				{% for item in videos %}
+
 				<div class="video_box">
 					<div class="video_item">
 						<a href="{% url 'videoOnly' %}">
-							<div class="video_img "
-								style="background-image: url(https://i.ytimg.com/vi/gzbLODUb1sA/maxresdefault.jpg)">
-								<div class="img_bg"></div>
-							</div>
+							{% video item.url %}
+<!--							<div class="video_img "-->
+<!--								style="background-image: url(https://i.ytimg.com/vi/gzbLODUb1sA/maxresdefault.jpg)">-->
+<!--								<div class="img_bg"></div>-->
+<!--							</div>-->
 						</a>
 					</div>
-					<div class="video_index"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
+					<div class="video_index">{{item.added|date:"d.m.Y"}}</div>
 					<a href="{% url 'videoOnly' %}">
-						<h2>TheFatRat & Anjulie - Love It When You Hurt Me [Chapter 9]</h2>
+						<h2>{{item.title}}</h2>
 					</a>
 				</div>
-	
-				<div class="video_box">
-					<div class="video_item">
-						<a href="{% url 'videoOnly' %}">
-							<div class="video_img "
-								style="background-image: url(https://i.ytimg.com/vi/gzbLODUb1sA/maxresdefault.jpg)">
-								<div class="img_bg"></div>
-							</div>
-						</a>
-					</div>
-					<div class="video_index"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
-					<a href="{% url 'videoOnly' %}">
-						<h2>TheFatRat & Anjulie - Love It When You Hurt Me [Chapter 9]</h2>
-					</a>
-				</div>
-	
-				<div class="video_box">
-					<div class="video_item">
-						<a href="{% url 'videoOnly' %}">
-							<div class="video_img "
-								style="background-image: url(https://i.ytimg.com/vi/gzbLODUb1sA/maxresdefault.jpg)">
-								<div class="img_bg"></div>
-							</div>
-						</a>
-					</div>
-					<div class="video_index"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
-					<a href="{% url 'videoOnly' %}">
-						<h2>TheFatRat & Anjulie - Love It When You Hurt Me [Chapter 9]</h2>
-					</a>
-				</div>
-	
-				<div class="video_box">
-					<div class="video_item">
-						<a href="{% url 'videoOnly' %}">
-							<div class="video_img "
-								style="background-image: url(https://i.ytimg.com/vi/gzbLODUb1sA/maxresdefault.jpg)">
-								<div class="img_bg"></div>
-							</div>
-						</a>
-					</div>
-					<div class="video_index"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
-					<a href="{% url 'videoOnly' %}">
-						<h2>TheFatRat & Anjulie - Love It When You Hurt Me [Chapter 9]</h2>
-					</a>
-				</div>
+				{% endfor %}
 
 			</div>
 	

@@ -1,10 +1,11 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import Group, User
+from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import CustomerForm
-from .models import Book, Category, Customer
+from .forms import CustomerForm, ChatForm
+from .models import Book, Category, Customer, Chat
 from django.db.models import Q
 from .decorators import unauthenticated_user, allowed_users
 from django.contrib.auth.hashers import make_password
@@ -146,13 +147,16 @@ def books(request):
         books = Book.objects.filter(category__name=category)
 
     categories = Category.objects.all()
-    context = {'books': books, 'categories': categories}
+    postlar = Paginator(categories, 4)
+    page_list = request.GET.get('page')
+    page = postlar.get_page(page_list)
+    context = {'books': books, 'categories': page}
     return render(request, 'books.html', context)
 
 
 def addBook(request):
-    books = request.user.customer.book_set.all()
-    total_books = books.count()
+    customer = Customer.objects.get(user=request.user)
+    books = Book.objects.filter(customer=customer).count()
     books_count = Book.objects.all().count()
 
     categories = Category.objects.all()
@@ -179,7 +183,27 @@ def addBook(request):
             author=author,
             year=year,
             pdf=pdf,
+            customer=customer,
         )
         return redirect('readers')
-    context = {'categories': categories, 'books_count': books_count, 'books': books, 'total_books': total_books}
+    context = {'categories': categories, 'books_count': books_count, 'books': books}
     return render(request, 'addbook.html', context)
+
+
+def chatForm(request):
+    form = ChatForm()
+    if request.method == 'POST':
+        form = ChatForm(request.POST, request.FILES)
+        if form.is_valid():
+            instance = form.save(commit=False)
+            # instance.customer = request.user
+            instance.customer = Customer.objects.get(user=request.user)
+            instance.save()
+        return redirect('chat')
+    context = {'form': form}
+    return render(request, 'chatform.html', context)
+
+
+def chat(request):
+    chat = Chat.objects.all()
+    return render(request, 'chat.html', {'chat': chat})

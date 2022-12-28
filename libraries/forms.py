@@ -10,8 +10,20 @@ class CustomerForm(ModelForm):
         model = Customer
         fields = ['name', 'phone', 'email', 'profile_pic', 'faculty']
 
+    # widgets = {
+    #     'profile_pic': forms.ImageField(attrs={'class': 'input'})
+    #     }
+
 
 # class CreateUserForm(UserCreationForm):
 #     class Meta:
 #         model = User
 #         fields = ['username', 'password1', 'password2']
+
+
+class ChatForm(forms.ModelForm):
+    class Meta:
+        model = Chat
+        fields = ('message', 'image',)
+
+
