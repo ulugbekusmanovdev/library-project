@@ -54,12 +54,10 @@
 		{% endfor %}
 
 		{% for lib5 in library5 %}
-		<div class="history_box">
-			<div class="history_img his">
 			<p>{{ lib5.history_body|linebreaks }}</p>
+			<div class="history_img">
 				<img src="{{lib5.history_image.url}}" alt="">
 			</div>
-		</div>
 		{% endfor %}
 	</div>
 </div>

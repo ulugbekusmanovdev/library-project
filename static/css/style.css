@@ -615,19 +615,10 @@ body {
   text-decoration: none;
 }
 
-.info_box img {
+.info_box img, .info_box iframe {
   width: 200px;
   height: 150px;
   transition: 0.4s all linear;
-}
-
-.info_player {
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  z-index: 1;
-  width: 50% !important;
-  height: 50% !important;
 }
 
 .info_box:hover img {

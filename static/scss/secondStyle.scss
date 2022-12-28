@@ -20,6 +20,7 @@ span{
 
 .bg{
 	background: #EBECF0;
+	padding: 5px;
 }
 
 .sec-container{
@@ -385,22 +386,16 @@ span{
 	}
 	p{
 		font-size: 18px;
+		padding: 10px;
 	}
 	.history_img{
 		width: 500px;
 		margin: 10px auto;
 	}
-	.history_img p{
-		padding: 150px 0;
-	}
+	
 	img{
 		width: 500px;
 
-
-	}
-	.history_box{
-		display: flex;
-		justify-content: space-around;
 	}
 }
 

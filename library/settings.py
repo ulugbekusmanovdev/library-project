@@ -44,7 +44,6 @@ INSTALLED_APPS = [
 
     'ckeditor',
     'ckeditor_uploader',
-    'widget_tweaks',
     'embed_video',
 ]
 

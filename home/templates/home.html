@@ -125,8 +125,8 @@
 				<div class="info_item">
 
 					{% for video in videos %}
-						<div class="info_box">
-							{% video video.url '230x200' %}
+						<div class="info_box">	
+							{% video video.url %}
 							<p class="info_text">{{video.title}}</p>
 					</div>
 					{% endfor %}
