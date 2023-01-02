@@ -16,8 +16,10 @@
 						<div class="news_block-1">
 							<div class="news_block-only">
 								<div class="news_info-only">
+									<div class="news_slick-slider">
 										<img class="news_img-only" src="{{ post.image.url }}" alt="">
-
+										<img class="news_img-only" src="{{ post.image.url }}" alt="">	
+									</div>
 										<div class="news_index-only"><i class="bi bi-eye"></i>{{post.news_view}}/{{post.create_date|date:"d.m.Y"}}</div>
 									<div class="news_text-only">
 										<p class="news_title-only">{{post.title}}</p>
@@ -25,7 +27,7 @@
 									</div>
 
 			{% if request.user.is_staff %}
-			<div class="post-right">
+			<div class="news_post-only">
 				<a href="{% url 'delete-post' post.id %}"><img src="{% static 'img/news/bin.png' %}" alt="Delete"></a>
 				<a href="{% url 'update-post' post.id %}"><img src="{% static 'img/news/pencil.png' %}" alt="Update"></a>
 			</div>
@@ -41,7 +43,6 @@
 							<div class="news_several">
 								<div class="news_hidden-only">
 									<div class="news_in-only">
-										
 										<img class="news_img-only2" src="{{post.image.url}}" alt="">
 									</div>
 									</div>

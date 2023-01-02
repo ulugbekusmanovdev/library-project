@@ -215,6 +215,9 @@
   .photo_inner {
     width: 40% !important;
   }
+  .photo_img-only {
+    height: 400px !important;
+  }
   .video_box {
     width: 40% !important;
   }
@@ -327,6 +330,12 @@
   .photo_inner {
     width: 100% !important;
   }
+  .photo_img-only {
+    height: 300px !important;
+  }
+  .photo_item-only2 {
+    height: 150px !important;
+  }
   .video_box {
     width: 100% !important;
   }
@@ -349,6 +358,12 @@
   }
   .partner_item img {
     height: 150px;
+  }
+  .photo_img-only {
+    height: 250px !important;
+  }
+  .photo_item-only2 {
+    height: 150px !important;
   }
 }
 @media (max-width: 400px) {

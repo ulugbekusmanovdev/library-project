@@ -1,104 +1,59 @@
-<!--{% extends 'index.html' %}-->
-<!--{% load static %}-->
-<!--{% block content %}-->
-<!--{% include 'header.html' %}-->
-<!--<link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">-->
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
 
 
-<!--	<div class="sec-container">-->
-<!--		<div class="photo_only">-->
-<!--			<h1 class="photo_title">Фото</h1>-->
-<!--			<div class="photo_block-only">-->
-<!--	-->
-<!--				<div class="photo_inner-only">-->
-<!--					<div class="photo_box-only">-->
-<!--							<div class="photo_img-only" style="background-image: url({{ photo.image.url }})"></div>-->
-<!--							<div class="photo_index-only"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>-->
-<!--							<div class="photo_content-only">-->
-<!--								<h2>{{photo.title}}</h2>-->
-<!--								<p>{{photo.text}}</p>-->
-<!--							</div>-->
-<!--					</div>-->
-<!--				</div>-->
+<div class="sec-container">
+	<div class="photo_only">
+		<h1 class="photo_title">Фото</h1>
+		<div class="photo_block-only">
+
+			<div class="photo_inner-only">
+				<div class="photo_box-only">
+					
+					<div class="photo_slick-slider">
+					<img class="photo_img-only" src="{% static 'img/news/1.jpg' %}"/>
+					<img class="photo_img-only" src="{% static 'img/news/2.jpg' %}"/>
+				</div>
+					
+					<div class="photo_index-only"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
+					<div class="photo_content-only">
+						<h2>TEXT Loe</h2>
+						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur deserunt eum impedit aperiam pariatur aspernatur nulla mollitia tempora quidem voluptatem vitae, libero aliquid quod maxime iusto modi a error est.</p>
+					</div>
+					
+				</div>
+			</div>
 
 
 
-<!--&lt;!&ndash;				<div class="photo_inner-only2">&ndash;&gt;-->
+			<div class="photo_inner-only2">
 
-<!--&lt;!&ndash;					{% for foto in photos %}&ndash;&gt;-->
-<!--&lt;!&ndash;					<div class="photo_box-only2">&ndash;&gt;-->
-<!--&lt;!&ndash;						<div class="photo_item-only2">&ndash;&gt;-->
-<!--&lt;!&ndash;							<a href="{% url 'photo-Only' foto.id %}">&ndash;&gt;-->
-<!--&lt;!&ndash;								<div class="photo_img-only2" style="background-image: url({{foto.image.url}})">&ndash;&gt;-->
-<!--&lt;!&ndash;								</div>&ndash;&gt;-->
-<!--&lt;!&ndash;							</a>&ndash;&gt;-->
-<!--&lt;!&ndash;						</div>&ndash;&gt;-->
-<!--&lt;!&ndash;						<div class="photo_index-only"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>&ndash;&gt;-->
-<!--&lt;!&ndash;						<h2>{{ foto.title }}</h2>&ndash;&gt;-->
-<!--&lt;!&ndash;					</div>&ndash;&gt;-->
+				{% for foto in photos %}
+				<div class="photo_box-only2">
+					<div class="photo_item-only2">
+						<a href="{% url 'photo-Only' foto.id %}">
+							<div class="photo_img-only2" style="background-image: url({{foto.image.url}})">
+							</div>
+						</a>
+					</div>
+					<div class="photo_index-only"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
+					<h2>{{ foto.title }}</h2>
+				</div>
 
-<!--&lt;!&ndash;					{% endfor %}&ndash;&gt;-->
+				{% endfor %}
 
-<!--&lt;!&ndash;				</div>&ndash;&gt;-->
+			</div>
 
-<!--			</div>-->
-<!--		</div>-->
-<!--	</div>-->
-
-
-<!--{% include 'footer.html' %}-->
-
-<!--{% endblock %}-->
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Multi-Image Tutorial</title>
-</head>
-<body>
-    <div class="container py-4">
-
-		<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
-			<!--Indicators-->
-			<ol class="carousel-indicators">
-			{% for p in photos %}
-			  <li data-target="#carousel-example-1z" data-slide-to="{{ forloop.counter0 }}" class="{% if forloop.counter0 == 0 %} active {% endif %}"></li>
-			{% endfor %}
-			</ol>
-			<!--/.Indicators-->
-			<!--Slides-->
-			<div class="carousel-inner" role="listbox">
-			  {% for p in photos %}
-			  <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-				<img class="d-block w-100" src="{{p.image.url}}"
-				  alt="First slide">
-			  </div>
-			  {% endfor %}
-			  <!--/First slide-->
-			<!--/.Slides-->
-			<!--Controls-->
-			<a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-			  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			  <span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-			  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-			  <span class="sr-only">Next</span>
-			</a>
-			<!--/.Controls-->
-		  </div>
 		</div>
-
-		{{post.title}}
-		{{post.text}}
-
 	</div>
-        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</body>
-</html>
+</div>
+
+
+
+
+{% include 'footer.html' %}
+
+{% endblock %}
