@@ -153,7 +153,6 @@ def books(request):
     context = {'books': books, 'categories': page}
     return render(request, 'books.html', context)
 
-
 def addBook(request):
     customer = Customer.objects.get(user=request.user)
     books = Book.objects.filter(customer=customer).count()

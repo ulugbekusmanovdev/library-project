@@ -48,6 +48,11 @@ class Photo(models.Model):
         return self.title
 
 
+class PostImage(models.Model):
+    post = models.ForeignKey(Photo, default=None, on_delete=models.CASCADE)
+    image = models.FileField(upload_to='images/')
+
+
 class Video(models.Model):
     title = models.CharField(max_length=100)
     added = models.DateTimeField(auto_now=True)

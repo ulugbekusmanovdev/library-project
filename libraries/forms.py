@@ -24,6 +24,6 @@ class CustomerForm(ModelForm):
 class ChatForm(forms.ModelForm):
     class Meta:
         model = Chat
-        fields = ('message', 'image',)
+        fields = ('message',)
 
 

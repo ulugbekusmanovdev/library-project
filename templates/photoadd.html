@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+      <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+			<div class="form-group">
+					<div class="col"><input type="text" name="title" placeholder="Название фото" required="required"></div>
+			</div>
+			<div class="form-group">
+					<div class="col"><input type="text" name="text" placeholder="Текст" required="required"></div>
+			</div>
+
+			<div class="form-group">
+					<div class="col"><label>Фото:</label>
+						<input type="file" id="myFile" name="images" multiple placeholder="Report Attachment"
+							   enctype="multipart/form-data"></div>
+			</div>
+
+
+
+			<div class="form-group">
+				<button type="submit" class="form_btn">Добавить</button>
+			</div>
+    </form>
+</body>
+</html>

@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Ads, Photo, Library, Video
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Ads, Photo, Library, Video, PostImage
 from news.models import News
 from libraries.decorators import allowed_users
 
@@ -50,20 +50,32 @@ def structure(request):
 
 
 def photo(request):
-    if request.method == 'POST':
-        photos = request.FILES.getlist('images')
-        for image in photos:
-            Photo.objects.create(photos=image)
     photos = Photo.objects.all()
     context = {'photos': photos}
     return render(request, 'photo.html', context)
 
 
 def photoOnly(request, pk):
-    photos = Photo.objects.all()
-    photo = Photo.objects.get(id=pk)
-    context = {'photo': photo, 'photos': photos}
+    post = Photo.objects.get(id=pk)
+    photos = PostImage.objects.filter(post=post)
+    context = {'post': post, 'photos': photos}
     return render(request, 'photoOnly.html', context)
+
+
+def photoAdd(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        text = request.POST.get('text')
+        images = request.FILES.getlist('images')
+
+        for image in images:
+            photo = Photo.objects.create(
+                title=title,
+                text=text,
+                image=image,
+            )
+        return redirect('photo')
+    return render(request, 'photoadd.html')
 
 
 def mission(request):

@@ -63,7 +63,7 @@ class Chat(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE, null=True, blank=True)
     message = models.TextField()
     posted_at = models.DateTimeField(auto_now=True, null=True)
-    image = models.ImageField(upload_to='book/photos/', blank=True, null=True)
+    # image = models.ImageField(upload_to='book/photos/', blank=True, null=True)
 
     def __str__(self):
         return self.customer
