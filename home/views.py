@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Ads, Photo, Library, Video, PostImage
+from .models import Ads, Photo, Library, Video, PostImage, Catalog, Contact
 from news.models import News
 from libraries.decorators import allowed_users
 
@@ -7,8 +7,8 @@ from libraries.decorators import allowed_users
 # Create your views here.
 # @allowed_users(allowed_roles=['admin'])
 def home(request):
-    posts = News.objects.order_by('-create_date')[0:3]
-    ads = Ads.objects.order_by('-id')[0:4]
+    posts = News.objects.all().order_by('-create_date')[0:3]
+    ads = Ads.objects.all().order_by('id')[0:4]
     photos = Photo.objects.order_by('-id')[0:4]
     videos = Video.objects.order_by('-id')[0:4]
     h_news = News.objects.all().first()
@@ -33,8 +33,8 @@ def adt(request):
 
 
 def catalogs(request):
-
-    return render(request, 'catalogs.html')
+    catalog = Catalog.objects.all()
+    return render(request, 'catalogs.html', {'catalog': catalog})
 
 
 def collection(request):
@@ -42,7 +42,9 @@ def collection(request):
 
 
 def contact(request):
-    return render(request, 'contact.html')
+    contact = Contact.objects.all()
+
+    return render(request, 'contact.html', {'contact': contact})
 
 
 def structure(request):
@@ -57,8 +59,9 @@ def photo(request):
 
 def photoOnly(request, pk):
     post = Photo.objects.get(id=pk)
-    photos = PostImage.objects.filter(post=post)
-    context = {'post': post, 'photos': photos}
+    photos1 = PostImage.objects.filter(post=post)
+    photos = Photo.objects.order_by('-id')[0:7]
+    context = {'post': post, 'photos1': photos1, 'photos': photos}
     return render(request, 'photoOnly.html', context)
 
 

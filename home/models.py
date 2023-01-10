@@ -1,5 +1,6 @@
 from django.db import models
 from embed_video.fields import EmbedVideoField
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class Ads(models.Model):
@@ -67,8 +68,8 @@ class Video(models.Model):
 
 class Catalog(models.Model):
     c_title = models.CharField(max_length=200, blank=True, null=True, verbose_name='Заголовок каталог')
-    c_body = models.TextField(blank=True, null=True, verbose_name='Текст каталог')
-    history_image = models.ImageField(blank=True, null=True, verbose_name='Картинки каталог')
+    c_body = RichTextField(blank=True, null=True, verbose_name='Текст каталог')
+    c_image = models.ImageField(blank=True, null=True, verbose_name='Картинки каталог')
 
     def __str__(self):
         return str(self.c_title)
@@ -80,7 +81,7 @@ class Catalog(models.Model):
 
 class Readers(models.Model):
     title = models.CharField(max_length=100)
-    text = models.TextField(verbose_name="Текст")
+    text = RichTextField(blank=True, null=True, verbose_name="Текст")
     image = models.ImageField(blank=True, null=True, verbose_name='Картинки')
 
     def __str__(self):
@@ -89,3 +90,15 @@ class Readers(models.Model):
     class Meta:
         verbose_name = 'Читателям'
         verbose_name_plural = 'Читателям'
+
+
+class Contact(models.Model):
+    title = models.CharField(max_length=100, verbose_name='Заголовок')
+    text = models.TextField(blank=True, null=False, verbose_name="Текст")
+
+    def __str__(self):
+        return str(self.title)
+
+    class Meta:
+        verbose_name = 'Как связаться'
+        verbose_name_plural = 'Как связаться'

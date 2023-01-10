@@ -4,8 +4,10 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+
+from home.models import Readers
 from .forms import CustomerForm, ChatForm
-from .models import Book, Category, Customer, Chat
+from .models import Book, Category, Customer, Chat, Library
 from django.db.models import Q
 from .decorators import unauthenticated_user, allowed_users
 from django.contrib.auth.hashers import make_password
@@ -79,7 +81,8 @@ def forLibrarists(request):
         if form.is_valid():
             form.save()
 
-    context = {'form': form}
+    irbis = Library.objects.all()
+    context = {'form': form, 'irbis': irbis}
     return render(request, 'forLibrarists.html', context)
 
 
@@ -115,7 +118,9 @@ def readers(request):
         books = Book.objects.filter(category__name=category)
 
     categories = Category.objects.all()
-    context = {'books': books, 'categories': categories}
+
+    reader = Readers.objects.all()
+    context = {'books': books, 'categories': categories, 'reader': reader}
     return render(request, 'readers.html', context)
 
 

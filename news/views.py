@@ -1,3 +1,4 @@
+from django.forms import modelformset_factory
 from django.shortcuts import render, redirect
 from .models import News
 from .forms import NewsForm
@@ -64,7 +65,5 @@ def createPost(request):
         if form.is_valid():
             form.save()
         return redirect('home')
-
     context = {'form': form}
-
     return render(request, 'createpost.html', context)

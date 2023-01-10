@@ -21,12 +21,12 @@
 				<div class="news_view-home">
 					<div class="news_info-home">
 						<div class="news_views-home">
-							<a href="#">
+							<a href="{% url 'single-news' h_news.id %}">
 								<img class="news_img" src="{{h_news.image.url}}" alt="">
 							</a>
 						</div>
 					</div>
-					<div class="news_index-home "><i class="bi bi-eye"></i>{{h_news.create_date|date:"d.m.Y"}}</div>
+					<div class="news_index-home ">{{h_news.create_date|date:"d.m.Y"}}</div>
 					<div class="news_title-home">
 						<p>{{h_news.title}}.</p>
 					</div>
@@ -48,8 +48,7 @@
 								</div>
 							</div>
 
-							<div class="news_index"><i class="bi bi-eye"></i> 12 / {{post.create_date|timesince}} назад
-							</div>
+							<div class="news_index">{{new.create_date|date:"d.m.Y"}}</div>
 						</a>
 					</div>
 
@@ -66,14 +65,14 @@
 			{% for a in ads %}
 			<div class="news_box">
 
-				<a href="#">
+				<a href="{% url 'adt' %}">
 					<div class="news-info">
 						<div class="news_logo">
 							<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
 							<p>{{a.title}}</p>
 						</div>
 						<div class="news_text-info">{{a.text}}</div>
-						<div class="news_index-info"><i class="bi bi-eye"></i> 12 / 12-09-2022</div>
+						<div class="news_index-info">{{a.ads_date|date:"d.m.Y"}}</div>
 					</div>
 				</a>
 				

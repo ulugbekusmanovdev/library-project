@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
 
 
 # Create your models here.
@@ -67,5 +68,17 @@ class Chat(models.Model):
 
     def __str__(self):
         return self.customer
+
+
+class Library(models.Model):
+    title = models.CharField(max_length=100, verbose_name='Заголовок')
+    text = RichTextField(blank=True, null=False, verbose_name="Текст")
+
+    def __str__(self):
+        return str(self.title)
+
+    class Meta:
+        verbose_name = 'Инфо Ирбис'
+        verbose_name_plural = 'Инфо Ирбис'
 
 
