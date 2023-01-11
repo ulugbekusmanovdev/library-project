@@ -6,15 +6,32 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chatform</title>
+    <style>
+        .chat_form{
+            width: 40%;
+            margin: 0 auto;
+        }
+        .chat_value{
+            display: flex;
+            padding: 10px;
+        }
+        .chat_value textarea{
+            width: 30% !important;
+           height: 30px !important;
+           margin-right: 20px;
+        }
+    </style>
 </head>
 <body>
 
     <div>
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form class="chat_add" action="" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-            {{ form.as_p }}
 
-            <input type="submit" value="Send">
+            
+            <div class="chat_value"> {{ form }}  
+                <input type="submit" value="Отправить">
+            </div>
         </form>
     </div>
 </body>

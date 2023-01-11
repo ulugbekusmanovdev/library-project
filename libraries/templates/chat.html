@@ -6,28 +6,80 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Chat</title>
+    <style>
+        body {
+          margin: 0 auto;
+          max-width: 800px;
+          padding: 0 20px;
+        }
+        
+        .container {
+          border: 2px solid #dedede;
+          background-color: #f1f1f1;
+          border-radius: 5px;
+          padding: 10px;
+          margin: 10px 0;
+          display: flex;
+        }
+        
+        .darker {
+          border-color: #ccc;
+          background-color: #ddd;
+        }
+        .chat_title a{
+            text-decoration: none;
+            color: #309AAC;
+        }
+        .container::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+        
+        .container .chat_avatar {
+          margin-right: 20px;
+        }
+        
+        .chat_text{
+            color: #666;
+            width: 100%;
+            margin: 5px 0;
+        }
+        
+        .time-right {
+          float: right;
+          color: #aaa;
+        }
+        
+        .time-left {
+          float: left;
+          color: #999;
+        }
+        </style>
+        
 </head>
 <body>
-    <a href="{% url 'chatform' %}">chat</a>
 
-
-    <div>
+<h2 class="chat_title"><a href="{% url 'chatform' %}">Чат</a></h2>
         {% for chat_v in chat %}
-
-        {% if chat_v.user.is_staff %}
-
-            <p>{{ chat_v.user }}</p>
+        {% if chat_v.user.is_staff %}   
+        {{ chat_v.user }}
         {% else %}
 
-            <p>{{ chat_v.customer.user }}</p>
-
+        <div class="container">
+            <!-- <img src="" alt="Avatar" style="width:100%;"> -->
+            <div class="chat_avatar">{{ chat_v.customer.user }}</div>
         {% endif %}
-
-        <p>{{ chat_v.message }}</p>
+        <p class="chat_text">{{ chat_v.message }}</p>
 <!--        <div>-->
 <!--            <img style="height: 200px; width: 300px;" src="{{chat_v.image.url}}" alt="photo">-->
 <!--        </div>-->
-        {% endfor %}
-    </div>
+        <!-- <span class="time-right">11:00</span> -->
+
+        </div>
+
+        {% endfor %}    
+
+          
 </body>
 </html>
