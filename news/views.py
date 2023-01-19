@@ -10,10 +10,10 @@ from libraries.decorators import allowed_users, admin_only
 
 def news(request):
     posts = News.objects.all()
-    postlar = Paginator(posts, 4)
+    postlar = Paginator(posts, 6)
     page_list = request.GET.get('page')
     page = postlar.get_page(page_list)
-    context = {'posts': page}
+    context = {'posts': page, }
     return render(request, 'news.html', context)
 
 
@@ -21,7 +21,7 @@ def newsOnly(request, pk):
     post = News.objects.get(id=pk)
     post.news_view = post.news_view + 1
     post.save()
-    posts = News.objects.all()
+    posts = News.objects.all().order_by('-create_date')[0:6]
     context = {'post': post, 'posts': posts}
     return render(request, 'newsOnly.html', context)
 

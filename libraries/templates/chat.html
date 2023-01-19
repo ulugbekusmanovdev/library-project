@@ -55,12 +55,26 @@
           float: left;
           color: #999;
         }
+
+        .chat_form{
+            width: 40%;
+            margin: 0 auto;
+        }
+        .chat_value{
+            display: flex;
+            padding: 10px;
+        }
+        .chat_value textarea{
+            width: 30% !important;
+           height: 30px !important;
+           margin-right: 20px;
+        }
         </style>
         
 </head>
 <body>
 
-<h2 class="chat_title"><a href="{% url 'chatform' %}">Чат</a></h2>
+<!--<h2 class="chat_title"><a href="/">Чат</a></h2>-->
         {% for chat_v in chat %}
         {% if chat_v.user.is_staff %}   
         {{ chat_v.user }}
@@ -78,7 +92,18 @@
 
         </div>
 
-        {% endfor %}    
+        {% endfor %}
+
+        <div>
+            <form class="chat_add" action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+
+                <div class="chat_value"> {{ form }}
+                    <input type="submit" value="Отправить">
+                </div>
+            </form>
+        </div>
 
           
 </body>

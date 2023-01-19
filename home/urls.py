@@ -16,7 +16,6 @@ urlpatterns = [
     path('vacancy', views.video, name='vacancy'),
     path('photoAdd', views.photoAdd, name='photoAdd'),
     path('photoOnly/<str:pk>', views.photoOnly, name='photo-Only'),
-    path('videoOnly', views.videoOnly, name='videoOnly'),
 ]
 
 # login adminlib

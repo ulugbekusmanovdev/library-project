@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% load static %}
+{% load i18n %}
 {% block content %}
 {% include 'header.html' %}
 <link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
@@ -15,7 +16,7 @@
 					<div class="books_dropdown">
 						<button onclick="myFunction()" class="books_dropbtn">Темы</button>
 						<div id="books_myDropdown" class="books_dropdown-content">
-							<a href="{% url 'books' %}">Все книги</a>
+							<a href="{% url 'books' %}">{% trans 'Все книги' %}</a>
 	
 							{% for category in categories %}
 						  <a href="{% url 'readers' %}?category={{category.name}}">{{category.name}}</a>
@@ -32,7 +33,7 @@
 						<div class="books_search-box">
 							<input type="text" class="books_search-inp" placeholder="Искать книгу"
 								   name="q">
-							<button class="books_search-btn" type="submit">поиск</button>
+							<button class="books_search-btn" type="submit">{% trans 'поиск' %}</button>
 						</div>
 					</form>
 					</div>
@@ -48,7 +49,7 @@
 								<h4>{{book.title}}</h4>
 								<p>Автор: {{book.author}}</p>
 								<p class="books_text">Категория: {{book.category.name}}</p>
-								<button><a href="{{ book.pdf.url }}">Читать...</a></button>
+								<button><a href="{{ book.pdf.url }}">{% trans 'Читать' %}...</a></button>
 							</div>
 						</div>
 						{% endfor %}

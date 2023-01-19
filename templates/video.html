@@ -17,16 +17,16 @@
 
 				<div class="video_box">
 					<div class="video_item">
-						<a href="{% url 'videoOnly' %}">
+
 							{% video item.url %}
 <!--							<div class="video_img "-->
 <!--								style="background-image: url(https://i.ytimg.com/vi/gzbLODUb1sA/maxresdefault.jpg)">-->
 <!--								<div class="img_bg"></div>-->
 <!--							</div>-->
-						</a>
+
 					</div>
 					<div class="video_index">{{item.added|date:"d.m.Y"}}</div>
-					<a href="{% url 'videoOnly' %}">
+					<a href="/">
 						<h2>{{item.title}}</h2>
 					</a>
 				</div>

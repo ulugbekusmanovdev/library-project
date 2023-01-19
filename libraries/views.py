@@ -3,11 +3,12 @@ from django.contrib.auth.models import Group, User
 from django.core.paginator import Paginator
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from libraries.decorators import allowed_users, admin_only
 from django.contrib import messages
 
 from home.models import Readers
 from .forms import CustomerForm, ChatForm
-from .models import Book, Category, Customer, Chat, Library
+from .models import Book, Category, Customer, Chat, Library, Video
 from django.db.models import Q
 from .decorators import unauthenticated_user, allowed_users
 from django.contrib.auth.hashers import make_password
@@ -136,13 +137,12 @@ def search(request):
     return render(request, 'books.html', {"books": books})
 
 
+@login_required(login_url='login')
+@admin_only
 def infoLib(request):
     customers = Customer.objects.all()
     return render(request, 'infoLib.html', {'customers': customers})
 
-
-def videoLib(request):
-    return render(request, 'videoLib.html')
 
 def books(request):
     category = request.GET.get('category')
@@ -158,6 +158,9 @@ def books(request):
     context = {'books': books, 'categories': page}
     return render(request, 'books.html', context)
 
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['customer'])
 def addBook(request):
     customer = Customer.objects.get(user=request.user)
     books = Book.objects.filter(customer=customer).count()
@@ -194,7 +197,17 @@ def addBook(request):
     return render(request, 'addbook.html', context)
 
 
-def chatForm(request):
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['customer'])
+def videoLib(request):
+    videolib = Video.objects.all()
+    return render(request, "videoLib.html", {"videolib": videolib})
+
+
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['customer'])
+def chat(request):
+    chat = Chat.objects.all()
     form = ChatForm()
     if request.method == 'POST':
         form = ChatForm(request.POST, request.FILES)
@@ -204,10 +217,9 @@ def chatForm(request):
             instance.customer = Customer.objects.get(user=request.user)
             instance.save()
         return redirect('chat')
-    context = {'form': form}
-    return render(request, 'chatform.html', context)
+    context = {'form': form, 'chat': chat}
+    return render(request, 'chat.html', context)
 
-
-def chat(request):
-    chat = Chat.objects.all()
-    return render(request, 'chat.html', {'chat': chat})
+# def chat(request):
+#     chat = Chat.objects.all()
+#     return render(request, 'chat.html', {'chat': chat})

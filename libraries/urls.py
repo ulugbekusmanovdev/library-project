@@ -18,7 +18,7 @@ urlpatterns = [
     path('add-book', views.addBook, name='add-book'),
     path('search', views.search, name='search'),
     path('books', views.books, name='books'),
-    path('chatform', views.chatForm, name='chatform'),
+    # path('chatform', views.chatForm, name='chatform'),
     path('chat', views.chat, name='chat'),
 ]
 

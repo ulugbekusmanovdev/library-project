@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Customer, Faculty, Book, Category, Chat, Library
+from .models import Customer, Faculty, Book, Category, Chat, Library, Video
 
 # Register your models here.
 
@@ -9,3 +9,4 @@ admin.site.register(Book)
 admin.site.register(Category)
 admin.site.register(Chat)
 admin.site.register(Library)
+admin.site.register(Video)

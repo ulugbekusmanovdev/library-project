@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% load static %}
+{% load i18n %}
 {% block content %}
 {% include 'header.html' %}
 <link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
@@ -7,7 +8,7 @@
 
 	<div class="sec-container">
 		<div class="contact">
-			<h1>Как связаться</h1>
+			<h1>{% trans 'Как связаться' %}</h1>
 			<table class="contact_box">
 				{% for c in contact %}
 				<tr>

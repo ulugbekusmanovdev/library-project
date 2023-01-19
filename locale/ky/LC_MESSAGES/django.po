@@ -1,0 +1,187 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-19 11:07+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\home\templates\header.html:16 .\home\templates\header.html:254
+msgid "Научная библиотека"
+msgstr "Илимий китепкана"
+
+#: .\home\templates\header.html:24 .\home\templates\header.html:127
+msgid "Главная"
+msgstr "Башкы"
+
+#: .\home\templates\header.html:29 .\home\templates\header.html:132
+msgid "О библиотеке"
+msgstr "Китепкана жөнүндө"
+
+#: .\home\templates\header.html:34 .\home\templates\header.html:137
+msgid "Миссия"
+msgstr "Миссия"
+
+#: .\home\templates\header.html:37 .\home\templates\header.html:140
+msgid "История"
+msgstr "Тарых"
+
+#: .\home\templates\header.html:40 .\home\templates\header.html:143
+msgid "Структура"
+msgstr "Структура"
+
+#: .\home\templates\header.html:52 .\home\templates\header.html:155
+msgid "Каталоги"
+msgstr "Каталоги"
+
+#: .\home\templates\header.html:57 .\home\templates\header.html:160
+msgid "Читателям"
+msgstr "Окурмандар"
+
+#: .\home\templates\header.html:62 .\home\templates\header.html:165
+msgid "Каталог книг"
+msgstr "Китеп каталогу"
+
+#: .\home\templates\header.html:65 .\home\templates\header.html:168
+msgid "Правила пользования"
+msgstr "Пайдалануу шарттары"
+
+#: .\home\templates\header.html:71 .\home\templates\header.html:174
+msgid "Запись в библиотеку"
+msgstr "Китепканага катталуу"
+
+#: .\home\templates\header.html:74 .\home\templates\header.html:177
+msgid "Абонемент"
+msgstr "Абонемент"
+
+#: .\home\templates\header.html:77 .\home\templates\header.html:180
+msgid "Режим работы"
+msgstr "Иштөө режими"
+
+#: .\home\templates\header.html:80 .\home\templates\header.html:183
+msgid "Полезно знать"
+msgstr "Билген жакшы"
+
+#: .\home\templates\header.html:86 .\home\templates\header.html:189
+#: .\libraries\templates\forLibrarists.html:14
+msgid "Библиотекарям"
+msgstr "Китепканачылар"
+
+#: .\home\templates\header.html:90 .\home\templates\header.html:193
+msgid "Регистрация"
+msgstr "Регистрация"
+
+#: .\home\templates\header.html:93 .\home\templates\header.html:196
+msgid "Информация о пользователи"
+msgstr "Колдонуучулар жөнүндө маалымат"
+
+#: .\home\templates\header.html:100 .\home\templates\header.html:203
+#: .\templates\contact.html:11
+msgid "Как связаться"
+msgstr "Байланыш"
+
+#: .\home\templates\header.html:106
+msgid "Выйти"
+msgstr "Чыгуу"
+
+#: .\home\templates\header.html:113 .\home\templates\header.html:216
+msgid "Привет"
+msgstr "Салам"
+
+#: .\home\templates\home.html:18 .\news\templates\news.html:12
+#: .\news\templates\newsOnly.html:13
+msgid "Новости"
+msgstr "Жаңылыктар"
+
+#: .\home\templates\home.html:65 .\templates\adt.html:13
+msgid "Объявления"
+msgstr "Кулактандыруу"
+
+#: .\home\templates\home.html:120 .\home\templates\home.html:137
+msgid "Все"
+msgstr "Баары"
+
+#: .\home\templates\home.html:148
+msgid "Ресурсы библиотеки"
+msgstr "Китепкана ресурстары"
+
+#: .\libraries\templates\addbook.html:14
+msgid "Добавленные книги"
+msgstr "Кошулган китептер"
+
+#: .\libraries\templates\addbook.html:15
+msgid "Добавленные книги вами"
+msgstr "Сиз кошкон китептер"
+
+#: .\libraries\templates\addbook.html:18
+#: .\libraries\templates\forLibrarists.html:50
+msgid "Добавление книги"
+msgstr "Китеп кошуу"
+
+#: .\libraries\templates\addbook.html:47 .\libraries\templates\addbook.html:49
+msgid "Выберите категории"
+msgstr "Категорияларды тандаңыз"
+
+#: .\libraries\templates\addbook.html:58
+msgid "Новая категория"
+msgstr "Жаңы категория"
+
+#: .\libraries\templates\addbook.html:64
+msgid "Добавить"
+msgstr "Кошуу"
+
+#: .\libraries\templates\forLibrarists.html:41
+msgid "Сохранить"
+msgstr "Сактоо"
+
+#: .\libraries\templates\forLibrarists.html:46
+msgid "Личный кабинет"
+msgstr "Жеке бөлмө"
+
+#: .\libraries\templates\forLibrarists.html:48
+msgid "Проверка задолжности студента"
+msgstr "Студенттик карызды текшерүү"
+
+#: .\libraries\templates\forLibrarists.html:49
+msgid "Видеоуроки"
+msgstr "Видеосабактар"
+
+#: .\libraries\templates\forLibrarists.html:52
+msgid "Выход"
+msgstr "Чыгуу"
+
+#: .\library\settings.py:126
+msgid "Kyrgyz"
+msgstr "Кыргызча"
+
+#: .\library\settings.py:127
+msgid "Russian"
+msgstr "Русский"
+
+#: .\templates\books.html:19 .\templates\readers.html:23
+msgid "Все книги"
+msgstr "Бардык китептер"
+
+#: .\templates\books.html:36
+msgid "поиск"
+msgstr "издөө"
+
+#: .\templates\books.html:52 .\templates\readers.html:47
+msgid "Читать"
+msgstr "Окуу"
+
+#: .\templates\readers.html:95
+msgid "Республиканские газеты и журналы"
+msgstr "Республикалык газеталар жана журналдар"

@@ -1,4 +1,5 @@
 from django.db import models
+from embed_video.fields import EmbedVideoField
 from django.contrib.auth.models import User
 from ckeditor.fields import RichTextField
 
@@ -58,6 +59,18 @@ class Book(models.Model):
     class Meta:
         verbose_name = "Книги"
         verbose_name_plural = "Книги"
+
+
+class Video(models.Model):
+    title = models.CharField(max_length=100)
+    added = models.DateTimeField(auto_now=True)
+    url = EmbedVideoField()
+
+    def __str__(self):
+        return str(self.title)
+
+    class Meta:
+        ordering = ['-added']
 
 
 class Chat(models.Model):

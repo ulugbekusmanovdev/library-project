@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% load static %}
+{% load i18n %}
 {% load embed_video_tags %}
 {% block content %}
 
@@ -14,7 +15,7 @@
 	<div class="news_inner">
 
 		<div class="news_item">
-			<h1 class="news_name"><a href="{% url 'news' %}">Новости </a></h1>
+			<h1 class="news_name"><a href="{% url 'news' %}">{% trans 'Новости' %} </a></h1>
 
 			<div class="news_block">
 
@@ -61,7 +62,7 @@
 
 
 		<div class="news_item-2">
-			<h1 class="news_name"><a href="{% url 'adt' %}">Объявления</a></h1>
+			<h1 class="news_name"><a href="{% url 'adt' %}">{% trans 'Объявления' %}</a></h1>
 			{% for a in ads %}
 			<div class="news_box">
 
@@ -116,7 +117,7 @@
 
 					
 				</div>
-				<h2 class="info_sub"><a href="{% url 'photo' %}">Все</a>
+				<h2 class="info_sub"><a href="{% url 'photo' %}">{% trans 'Все' %}</a>
 					<div class="info_line"></div>
 				</h2>
 			</div>
@@ -133,7 +134,7 @@
 					{% endfor %}
 
 				</div>
-				<h2 class="info_sub"><a href="{% url 'video' %}">Все</a>
+				<h2 class="info_sub"><a href="{% url 'video' %}">{% trans 'Все' %}</a>
 				</h2>
 			</div>
 		</div>
@@ -144,7 +145,7 @@
 
 <!-- Partner -->
 <div class="partner">
-	<h1 class="partner_title">Ресурсы библиотеки</h1>
+	<h1 class="partner_title">{% trans 'Ресурсы библиотеки' %}</h1>
 	<div class="partner_inner">
 		<div class="partner_item">
 			<a href="https://lib.oshsu.kg/CGI/irbis64r_plus/cgiirbis_64_ft.exe?C21COM=F&I21DBN=OSU_FULLTEXT&P21DBN=OSU&Z21ID=&S21CNR=5"

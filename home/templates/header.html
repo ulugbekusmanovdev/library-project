@@ -1,4 +1,5 @@
 	{% load static %}
+	{% load i18n %}
 	
 
 	<nav class="menu_hamburger">
@@ -11,7 +12,8 @@
 				<span class="menu_line menu_line3"></span>
 			  </div>  
 			  <div class="menu_item">
-				<h1 class="nav_title"><a href="{% url 'home' %}">Научная библиотека</a></h1>
+				<h1
+						class="nav_title"><a href="{% url 'home' %}">{% trans 'Научная библиотека' %}</a></h1>
 			</div>
 			<div class="menu_logo">
 				<img src="{% static 'img/logo_ru.svg' %}" alt="">
@@ -19,23 +21,23 @@
 			<div class="menu_menu-items">
 				<li>
 					<div class="menu_select">
-					<a class="navbar_title" data-scroll="home" href="{% url 'home' %}" >Главная</a>
+					<a class="navbar_title" data-scroll="home" href="{% url 'home' %}" >{% trans 'Главная' %}</a>
 				</div>
 				</li>
 				<li>
 					<div class="menu_select">
-						<a class="navbar_title" data-scroll="about_us" href="{% url 'about' %}" >О библиотеке</a>
+						<a class="navbar_title" data-scroll="about_us" href="{% url 'about' %}" >{% trans 'О библиотеке' %}</a>
 							<div class="caret"></div>
 					</div>
 					<ul class="navbar_sub">
 						<li>
-							<a class="navbar_title" data-scroll="mission" href="{% url 'about' %}#mission" >Миссия</a>
+							<a class="navbar_title" data-scroll="mission" href="{% url 'about' %}#mission" >{% trans 'Миссия' %}</a>
 						</li>
 						<li>
-							<a class="navbar_title" data-scroll="history" href="{% url 'about' %}#history">История</a>
+							<a class="navbar_title" data-scroll="history" href="{% url 'about' %}#history">{% trans 'История' %}</a>
 						</li>
 						<li>
-							<a class="navbar_title" data-scroll="structure" href="{% url 'about' %}#structure">Структура</a>
+							<a class="navbar_title" data-scroll="structure" href="{% url 'about' %}#structure">{% trans 'Структура' %}</a>
 						</li>
 						<!-- <li>
 							<a class="navbar_title" data-scroll="collection" href="{% url 'about' %}">Коллекция</a>
@@ -47,68 +49,70 @@
 				</li>
 				<li>
 					<div class="menu_select">
-					<a class="navbar_title" href="{% url 'catalogs' %}">Каталоги</a>
+					<a class="navbar_title" href="{% url 'catalogs' %}">{% trans 'Каталоги' %}</a>
 					</div>
 				</li>
 				<li>	
 					<div class="menu_select">
-						<a class="navbar_title" href="{% url 'readers' %}">Читателям</a>
+						<a class="navbar_title" href="{% url 'readers' %}">{% trans 'Читателям' %}</a>
 							<div class="caret"></div>
 					</div>
 					<ul class="navbar_sub">
 						<li>
-							<a class="navbar_title" data-scroll="books" href="{% url 'readers' %}#books">Каталог книг</a>
+							<a class="navbar_title" data-scroll="books" href="{% url 'readers' %}#books">{% trans 'Каталог книг' %}</a>
 						</li>
 						<li>
-							<a class="navbar_title" data-scroll="direction" href="{% url 'readers' %}#direction">Правила пользования</a>
+							<a class="navbar_title" data-scroll="direction" href="{% url 'readers' %}#direction">{% trans 'Правила пользования' %}</a>
 						</li>
 						 <!-- <li>
 							<a class="navbar_title" data-scroll="reading_rooms" href="{% url 'readers' %}#reading_rooms">Читальные залы</a>
 						</li>  -->
 						<li>
-							<a class="navbar_title" data-scroll="library_entry" href="{% url 'readers' %}#library_entry">Запись в библиотеку</a>
+							<a class="navbar_title" data-scroll="library_entry" href="{% url 'readers' %}#library_entry">{% trans 'Запись в библиотеку' %}</a>
 						</li>
 						<li>
-							<a class="navbar_title" data-scroll="subscription" href="{% url 'readers' %}#subscription">Абонемент</a>
+							<a class="navbar_title" data-scroll="subscription" href="{% url 'readers' %}#subscription">{% trans 'Абонемент' %}</a>
 						</li>
 						<li>
-							<a class="navbar_title" data-scroll="workSchedule" href="{% url 'readers' %}#workSchedule">Режим работы</a>
+							<a class="navbar_title" data-scroll="workSchedule" href="{% url 'readers' %}#workSchedule">{% trans 'Режим работы' %}</a>
 						</li>
 						<li>
-							<a class="navbar_title" data-scroll="good_to_know" href="{% url 'readers' %}#good_to_know">Полезно знать</a>
+							<a class="navbar_title" data-scroll="good_to_know" href="{% url 'readers' %}#good_to_know">{% trans 'Полезно знать' %}</a>
 						</li>
 					</ul>
 				</li>
 				 <li>
 					<div class="menu_select">
-					<a class="navbar_title" href="{% url 'forLibrarists' %}">Библиотекарям</a>
+					<a class="navbar_title" href="{% url 'forLibrarists' %}">{% trans 'Библиотекарям' %}</a>
 				</div>
+
+					 {% if request.user.is_staff %}
 					<ul class="navbar_sub">
 						<li>
-							<a class="navbar_title" href="{% url 'register' %}">Регистрация</a>
+							<a class="navbar_title" href="{% url 'register' %}">{% trans 'Регистрация' %}</a>
 						</li>
 						<li>
-							<a class="navbar_title" href="{% url 'infoLib' %}">Информация о пользователи</a>
+							<a class="navbar_title" href="{% url 'infoLib' %}">{% trans 'Информация о пользователи' %}</a>
 						</li>
 					</ul>
-					
+						{% endif %}
 				</li>
 				<li> 
 					<div class="menu_select">
-					<a class="navbar_title" href="{% url 'contact' %}">Как связаться</a>
+					<a class="navbar_title" href="{% url 'contact' %}">{% trans 'Как связаться' %}</a>
 					</div>
 				</li>
 		
 				<li>
 					<div class="menu_select">
-					<a class="navbar_title" href="{% url 'logout' %}">Выйти</a>
+					<a class="navbar_title" href="{% url 'logout' %}">{% trans 'Выйти' %}</a>
 					</div>
 				</li>
 		
 				{% if user.is_authenticated %}
 				<li>
 					<div class="menu_select">
-					<p class="navbar_title">Привет, {{request.user|title}}</p>
+					<p class="navbar_title">{% trans 'Привет' %}, {{request.user|title}}</p>
 					</div>
 				</li>
 				{% endif %}
@@ -122,23 +126,23 @@
 	<ul class="navbar menu__box" id="menu">
 		<li>
 			<div class="select">
-			<a class="navbar_title" data-scroll="home" href="{% url 'home' %}" >Главная</a>
+			<a class="navbar_title" data-scroll="home" href="{% url 'home' %}" >{% trans 'Главная' %}</a>
 		</div>
 		</li>
 		<li>
 			<div class="select">
-				<a class="navbar_title" data-scroll="about_us" href="{% url 'about' %}" >О библиотеке</a>
+				<a class="navbar_title" data-scroll="about_us" href="{% url 'about' %}" >{% trans 'О библиотеке' %}</a>
 					<div class="caret"></div>
 			</div>
 			<ul class="navbar_sub">
 				<li>
-					<a class="navbar_title" data-scroll="mission" href="{% url 'about' %}#mission" >Миссия</a>
+					<a class="navbar_title" data-scroll="mission" href="{% url 'about' %}#mission" >{% trans 'Миссия' %}</a>
 				</li>
 				<li>
-					<a class="navbar_title" data-scroll="history" href="{% url 'about' %}#history">История</a>
+					<a class="navbar_title" data-scroll="history" href="{% url 'about' %}#history">{% trans 'История' %}</a>
 				</li>
 				<li>
-					<a class="navbar_title" data-scroll="structure" href="{% url 'about' %}#structure">Структура</a>
+					<a class="navbar_title" data-scroll="structure" href="{% url 'about' %}#structure">{% trans 'Структура' %}</a>
 				</li>
 				<!-- <li>
 					<a class="navbar_title" data-scroll="collection" href="{% url 'about' %}">Коллекция</a>
@@ -150,55 +154,57 @@
 		</li>
 		<li>
 			<div class="select">
-			<a class="navbar_title" href="{% url 'catalogs' %}">Каталоги</a>
+			<a class="navbar_title" href="{% url 'catalogs' %}">{% trans 'Каталоги' %}</a>
 			</div>
 		</li>
 		<li>	
 			<div class="select">
-				<a class="navbar_title" href="{% url 'readers' %}">Читателям</a>
+				<a class="navbar_title" href="{% url 'readers' %}">{% trans 'Читателям' %}</a>
 					<div class="caret"></div>
 			</div>
 			<ul class="navbar_sub">
 				<li>
-					<a class="navbar_title" data-scroll="books" href="{% url 'readers' %}#books">Каталог книг</a>
+					<a class="navbar_title" data-scroll="books" href="{% url 'readers' %}#books">{% trans 'Каталог книг' %}</a>
 				</li>
 				<li>
-					<a class="navbar_title" data-scroll="direction" href="{% url 'readers' %}#direction">Правила пользования</a>
+					<a class="navbar_title" data-scroll="direction" href="{% url 'readers' %}#direction">{% trans 'Правила пользования' %}</a>
 				</li>
 				 <!-- <li>
 					<a class="navbar_title" data-scroll="reading_rooms" href="{% url 'readers' %}#reading_rooms">Читальные залы</a>
 				</li>  -->
 				<li>
-					<a class="navbar_title" data-scroll="library_entry" href="{% url 'readers' %}#library_entry">Запись в библиотеку</a>
+					<a class="navbar_title" data-scroll="library_entry" href="{% url 'readers' %}#library_entry">{% trans 'Запись в библиотеку' %}</a>
 				</li>
 				<li>
-					<a class="navbar_title" data-scroll="subscription" href="{% url 'readers' %}#subscription">Абонемент</a>
+					<a class="navbar_title" data-scroll="subscription" href="{% url 'readers' %}#subscription">{% trans 'Абонемент' %}</a>
 				</li>
 				<li>
-					<a class="navbar_title" data-scroll="workSchedule" href="{% url 'readers' %}#workSchedule">Режим работы</a>
+					<a class="navbar_title" data-scroll="workSchedule" href="{% url 'readers' %}#workSchedule">{% trans 'Режим работы' %}</a>
 				</li>
 				<li>
-					<a class="navbar_title" data-scroll="good_to_know" href="{% url 'readers' %}#good_to_know">Полезно знать</a>
+					<a class="navbar_title" data-scroll="good_to_know" href="{% url 'readers' %}#good_to_know">{% trans 'Полезно знать' %}</a>
 				</li>
 			</ul>
 		</li>
 		 <li>
 			<div class="select">
-			<a class="navbar_title" href="{% url 'forLibrarists' %}">Библиотекарям</a>
+			<a class="navbar_title" href="{% url 'forLibrarists' %}">{% trans 'Библиотекарям' %}</a>
 		</div>
+			 {% if request.user.is_staff %}
 			<ul class="navbar_sub">
 				<li>
-					<a class="navbar_title" href="{% url 'register' %}">Регистрация</a>
-				</li> 	
+					<a class="navbar_title" href="{% url 'register' %}">{% trans 'Регистрация' %}</a>
+				</li>
 				<li>
-					<a class="navbar_title" href="{% url 'infoLib' %}">Информация о пользователи</a>
+					<a class="navbar_title" href="{% url 'infoLib' %}">{% trans 'Информация о пользователи' %}</a>
 				</li>
 			</ul>
-			
+			 {% endif %}
+
 		</li>
 		<li> 
 			<div class="select">
-			<a class="navbar_title" href="{% url 'contact' %}">Как связаться</a>
+			<a class="navbar_title" href="{% url 'contact' %}">{% trans 'Как связаться' %}</a>
 			</div>
 		</li>
 		{% if user.is_staff %}
@@ -211,10 +217,29 @@
 		{% if user.is_authenticated %}
 		<li>
 			<div class="select">
-			<p class="navbar_title">Привет, {{request.user|title}}</p>
+			<p class="navbar_title">{% trans 'Привет' %}, {{request.user|title}}</p>
 			</div>
 		</li>
 		{% endif %}
+
+		<li>
+			<div class="select">
+				<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+					<input name="next" type="hidden" value="{{ redirect_to }}">
+					<select name="language">
+						{% get_current_language as LANGUAGE_CODE %}
+						{% get_available_languages as LANGUAGES %}
+						{% get_language_info_list for LANGUAGES as languages %}
+						{% for language in languages %}
+							<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+								{{ language.name_local }} ({{ language.code }})
+							</option>
+						{% endfor %}
+					</select>
+					<input type="submit" value="Go">
+				</form>
+			</div>
+		</li>
 
 	</ul>
 </nav>
@@ -230,7 +255,7 @@
 				</div>
 
 				<div class="nav_item">
-					<h1 class="nav_title"><a href="{% url 'home' %}">Научная библиотека</a></h1>
+					<h1 class="nav_title"><a href="{% url 'home' %}">{% trans 'Научная библиотека' %}</a></h1>
 				</div>
 			</div>
 				

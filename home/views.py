@@ -88,8 +88,3 @@ def mission(request):
 def video(request):
     videos = Video.objects.all()
     return render(request, 'video.html', {'videos': videos})
-
-
-def videoOnly(request):
-
-    return render(request, 'videoOnly.html')

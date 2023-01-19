@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
 {% include 'header.html' %}
@@ -10,7 +11,7 @@
 
 <div class="sec-container">
 	<div class="catalog catalog-irbis">
-		<h1 class="catalog_title">Библиотекарям</h1>
+		<h1 class="catalog_title">{% trans 'Библиотекарям' %}</h1>
 		<div class="personal">
 			<div class="personal_box">
 				<div class="personal_photo">
@@ -37,18 +38,18 @@
 					<div class="personal_item">
 						<h4>Факультет:</h4>{{form.faculty}}
 					</div>
-					<button class="personal_btn" type="submit">Сохранить</button>
+					<button class="personal_btn" type="submit">{% trans 'Сохранить' %}</button>
 				</form>
 			</div>
 			<div class="personal_inner">
 				<div class="personal_block">
-				<h3>Личный кабинет</h3>
+				<h3>{% trans 'Личный кабинет' %}</h3>
 				<ul>
-					<li><a class="personal_title" target="_blank" href="http://avn.oshsu.kg/AVN_search_st.html">Проверка задолжности студента</a></li>
-					<li><a class="personal_title" href="{% url 'videoLib' %}">Видеоуроки</a></li>
-					<li><a class="personal_title" href="{% url 'add-book' %}">Добавление книги</a></li>
+					<li><a class="personal_title" target="_blank" href="http://avn.oshsu.kg/AVN_search_st.html">{% trans 'Проверка задолжности студента' %}</a></li>
+					<li><a class="personal_title" href="{% url 'videoLib' %}">{% trans 'Видеоуроки' %}</a></li>
+					<li><a class="personal_title" href="{% url 'add-book' %}">{% trans 'Добавление книги' %}</a></li>
 					<li><a class="personal_title" href="{% url 'chat' %}">Чат</a></li>
-					<li><a class="personal_title" href="{% url 'logout' %}">Выход</a></li>
+					<li><a class="personal_title" href="{% url 'logout' %}">{% trans 'Выход' %}</a></li>
 				</ul>
 			</div>
 		</div>
@@ -59,9 +60,9 @@
 
 		<p class="catalog_text">{{info.text|safe|linebreaks}}</p>
 
+		{% endfor %}
 		<p class="catalog_irbis"><a href="http://sntnarciss.ru/irbis/spravka/irbis64.html?wirbis0010.htm"
 				target="_blank">Полное руководство по системе ИРБИС 64</a></p>
-	 	{% endfor %}
 
 	</div>
 </div>

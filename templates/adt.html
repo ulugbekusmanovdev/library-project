@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% load static %}
+{% load i18n %}
 {% block content %}
 {% include 'header.html' %}
 <link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
@@ -9,7 +10,7 @@
 	<div class="news">
 			<div class="news_inner">
 				<div class="news_item">
-					<h1 class="news_title">Объявления</h1>
+					<h1 class="news_title">{% trans 'Объявления' %}</h1>
 					<div class="news_box">
 
 						{% for ad in ads %}
