@@ -33,7 +33,7 @@
 						<h4>Email:</h4>{{form.email}}
 					</div>
 					<div class="personal_item">
-						<h4>Фото:</h4>{{ form.profile_pic}}
+						<h4>Фото:</h4>{{ form.imageURL}}
 					</div>
 					<div class="personal_item">
 						<h4>Факультет:</h4>{{form.faculty}}
@@ -48,7 +48,7 @@
 					<li><a class="personal_title" target="_blank" href="http://avn.oshsu.kg/AVN_search_st.html">{% trans 'Проверка задолжности студента' %}</a></li>
 					<li><a class="personal_title" href="{% url 'videoLib' %}">{% trans 'Видеоуроки' %}</a></li>
 					<li><a class="personal_title" href="{% url 'add-book' %}">{% trans 'Добавление книги' %}</a></li>
-					<li><a class="personal_title" href="{% url 'chat' %}">Чат</a></li>
+<!--					<li><a class="personal_title" href="{% url 'chat' %}">Чат</a></li>-->
 					<li><a class="personal_title" href="{% url 'logout' %}">{% trans 'Выход' %}</a></li>
 				</ul>
 			</div>

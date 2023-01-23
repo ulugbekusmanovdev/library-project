@@ -15,7 +15,7 @@ class LibraryTranslationOptions(TranslationOptions):
 
 @register(Photo)
 class PhotoTranslationOptions(TranslationOptions):
-    fields = ('title', 'text',)
+    fields = ('title',)
 
 
 @register(Catalog)

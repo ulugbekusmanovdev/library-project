@@ -2,10 +2,11 @@ from django.db import models
 from embed_video.fields import EmbedVideoField
 from ckeditor.fields import RichTextField
 
+
 # Create your models here.
 class Ads(models.Model):
     title = models.CharField(max_length=200, blank=True, null=True, verbose_name='Заголовок')
-    text = models.TextField(verbose_name='Текст')
+    text = RichTextField(verbose_name='Текст')
     ads_date = models.DateField(auto_now=True)
 
     class Meta:
@@ -31,14 +32,10 @@ class Library(models.Model):
         verbose_name = 'О Библиотеке'
         verbose_name_plural = 'О Библиотеке'
 
-    def __str__(self):
-        return self.l_title
-
 
 class Photo(models.Model):
     image = models.ImageField(blank=True, null=True, verbose_name='Картинки')
     title = models.CharField(max_length=200, blank=True, null=True, verbose_name='Заголовок')
-    text = models.TextField(verbose_name='Текст')
     photo_date = models.DateTimeField(auto_now=True)
 
     class Meta:
@@ -51,7 +48,7 @@ class Photo(models.Model):
 
 class PostImage(models.Model):
     post = models.ForeignKey(Photo, default=None, on_delete=models.CASCADE)
-    image = models.FileField(upload_to='images/')
+    image = models.FileField(upload_to='img/')
 
 
 class Video(models.Model):
@@ -80,7 +77,7 @@ class Catalog(models.Model):
 
 
 class Readers(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, blank=True, null=True, )
     text = RichTextField(blank=True, null=True, verbose_name="Текст")
     image = models.ImageField(blank=True, null=True, verbose_name='Картинки')
 

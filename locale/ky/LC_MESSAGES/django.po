@@ -107,7 +107,7 @@ msgstr "Жаңылыктар"
 
 #: .\home\templates\home.html:65 .\templates\adt.html:13
 msgid "Объявления"
-msgstr "Кулактандыруу"
+msgstr "Жарыялар"
 
 #: .\home\templates\home.html:120 .\home\templates\home.html:137
 msgid "Все"

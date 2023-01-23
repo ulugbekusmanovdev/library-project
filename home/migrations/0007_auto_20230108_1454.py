@@ -23,6 +23,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='postimage',
             name='image',
-            field=models.FileField(upload_to='images/'),
+            field=models.FileField(upload_to='img/'),
         ),
     ]

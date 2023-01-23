@@ -29,4 +29,4 @@ class News(models.Model):
 #
 # class Images(models.Model):
 #     post = models.ForeignKey(News, on_delete=models.CASCADE)
-#     image = models.ImageField(upload_to='images/', blank=True, null=True)
+#     image = models.ImageField(upload_to='img/', blank=True, null=True)

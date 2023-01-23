@@ -431,7 +431,7 @@ body {
 .news_views {
   width: 100%;
   position: relative;
-  height: auto;
+  height: 110px;
   border: 1px solid #dee2e6;
   margin: 10px 0;
 }
@@ -494,6 +494,7 @@ body {
 
 .news_title {
   font-size: 14px;
+  font-weight: 600;
 }
 
 .news_title p {
@@ -601,6 +602,7 @@ body {
 
 .info_box {
   margin: 10px;
+  width: 33%;
 }
 
 .info_bg {
@@ -629,6 +631,7 @@ body {
   padding: 5px;
   text-align: center;
   color: #333;
+  font-size:13px;
 }
 
 .info_sub {

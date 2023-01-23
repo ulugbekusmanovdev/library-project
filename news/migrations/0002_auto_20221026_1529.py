@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='news',
             name='image',
-            field=models.ImageField(upload_to='images', verbose_name='Картинки'),
+            field=models.ImageField(upload_to='img', verbose_name='Картинки'),
         ),
         migrations.AlterField(
             model_name='news',

@@ -65,20 +65,20 @@ def photoOnly(request, pk):
     return render(request, 'photoOnly.html', context)
 
 
-def photoAdd(request):
-    if request.method == 'POST':
-        title = request.POST.get('title')
-        text = request.POST.get('text')
-        images = request.FILES.getlist('images')
-
-        for image in images:
-            photo = Photo.objects.create(
-                title=title,
-                text=text,
-                image=image,
-            )
-        return redirect('photo')
-    return render(request, 'photoadd.html')
+# def photoAdd(request):
+#     if request.method == 'POST':
+#         title = request.POST.get('title')
+#         text = request.POST.get('text')
+#         images = request.FILES.getlist('img')
+#
+#         for image in images:
+#             photo = Photo.objects.create(
+#                 title=title,
+#                 text=text,
+#                 image=image,
+#             )
+#         return redirect('photo')
+#     return render(request, 'photoadd.html')
 
 
 def mission(request):

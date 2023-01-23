@@ -240,6 +240,7 @@ body{
     
 }
 
+
 .nav_text{
 	font-size: 18px;
 	font-weight: 500;
@@ -278,10 +279,12 @@ body{
 	transition: 0.2s linear;
     position: relative;
 }
-
-
 .navbar_title:hover{
 	color: #309AAC;
+}
+
+.lan_btn{
+    padding: 1px;
 }
 
 .navbar_sub{
