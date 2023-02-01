@@ -94,6 +94,9 @@
 						<li>
 							<a class="navbar_title" href="{% url 'infoLib' %}">{% trans 'Информация о пользователи' %}</a>
 						</li>
+						<li>
+							<a class="navbar_title" href="{% url 'login' %}">Логин</a>
+						</li>
 					</ul>
 						{% endif %}
 				</li>
@@ -164,19 +167,10 @@
 			</div>
 			<ul class="navbar_sub">
 				<li>
-					<a class="navbar_title" data-scroll="books" href="{% url 'readers' %}#books">{% trans 'Каталог книг' %}</a>
-				</li>
-				<li>
 					<a class="navbar_title" data-scroll="direction" href="{% url 'readers' %}#direction">{% trans 'Правила пользования' %}</a>
 				</li>
-				 <!-- <li>
-					<a class="navbar_title" data-scroll="reading_rooms" href="{% url 'readers' %}#reading_rooms">Читальные залы</a>
-				</li>  -->
 				<li>
-					<a class="navbar_title" data-scroll="library_entry" href="{% url 'readers' %}#library_entry">{% trans 'Запись в библиотеку' %}</a>
-				</li>
-				<li>
-					<a class="navbar_title" data-scroll="subscription" href="{% url 'readers' %}#subscription">{% trans 'Абонемент' %}</a>
+					<a class="navbar_title" data-scroll="books" href="{% url 'readers' %}#books">{% trans 'Книги' %}</a>
 				</li>
 				<li>
 					<a class="navbar_title" data-scroll="workSchedule" href="{% url 'readers' %}#workSchedule">{% trans 'Режим работы' %}</a>
@@ -197,6 +191,9 @@
 				</li>
 				<li>
 					<a class="navbar_title" href="{% url 'infoLib' %}">{% trans 'Информация о пользователи' %}</a>
+				</li>
+				<li>
+					<a class="navbar_title" href="{% url 'login' %}">Логин</a>
 				</li>
 			</ul>
 			 {% endif %}
@@ -225,21 +222,22 @@
 		<li>
 			<div class="select">
 				<div class="navbar_title">
-				<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
-					<input name="next" type="hidden" value="{{ redirect_to }}">
-					<select name="language">
-						{% get_current_language as LANGUAGE_CODE %}
-						{% get_available_languages as LANGUAGES %}
-						{% get_language_info_list for LANGUAGES as languages %}
+					{% get_current_language as CURRENT_LANGUAGE %}
+					{% get_available_languages as AVAILABLE_LANGUAGES %}
+					{% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+					<div class="languages">
+					  <ul class="languages">
 						{% for language in languages %}
-							<option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
-								{{ language.name_local }}
-							</option>
+						  <li>
+							<a href="/{{ language.code }}/"
+							  {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
+							  {{ language.code }}
+							</a>
+						  </li>
 						{% endfor %}
-					</select>
-					<input class="lan_btn" type="submit" value="ok">
-				</form>
+					  </ul>
 					</div>
+				</div>
 			</div>
 		</li>
 

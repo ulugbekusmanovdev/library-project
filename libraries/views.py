@@ -15,7 +15,6 @@ from django.contrib.auth.hashers import make_password
 from .utils import searchBooks
 
 
-@unauthenticated_user
 def registerUser(request):
     if request.method == 'POST':
         username = request.POST['username']
