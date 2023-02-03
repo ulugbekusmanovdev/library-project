@@ -17,8 +17,9 @@
 						<div class="news-info">
 							<div class="news_logo">
 							<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
-							<p>{{ad.title}}</p>
+							<p>ОшГУ</p>
 							</div>
+							<div class="news_text-info">{{ad.title|safe|linebreaks}}</div>
 							<div class="news_text-info">{{ad.text|safe|linebreaks}}</div>
 							<div class="news_index">{{ad.ads_date|date:"d.m.Y"}}</div>
 						</div>

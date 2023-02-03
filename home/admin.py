@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Ads, Library, Photo, Catalog, Video, PostImage, Readers, Contact
+from .models import *
 
 
 # Register your models here.
@@ -32,3 +32,5 @@ admin.site.register(Catalog)
 admin.site.register(Video)
 admin.site.register(Readers)
 admin.site.register(Contact)
+admin.site.register(Newspaper)
+admin.site.register(Journal)

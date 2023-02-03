@@ -70,9 +70,9 @@
 					<div class="news-info">
 						<div class="news_logo">
 							<img class="news_img-info" src="{% static 'img/bg/logo.svg' %}" alt="">
-							<p>{{a.title}}</p>
+							<p>ОшГУ</p>
 						</div>
-						<div class="news_text-info">{{a.text|truncatewords:"5"|safe}}</div>
+						<div class="news_text-info">{{a.title|safe}}</div>
 						<div class="news_index-info">{{a.ads_date|date:"d.m.Y"}}</div>
 					</div>
 				</a>

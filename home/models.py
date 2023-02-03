@@ -89,6 +89,32 @@ class Readers(models.Model):
         verbose_name_plural = 'Читателям'
 
 
+class Newspaper(models.Model):
+    number = models.IntegerField(null=True, blank=True)
+    title = models.CharField(max_length=200, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.title)
+
+    class Meta:
+        verbose_name = 'Газета'
+        verbose_name_plural = 'Газета'
+        ordering = ('id',)
+
+
+class Journal(models.Model):
+    number = models.IntegerField(null=True, blank=True)
+    title = models.CharField(max_length=200, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.title)
+
+    class Meta:
+        verbose_name = 'Журнал'
+        verbose_name_plural = 'Журнал'
+        ordering = ('id',)
+
+
 class Contact(models.Model):
     title = models.CharField(max_length=100, verbose_name='Заголовок')
     text = models.TextField(blank=True, null=False, verbose_name="Текст")
