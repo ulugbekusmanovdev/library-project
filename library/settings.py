@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'home.apps.HomeConfig',
     'libraries.apps.LibraryConfig',
     'news.apps.NewsConfig',
-    'modeltranslation',
+    # 'modeltranslation',
 
     'ckeditor',
     'ckeditor_uploader',
@@ -150,9 +150,9 @@ LANGUAGES = (
     ('ru', _('Russian')),
 )
 
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+# MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 
-MODELTRANSLATION_LANGUAGES = ('ru', 'ky')
+# MODELTRANSLATION_LANGUAGES = ('ru', 'ky')
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
