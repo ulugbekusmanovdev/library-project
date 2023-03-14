@@ -12,8 +12,7 @@
 				<span class="menu_line menu_line3"></span>
 			  </div>  
 			  <div class="menu_item">
-				<h1
-						class="nav_title"><a href="{% url 'home' %}">{% trans 'Научная библиотека' %}</a></h1>
+				<h1 class="nav_title"><a href="{% url 'home' %}">{% trans 'Научная библиотека' %}</a></h1>
 			</div>
 			<div class="menu_logo">
 				<img src="{% static 'img/logo_ru.svg' %}" alt="">
@@ -105,13 +104,7 @@
 					<a class="navbar_title" href="{% url 'contact' %}">{% trans 'Как связаться' %}</a>
 					</div>
 				</li>
-		
-				<li>
-					<div class="menu_select">
-					<a class="navbar_title" href="{% url 'logout' %}">{% trans 'Выйти' %}</a>
-					</div>
-				</li>
-		
+
 				{% if user.is_authenticated %}
 				<li>
 					<div class="menu_select">
@@ -119,6 +112,16 @@
 					</div>
 				</li>
 				{% endif %}
+				
+				{% if user.is_staff %}
+				<li>
+					<div class="menu_select">
+					<a class="navbar_title" href="{% url 'logout' %}">{% trans 'Выйти' %}</a>
+					</div>
+				</li>
+				{% endif %}
+		
+				
 			</div>
 		  </div>
 		</div>
@@ -221,22 +224,18 @@
 
 		<li>
 			<div class="select">
-				<div class="navbar_title">
 					{% get_current_language as CURRENT_LANGUAGE %}
 					{% get_available_languages as AVAILABLE_LANGUAGES %}
 					{% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
-					<div class="languages">
-					  <ul class="languages">
+				<div class="navbar_title navbar_language">
 						{% for language in languages %}
-						  <li>
 							<a href="/{{ language.code }}/"
 							  {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
-							  {{ language.code }}
+							  <!-- {{ language.code }} -->
+							  <img src="{% static 'img/language/lang__ky.png' %}" alt="ky">
+							  <img src="{% static 'img/language/lang__ru.png' %}" alt="ru">
 							</a>
-						  </li>
 						{% endfor %}
-					  </ul>
-					</div>
 				</div>
 			</div>
 		</li>

@@ -8,14 +8,14 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
- 
+
 <!-- News -->
 
 <div class="news">
 	<div class="news_inner">
 
 		<div class="news_item">
-			<h1 class="news_name"><a href="{% url 'news' %}">{% trans 'Новости' %} </a></h1>
+			<h1 class="news_name response_title"><a href="{% url 'news' %}">{% trans 'Новости' %} </a></h1>
 
 			<div class="news_block">
 
@@ -76,7 +76,7 @@
 						<div class="news_index-info">{{a.ads_date|date:"d.m.Y"}}</div>
 					</div>
 				</a>
-				
+
 			</div>
 			{% endfor %}
 			<!-- <div class="static">
@@ -115,7 +115,7 @@
 					{% endfor %}
 
 
-					
+
 				</div>
 				<h2 class="info_sub"><a href="{% url 'photo' %}">{% trans 'Все' %}</a>
 					<div class="info_line"></div>
@@ -127,9 +127,9 @@
 				<div class="info_item">
 
 					{% for video in videos %}
-						<div class="info_box">	
-							{% video video.url %}
-							<p class="info_text">{{video.title}}</p>
+					<div class="info_box">
+						{% video video.url %}
+						<p class="info_text">{{video.title}}</p>
 					</div>
 					{% endfor %}
 
@@ -154,7 +154,7 @@
 			</a>
 		</div>
 		<div class="partner_item">
-			<a href="https://www.gov.kg/ru" target="_blank">
+			<a href="https://journal.oshsu.kg/" target="_blank">
 				<img src="{% static 'img/partner/logo_KR.png' %}" alt="">
 			</a>
 		</div>

@@ -1,4 +1,3 @@
-
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -53,10 +52,13 @@ body {
   font-weight: bolder;
 }
 
+.menu_navbar .menu_nav-container a:checked {
+  font-weight: bolder;
+}
+
 .menu_nav-container {
   display: block;
   position: relative;
-  height: 65px;
   background-color: #fff;
 }
 
@@ -151,7 +153,7 @@ body {
   width: 140px;
 }
 
-.menu_celect {
+.menu_select {
   align-items: center;
   text-align: center;
   color: #fff;
@@ -160,7 +162,7 @@ body {
   cursor: pointer;
   position: relative;
 }
-.menu_celect .caret {
+.menu_select .caret {
   position: absolute !important;
   right: 10px !important;
   width: 0;
@@ -239,6 +241,11 @@ body {
   align-items: center;
 }
 
+.navbar_language a {
+  color: #000;
+  text-decoration: none;
+}
+
 .navbar {
   transition: 0.4s linear;
   display: flex;
@@ -265,6 +272,10 @@ body {
 
 .navbar_title:hover {
   color: #309AAC;
+}
+
+.lan_btn {
+  padding: 1px;
 }
 
 .navbar_sub {
