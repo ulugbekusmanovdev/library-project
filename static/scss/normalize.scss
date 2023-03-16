@@ -56,11 +56,9 @@ body {
 	font-weight: bolder;
 }
 
-.menu_navbar .menu_nav-container a:checked {
-	font-weight: bolder;
-}
 
 .menu_nav-container {
+	// top: -59px;
 	display: block;
 	position: relative;
 	//   height: 65px;
@@ -325,6 +323,10 @@ body {
 	display: block;
 }
 
+.menu_select .caret:hover .navbar_sub {
+	display: block;
+}
+
 .sticky {
 	padding: 0;
 	position: fixed;
@@ -365,6 +367,7 @@ body {
 	border-left: 5px solid transparent;
 	border-right: 5px solid transparent;
 	border-top: 6px solid #333;
+	border-bottom: none;
 	transition: 0.3s;
 }
 
