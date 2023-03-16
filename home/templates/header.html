@@ -26,7 +26,7 @@
 				<li>
 					<div class="menu_select">
 						<a class="navbar_title" data-scroll="about_us" href="{% url 'about' %}" >{% trans 'О библиотеке' %}</a>
-							<div class="caret"></div>
+							<button class="caret"></button>
 					</div>
 					<ul class="navbar_sub">
 						<li>
@@ -38,12 +38,6 @@
 						<li>
 							<a class="navbar_title" data-scroll="structure" href="{% url 'about' %}#structure">{% trans 'Структура' %}</a>
 						</li>
-						<!-- <li>
-							<a class="navbar_title" data-scroll="collection" href="{% url 'about' %}">Коллекция</a>
-						</li>
-						<li>
-							<a class="navbar_title" data-scroll="vacancy" href="{% url 'about' %}">Ваканссия</a>
-						</li>  -->
 					</ul>
 				</li>
 				<li>
@@ -54,7 +48,7 @@
 				<li>	
 					<div class="menu_select">
 						<a class="navbar_title" href="{% url 'readers' %}">{% trans 'Читателям' %}</a>
-							<div class="caret"></div>
+							<button class="caret"></button>
 					</div>
 					<ul class="navbar_sub">
 						<li>
@@ -138,7 +132,7 @@
 		<li>
 			<div class="select">
 				<a class="navbar_title" data-scroll="about_us" href="{% url 'about' %}" >{% trans 'О библиотеке' %}</a>
-					<div class="caret"></div>
+					<button class="caret"></button>
 			</div>
 			<ul class="navbar_sub">
 				<li>
@@ -166,7 +160,7 @@
 		<li>	
 			<div class="select">
 				<a class="navbar_title" href="{% url 'readers' %}">{% trans 'Читателям' %}</a>
-					<div class="caret"></div>
+					<button class="caret"></button>
 			</div>
 			<ul class="navbar_sub">
 				<li>
@@ -231,9 +225,9 @@
 						{% for language in languages %}
 							<a href="/{{ language.code }}/"
 							  {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
-							  <!-- {{ language.code }} -->
-							  <img src="{% static 'img/language/lang__ky.png' %}" alt="ky">
-							  <img src="{% static 'img/language/lang__ru.png' %}" alt="ru">
+							  {{ language.code }}
+							  <!-- <img src="{% static 'img/language/lang__ky.png' %}" alt="ky">
+							  <img src="{% static 'img/language/lang__ru.png' %}" alt="ru"> -->
 							</a>
 						{% endfor %}
 				</div>
