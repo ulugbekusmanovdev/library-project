@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+<link rel="stylesheet" href="{% static 'css/secondStyle.css' %}">
+
+
+
+<div class="sec-container">
+    <div class="director">
+    <h1>Директор</h1>
+
+    <div class="director_box">
+        <div class="director_text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, id nemo quam fuga, suscipit dolorum rerum dolor quod perferendis harum, at iusto. Odio quod, repellendus eum debitis ab quam esse?</p>
+        </div>
+        <div class="director_img">
+            <img src="{% static 'img/structure/dir.jpg'  %}" alt="">
+            <p>Эсекеева А.</p>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+{% include 'footer.html' %}
+
+{% endblock %}

@@ -23,15 +23,18 @@
             <div class="books_box">
                 <h2>Категория</h2>
 
-                <div class="books_dropdown">
-                   <button onclick="myFunction()" class="books_dropbtn">Темы</button>
-                    <div id="books_myDropdown" class="books_dropdown-content">
-                        <a href="{% url 'books' %}">{% trans 'Все книги' %}</a>
-
-                        {% for category in categories %}
-                      <a href="{% url 'readers' %}?category={{category.name}}">{{category.name}}</a>
-                        {%endfor%}
-
+                <div class="books_drop">
+                    <div class="books_drop">
+                        <ul>
+                            <li>
+                                <a href="{% url 'books' %}">{% trans 'Все книги' %}</a>
+                            </li>
+                            {% for category in categories %}
+                            <li>
+                                <a href="{% url 'readers' %}?category={{category.name}}">{{category.name}}</a>
+                            </li>
+                            {%endfor%}    
+                        </ul>
                     </div>
             </div>
             </div>

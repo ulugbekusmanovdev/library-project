@@ -88,3 +88,9 @@ def mission(request):
 def video(request):
     videos = Video.objects.all()
     return render(request, 'video.html', {'videos': videos})
+
+def director(request):
+    return render(request, 'director.html')
+
+def ibo(request):
+    return render(request, 'ibo.html')
