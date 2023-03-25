@@ -6,7 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from libraries.decorators import allowed_users, admin_only
 from django.contrib import messages
 
-from home.models import Readers
+from home.models import Readers, Newspaper, Journal
 from .forms import CustomerForm, ChatForm
 from .models import Book, Category, Customer, Chat, Library, Video
 from django.db.models import Q
@@ -85,7 +85,7 @@ def forLibrarists(request):
     context = {'form': form, 'irbis': irbis}
     return render(request, 'forLibrarists.html', context)
 
-
+           
 def readers(request):
     category = request.GET.get('category')
     if category == None:
@@ -96,7 +96,12 @@ def readers(request):
     categories = Category.objects.all()
 
     reader = Readers.objects.all()
-    context = {'books': books, 'categories': categories, 'reader': reader}
+
+    newspapers = Newspaper.objects.all() 
+    journals = Journal.objects.all()
+    context = {'books': books, 'categories': categories,
+               'reader': reader, 'newspapers' : newspapers, 'journals': journals}
+    
     return render(request, 'readers.html', context)
 
 

@@ -1,56 +1,48 @@
 //  Navbar
+// search-box open close js code
+// let navbar = document.querySelector(".navbar");
+// let searchBox = document.querySelector(".search-box");
 
-const nav = document.getElementById('nav');
-const menu = document.getElementById('menu');
-const menuHeigt = menu.getBoundingClientRect().height;
-const menuH = menuHeigt - 240;
-
-// document.addEventListener("DOMContentLoaded", () => {
-// 	const elemenId = window.location.href.match(/#(\w+)$/)[1];
-// 	if(elemenId){
-// 		console.log(elemenId, window.location.href);
-// 		const elementTop = document.getElementById(elemenId).getBoundingClientRect()
-	
-// 		window.scrollTo({
-// 			behavior: "smooth",
-// 			top: elementTop - 400
-// 		})
-// 	}
-	
-// })
+// searchBox.addEventListener("click", ()=>
+//   navbar.classList.toggle("showInput");
+//   if(navbar.classList.contains("showInput")){
+//     searchBox.classList.replace("bx-search" ,"bx-x");
+//   }else {
+//     searchBox.classList.replace("bx-x" ,"bx-search");
+//   }
+// });
 
 
-
-
-
-const setScrollListebner = () => {
-	const { scrollY } = window;
-
-	if (scrollY >= menuH) {
-		nav.classList.add('sticky');
-	} else {
-		nav.classList.remove('sticky');
-	}
+// sidebar open close js code
+let navLinks = document.querySelector(".nav-links");
+let menuOpenBtn = document.querySelector(".navbar .bx-menu");
+let menuCloseBtn = document.querySelector(".nav-links .bx-x");
+menuOpenBtn.onclick = function() {
+navLinks.style.left = "0";
+}
+menuCloseBtn.onclick = function() {
+navLinks.style.left = "-100%";
 }
 
-window.addEventListener("scroll", setScrollListebner)
-
-
-
-// /* Когда пользователь нажимает на кнопку, переключаться раскрывает содержимое */
-// function myFunction() {
-// 	document.getElementById("books_myDropdown").classList.toggle("show");
+// sidebar submenu open close js code
+let htmlcssArrow = document.querySelector(".htmlcss-arrow");
+htmlcssArrow.onclick = function() {
+ navLinks.classList.toggle("show1");
+}
+// let moreArrow = document.querySelector(".more-arrow");
+// moreArrow.onclick = function() {
+//  navLinks.classList.toggle("show2");
 // }
-// // Закрыть раскрывающийся список, если пользователь щелкнет за его пределами.
-// window.onclick = function (event) {
-// 	if (!event.target.matches('.books_dropbtn')) {
-// 		var dropdowns = document.getElementsByClassName("books_dropdown-content");
-// 		var i;
-// 		for (i = 0; i < dropdowns.length; i++) {
-// 			var openDropdown = dropdowns[i];
-// 			if (openDropdown.classList.contains('show')) {
-// 				openDropdown.classList.remove('show');
-// 			}
-// 		}
-// 	}
-// }
+let jsArrow = document.querySelector(".js-arrow");
+jsArrow.onclick = function() {
+ navLinks.classList.toggle("show3");
+}
+
+// READERS BOOKS
+$(document).ready(function(){
+    $('.dropdown-submenu a.test').on("click", function(e){
+      $(this).next('ul').toggle();
+      e.stopPropagation();
+      e.preventDefault();
+    });
+  });

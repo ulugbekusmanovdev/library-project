@@ -3,6 +3,9 @@
 
 
 /* NEWS */
+.news_bg{
+	background-color: #F0F4F8;
+}
 .news {
 	width: 87%;
 	margin: 0 auto;
@@ -11,7 +14,7 @@
 .news_inner {
 	width: 100%;
 	display: flex;
-	margin-bottom: 20px;
+	padding-bottom: 20px;
 }
 
 .news_item {
@@ -208,8 +211,7 @@
 /* INFO */
 .info {
 	background-color: #F0F4F8;
-	padding: 60px 0;
-
+	padding: 30px 0;
 }
 
 .info_title {

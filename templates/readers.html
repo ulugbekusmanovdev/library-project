@@ -11,20 +11,84 @@
 
 
 
-
-
-
 <!-- BOOKS-->
 <div class="bg" id="books">
-<div class="sec-container">
-    <div class="books">
-        <div class="books_category">
+    <div class="sec-container">
+        <div class="books">
+            <h1 class="books_title">Книги</h1>
 
-            <div class="books_box">
-                <h2>Категория</h2>
+            <div class="books_category">
+                <div class="books_box">
+                    <h2>Категория</h2>
 
-                <div class="books_drop">
-                    <div class="books_drop">
+                    <div class="dropdown">
+                        <button class="dropbtn">Гуманитарные науки</button>
+                        <div class="dropdown-content">
+                            <a href="#">Исторические науки</a>
+                            <a href="#">Экономические науки</a>
+                            <a href="#">Философские науки</a>
+                            <a href="#">Филологические науки</a>
+                            <a href="#">Социологические науки</a>
+                            <a href="#">Политические науки</a>
+                            <a href="#">Культурология</a>
+                            <a href="#">Архитектура</a>
+                            <a href="#">Библиотековедение, библиографоведение и книговедение</a>
+                            <a href="#">Юридические науки</a>
+                            <a href="#">Педагогические науки</a>
+                            <a href="#">Искусствоведение</a>
+                            <a href="#">Психологические науки</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Естественные науки</button>
+                        <div class="dropdown-content">
+                            <a href="#">Физико-математические науки</a>
+                            <a href="#">Химические науки</a>
+                            <a href="#">Биологические науки</a>
+                            <a href="#">Сельскохозяйственные науки</a>
+                            <a href="#">Медицинские науки</a>
+                            <a href="#">Науки о земле</a>
+                            <a href="#">Ветеринарные науки</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="dropbtn">Технические науки</button>
+                        <div class="dropdown-content">
+                            <a href="#">Энергетическое, металлургическое и химическое машиностроение</a>
+                            <a href="#">Транспортное, горное и строительное машиностроение</a>
+                            <a href="#">Кораблестроение</a>
+                            <a href="#">Радиотехника и связь</a>
+                            <a href="#">Информатика, вычислительная техника и управление</a>
+                            <a href="#">Энергетика</a>
+                            <a href="#">Химическая технология</a>
+                            <a href="#">Технология производственных продуктов</a>
+                            <a href="#">Технология материалов и изделий текстильной и легкой промышленности</a>
+                            <a href="#">Процессы и машины агроинженерных систем</a>
+                            <a href="#">Технология, машины и оборудование для лесозагатовок</a>
+                            <a href="#">Транспорт</a>
+                            <a href="#">Строительство</a>
+                            <a href="#">История науки и техники</a>
+                            <a href="#">Электротехника</a>
+                            <a href="#">Инженерная геометрия и компьютерная графика</a>
+                            <a href="#">Машиностроение и машиноведение</a>
+                            <a href="#">Авиационная и ракетно-космическая техника</a>
+                            <a href="#">Приборостроение</a>
+                            <a href="#">Электроника</a>
+                            <a href="#">Металлургия</a>
+                            <a href="#">Документальная информация</a>
+                            <a href="#">Информационные системы и процессы, правовые аспекты информатики</a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+                <!-- <div class="books_drop">
                         <ul>
                             <li>
                                 <a href="{% url 'books' %}">{% trans 'Все книги' %}</a>
@@ -33,10 +97,9 @@
                             <li>
                                 <a href="{% url 'readers' %}?category={{category.name}}">{{category.name}}</a>
                             </li>
-                            {%endfor%}    
+                            {%endfor%}
                         </ul>
-                    </div>
-            </div>
+                    </div> -->
             </div>
 
             <div class="books_info">
@@ -44,46 +107,40 @@
                 <div class="books_inner">
 
                     <div class="books_slick-slider">
-                    {% for book in books %}
-                    <div class="books_content">
-                        <div class="books_img">
-                            <img src="{{ book.photo.url }}" alt="">
+                        {% for book in books %}
+                        <div class="books_content">
+                            <div class="books_img">
+                                <img src="{{ book.photo.url }}" alt="">
+                            </div>
+                            <div class="books_item">
+                                <h4>{{book.title}}</h4>
+                                <p>Автор: {{book.author}}</p>
+                                <p class="books_text">Категория: {{book.category.name}}</p>
+                                <button><a href="{{ book.pdf.url }}">{% trans 'Читать' %}...</a></button>
+                            </div>
                         </div>
-                        <div class="books_item">
-                            <h4>{{book.title}}</h4>
-                            <p>Автор: {{book.author}}</p>
-                            <p class="books_text">Категория: {{book.category.name}}</p>
-                            <button><a href="{{ book.pdf.url }}">{% trans 'Читать' %}...</a></button>
-                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
-
-
-
-
-                </div>
-                </div>
-
-
+            </div>
         </div>
     </div>
 </div>
 </div>
 
 <!--   LIBRARY ENTRy-->
-<div class="bg">
-<div class="sec-container">
-    {% for r in reader %}
-    <div class="library_entry" id="library_entry">
-        <div class="library_entry-title">
-            <h1>{{r.title}}</h1>
-            <img src="{{r.image.url}}" alt="">
+<div class="bg" id="direction">
+    <div class="sec-container">
+        {% for r in reader %}
+        <div class="library_entry" id="library_entry">
+            <div class="library_entry-title">
+                <h1>{{r.title}}</h1>
+                <img src="{{r.image.url}}" alt="">
+            </div>
+            <p>{{r.text|safe}}</p>
         </div>
-        <p>{{r.text|safe}}</p>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
 </div>
 
 
@@ -93,8 +150,13 @@
         <h2 class="good_title">{% trans 'Республиканские газеты и журналы' %}</h2>
 
         <table class="good_box">
-            <tr><td><p><b>№</b></p></td>
-                <td><p><b>индекс</b></p></td>
+            <tr>
+                <td>
+                    <p><b>№</b></p>
+                </td>
+                <td>
+                    <p><b>индекс</b></p>
+                </td>
                 <td>
                     <p>
                         <b>Наименование</b>
@@ -108,22 +170,23 @@
                 </td>
             </tr>
 
+            {% for newspaper in newspapers %}
             <tr>
                 <td>
                     <p>
-                        1
+                        {{newspaper.id}}
                     </p>
                 </td>
 
                 <td>
                     <p>
-                        68537
+                        {{newspaper.number}}
                     </p>
                 </td>
 
                 <td>
                     <p>
-                        Азия Ньюс
+                        {{newspaper.title}}
                     </p>
                 </td>
 
@@ -133,581 +196,8 @@
                     </p>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <p>
-                        2
-                    </p>
-                </td>
 
-                <td>
-                    <p>
-                        68544
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Аргументы и факты - Кыргызстан (с прил.АиФ Здор.)
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        3
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68449
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Алиби
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        4
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68459
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Ай-Данек
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Зирек
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        5
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68472
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Де-факто плюс
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        6
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68403
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Дело №
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        7
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68606
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Жа&#1187;ы ордо
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        8
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        31470
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Комсомольская правда
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        9
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68411
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Кутбилим
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        10
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68418
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Кутбилим сабак
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        11
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68416
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Кыргыз Туусу
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        12
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68407
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Московский комсомолец – Азия
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        13
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68484
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Кыргыз тили
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        14
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68504
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Ош шамы
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        15
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68420
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Ош жа&#1187;ырыгы
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        16
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68419
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Общественый рейтинг
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        17
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68415
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Слово Кыргызстана
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        18
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68400
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Совершенно не секретно
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        19
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68527
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Супер инфо
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        жатакана
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        20
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68548
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Тил жана маданият
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        21
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68421
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Эхо Оша
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        22
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68422
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Уш Садоси
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        23
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        68451
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Эркин Тоо
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        24
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        32185
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Российская газета
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
+            {% endfor %}
 
         </table>
 
@@ -715,22 +205,23 @@
 
             <h2 class="good_title">Журналы</h2>
 
+            {% for journal in journals %}
             <tr>
                 <td>
                     <p>
-                        1
+                        {{journal.id}}
                     </p>
                 </td>
 
                 <td>
                     <p>
-                        77324
+                        {{journal.number}}
                     </p>
                 </td>
 
                 <td>
                     <p>
-                        Жа&#1187;ы Ала Тоо
+                        {{journal.title}}
                     </p>
                 </td>
 
@@ -740,210 +231,20 @@
                     </p>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <p>
-                        2
-                    </p>
-                </td>
+            {%endfor%}
 
-                <td>
-                    <p>
-                        77406
-                    </p>
-                </td>
 
-                <td>
-                    <p>
-                        Балакай
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        искусство
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        3
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        77305
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Байчечекей
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Зирек, ГПК
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        4
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        77312
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Главный бухгалтер
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        5
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        77328
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Мугалим
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        ГПК
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        6
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        77331
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Русский язык и литература в школах Кыргызстана
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        7
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        77302
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Жетиген
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        8
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        77327
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Шоокум
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <p>
-                        9
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        77438
-                    </p>
-                </td>
-
-                <td>
-                    <p>
-                        Эл агартуу
-                    </p>
-                </td>
-                <td>
-                    <p>
-                        чит.зал ИБО
-                    </p>
-                </td>
-            </tr>
         </table>
+        <p>
+            <a href="https://journal.oshsu.kg/index.php/index/index">Ош Мамлекеттик Университетинин Илимий
+                Журналдары</a>
+        </p>
+
+
     </div>
 </div>
 
-    
+
 
 {% include 'footer.html' %}
 
