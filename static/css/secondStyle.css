@@ -1301,7 +1301,7 @@ iframe {
 }
 
 .books_box-only {
-  width: 15%;
+  width: 25%;
   padding: 10px;
   border-right: 1px #333 solid;
 }
@@ -1360,7 +1360,7 @@ iframe {
 }
 
 .books_info-only {
-  width: 85%;
+  width: 75%;
 }
 .books_info-only .books_search {
   margin: 20px;
@@ -1444,26 +1444,63 @@ iframe {
 .director {
   width: 100%;
 }
-.director h1 {
+.director .ibo-us h1 {
   text-align: center;
   color: #309AAC;
-  margin: 20px;
+  margin: 30px;
 }
-.director .director_box {
-  width: 90%;
+
+.ibo-us {
+  width: 100%;
+  padding: 20px 0 40px;
+  background: #ddd;
+}
+
+.ibo_pic {
+  height: auto;
+  width: 302px;
+}
+
+.ibo {
+  width: 95%;
+  margin: 0 auto;
   display: flex;
-  margin: 50px auto;
+  align-items: center;
+  justify-content: space-around;
 }
-.director .director_text {
+
+.ibo_text {
   width: 60%;
-  margin: 50px 25px 0 0;
+  margin: 0 20px;
 }
-.director .director_img {
-  width: 20%;
+
+.ibo_text h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
-.director .director_img p {
-  text-align: center;
-  margin-top: 20px;
+
+.ibo_text h5 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+span {
+  color: #4070f4;
+}
+
+.ibo_text p {
+  font-size: 16px;
+  line-height: 25px;
+  letter-spacing: 1px;
+}
+
+.ibo_info {
+  padding: 20px;
+}
+.ibo_info p {
+  font-size: 16px;
 }
 
 @media (max-width: 1550px) {

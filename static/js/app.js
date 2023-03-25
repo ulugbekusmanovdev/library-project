@@ -39,10 +39,9 @@ jsArrow.onclick = function() {
 }
 
 // READERS BOOKS
-$(document).ready(function(){
-    $('.dropdown-submenu a.test').on("click", function(e){
-      $(this).next('ul').toggle();
-      e.stopPropagation();
-      e.preventDefault();
-    });
-  });
+let dropdownSub = document.querySelector('.dropdown-submenu a.test');
+  dropdownSub.on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+});
