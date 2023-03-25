@@ -1,261 +1,100 @@
 	{% load static %}
 	{% load i18n %}
 	
-
-	<nav class="menu_hamburger">
-		<div class="menu_navbar">
-		  <div class="menu_container menu_nav-container">
-			  <input class="menu_checkbox" type="checkbox" name="" id="" />
-			  <div class="menu_hamburger-lines">
-				<span class="menu_line menu_line1"></span>
-				<span class="menu_line menu_line2"></span>
-				<span class="menu_line menu_line3"></span>
-			  </div>  
-			  <div class="menu_item">
-				<h1 class="nav_title"><a href="{% url 'home' %}">{% trans 'Научная библиотека' %}</a></h1>
+	<nav>
+		<div class="navbar">
+		  <i class='bx bx-menu'></i>
+		  <div class="logo"><a href="{% url 'home' %}">
+			<img class="logo" src="{% static 'img/logo_ru.svg' %}" alt="">
+		</a></div>
+		  <div class="nav-links">
+			<div class="sidebar-logo">
+			  <span class="logo-name"><a href="{% url 'home' %}">
+				<img class="logo" src="{% static 'img/logo_ru.svg' %}" alt="">
+			</a></span>
+			  <i class='bx bx-x'></i>
 			</div>
-			<div class="menu_logo">
-				<img src="{% static 'img/logo_ru.svg' %}" alt="">
-			</div>
-			<div class="menu_menu-items">
-				<li>
-					<div class="menu_select">
-					<a class="navbar_title" data-scroll="home" href="{% url 'home' %}" >{% trans 'Главная' %}</a>
-				</div>
-				</li>
-				<li>
-					<div class="menu_select">
-						<a class="navbar_title" data-scroll="about_us" href="{% url 'about' %}" >{% trans 'О библиотеке' %}</a>
-							<button class="caret"></button>
-					</div>
-					<ul class="navbar_sub">
-						<li>
-							<a class="navbar_title" data-scroll="mission" href="{% url 'about' %}#mission" >{% trans 'Миссия' %}</a>
-						</li>
-						<li>
-							<a class="navbar_title" data-scroll="history" href="{% url 'about' %}#history">{% trans 'История' %}</a>
-						</li>
-						<li>
-							<a class="navbar_title" data-scroll="structure" href="{% url 'about' %}#structure">{% trans 'Структура' %}</a>
-						</li>
+			<ul class="links">
+			  <li><a data-scroll="home" href="{% url 'home' %}" >{% trans 'Главная' %}</a></li>
+			  <li>
+				<a data-scroll="about_us" href="{% url 'about' %}" >{% trans 'О библиотеке' %}</a>
+				<i class='bx bxs-chevron-down htmlcss-arrow arrow'></i>
+				<ul class="htmlCss-sub-menu sub-menu">
+					<li>
+						<a data-scroll="mission" href="{% url 'about' %}#mission" >{% trans 'Миссия' %}</a>
+					</li>
+					<li>
+						<a data-scroll="history" href="{% url 'about' %}#history">{% trans 'История' %}</a>
+					</li>
+					<li>
+						<a data-scroll="structure" href="{% url 'about' %}#structure">{% trans 'Структура' %}</a>
+					</li>
+				  <!-- <li class="more">
+					<span><a href="#">More</a>
+					  <i class='bx bxs-chevron-right arrow more-arrow'></i>
+					</span>
+					<ul class="more-sub-menu sub-menu">
+					  <li><a href="#">Neumorphism</a></li>
+					  <li><a href="#">Pre-loader</a></li>
+					  <li><a href="#">Glassmorphism</a></li>
 					</ul>
-				</li>
-				<li>
-					<div class="menu_select">
-					<a class="navbar_title" href="{% url 'catalogs' %}">{% trans 'Каталоги' %}</a>
-					</div>
-				</li>
-				<li>	
-					<div class="menu_select">
-						<a class="navbar_title" href="{% url 'readers' %}">{% trans 'Читателям' %}</a>
-							<button class="caret"></button>
-					</div>
-					<ul class="navbar_sub">
-						<li>
-							<a class="navbar_title" data-scroll="books" href="{% url 'readers' %}#books">{% trans 'Каталог книг' %}</a>
-						</li>
-						<li>
-							<a class="navbar_title" data-scroll="direction" href="{% url 'readers' %}#direction">{% trans 'Правила пользования' %}</a>
-						</li>
-						 <!-- <li>
-							<a class="navbar_title" data-scroll="reading_rooms" href="{% url 'readers' %}#reading_rooms">Читальные залы</a>
-						</li>  -->
-						<li>
-							<a class="navbar_title" data-scroll="library_entry" href="{% url 'readers' %}#library_entry">{% trans 'Запись в библиотеку' %}</a>
-						</li>
-						<li>
-							<a class="navbar_title" data-scroll="subscription" href="{% url 'readers' %}#subscription">{% trans 'Абонемент' %}</a>
-						</li>
-						<li>
-							<a class="navbar_title" data-scroll="workSchedule" href="{% url 'readers' %}#workSchedule">{% trans 'Режим работы' %}</a>
-						</li>
-						<li>
-							<a class="navbar_title" data-scroll="good_to_know" href="{% url 'readers' %}#good_to_know">{% trans 'Периодический знание' %}</a>
-						</li>
-					</ul>
-				</li>
-				 <li>
-					<div class="menu_select">
-					<a class="navbar_title" href="{% url 'forLibrarists' %}">{% trans 'Библиотекарям' %}</a>
-				</div>
+				  </li> -->
+				</ul>
+			  </li>
+			  <li><a href="{% url 'catalogs' %}">{% trans 'Каталоги' %}</a></li>
+			  <li>
+				<a href="{% url 'readers' %}">{% trans 'Читателям' %}</a>
+				<i class='bx bxs-chevron-down js-arrow arrow '></i>
+				<ul class="js-sub-menu sub-menu">
+					<li>
+						<a data-scroll="books" href="{% url 'readers' %}#books">{% trans 'Книги' %}</a>
+					</li>
+					<li>
+						<a data-scroll="direction" href="{% url 'readers' %}#direction">{% trans 'Правила пользования' %}</a>
+					</li>
+					<!-- <li>
+						<a data-scroll="workSchedule" href="{% url 'readers' %}#workSchedule">{% trans 'Режим работы' %}</a>
+					</li> -->
+					<li>
+						<a data-scroll="good_to_know" href="{% url 'readers' %}#good_to_know">{% trans 'Периодический знание' %}</a>
+					</li>
+				</ul>
+			  </li>
+			 
+			  <li><a href="{% url 'forLibrarists' %}">{% trans 'Библиотекарям' %}</a></li>
+			  <li><a href="{% url 'contact' %}">{% trans 'Как связаться' %}</a></li>
 
-					 {% if request.user.is_staff %}
-					<ul class="navbar_sub">
-						<li>
-							<a class="navbar_title" href="{% url 'register' %}">{% trans 'Регистрация' %}</a>
-						</li>
-						<li>
-							<a class="navbar_title" href="{% url 'infoLib' %}">{% trans 'Информация о пользователи' %}</a>
-						</li>
-						<li>
-							<a class="navbar_title" href="{% url 'login' %}">Логин</a>
-						</li>
-					</ul>
-						{% endif %}
-				</li>
-				<li> 
-					<div class="menu_select">
-					<a class="navbar_title" href="{% url 'contact' %}">{% trans 'Как связаться' %}</a>
-					</div>
-				</li>
+			  {% if user.is_staff %}
+			  <li><a href="{% url 'logout' %}">Выйти</a></li>
+			  {% endif %}
 
-				{% if user.is_authenticated %}
-				<li>
-					<div class="menu_select">
-					<p class="navbar_title">{% trans 'Привет' %}, {{request.user|title}}</p>
-					</div>
-				</li>
-				{% endif %}
-				
-				{% if user.is_staff %}
-				<li>
-					<div class="menu_select">
-					<a class="navbar_title" href="{% url 'logout' %}">{% trans 'Выйти' %}</a>
-					</div>
-				</li>
-				{% endif %}
-		
-				
-			</div>
+			  {% if user.is_authenticated %}
+			  <li>{% trans 'Привет' %}, {{request.user|title}}</li>
+			  {% endif %}
+			
+			</ul>
+		  </div>
+
+		  <div class="search-box">
+			{% get_current_language as CURRENT_LANGUAGE %}
+                {% get_available_languages as AVAILABLE_LANGUAGES %}
+                {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+            <div class="navbar_language">
+                    {% for language in languages %}
+                        <a href="/{{ language.code }}/"
+                          {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
+                          {{ language.code }}
+                          <!-- <img src="{% static 'img/language/lang__ky.png' %}" alt="ky">
+                          <img src="{% static 'img/language/lang__ru.png' %}" alt="ru"> -->
+                        </a>
+                    {% endfor %}
+            </div>
 		  </div>
 		</div>
 	  </nav>
 
-
-<nav class="nav" id="nav">
-	<ul class="navbar menu__box" id="menu">
-		<li>
-			<div class="select">
-			<a class="navbar_title" data-scroll="home" href="{% url 'home' %}" >{% trans 'Главная' %}</a>
-		</div>
-		</li>
-		<li>
-			<div class="select">
-				<a class="navbar_title" data-scroll="about_us" href="{% url 'about' %}" >{% trans 'О библиотеке' %}</a>
-					<button class="caret"></button>
-			</div>
-			<ul class="navbar_sub">
-				<li>
-					<a class="navbar_title" data-scroll="mission" href="{% url 'about' %}#mission" >{% trans 'Миссия' %}</a>
-				</li>
-				<li>
-					<a class="navbar_title" data-scroll="history" href="{% url 'about' %}#history">{% trans 'История' %}</a>
-				</li>
-				<li>
-					<a class="navbar_title" data-scroll="structure" href="{% url 'about' %}#structure">{% trans 'Структура' %}</a>
-				</li>
-				<!-- <li>
-					<a class="navbar_title" data-scroll="collection" href="{% url 'about' %}">Коллекция</a>
-				</li>
-				<li>
-					<a class="navbar_title" data-scroll="vacancy" href="{% url 'about' %}">Ваканссия</a>
-				</li>  -->
-			</ul>
-		</li>
-		<li>
-			<div class="select">
-			<a class="navbar_title" href="{% url 'catalogs' %}">{% trans 'Каталоги' %}</a>
-			</div>
-		</li>
-		<li>	
-			<div class="select">
-				<a class="navbar_title" href="{% url 'readers' %}">{% trans 'Читателям' %}</a>
-					<button class="caret"></button>
-			</div>
-			<ul class="navbar_sub">
-				<li>
-					<a class="navbar_title" data-scroll="direction" href="{% url 'readers' %}#direction">{% trans 'Правила пользования' %}</a>
-				</li>
-				<li>
-					<a class="navbar_title" data-scroll="books" href="{% url 'readers' %}#books">{% trans 'Книги' %}</a>
-				</li>
-				<li>
-					<a class="navbar_title" data-scroll="workSchedule" href="{% url 'readers' %}#workSchedule">{% trans 'Режим работы' %}</a>
-				</li>
-				<li>
-					<a class="navbar_title" data-scroll="good_to_know" href="{% url 'readers' %}#good_to_know">{% trans 'Периодический знание' %}</a>
-				</li>
-			</ul>
-		</li>
-		 <li>
-			<div class="select">
-			<a class="navbar_title" href="{% url 'forLibrarists' %}">{% trans 'Библиотекарям' %}</a>
-		</div>
-			 {% if request.user.is_staff %}
-			<ul class="navbar_sub">
-				<li>
-					<a class="navbar_title" href="{% url 'register' %}">{% trans 'Регистрация' %}</a>
-				</li>
-				<li>
-					<a class="navbar_title" href="{% url 'infoLib' %}">{% trans 'Информация о пользователи' %}</a>
-				</li>
-				<li>
-					<a class="navbar_title" href="{% url 'login' %}">Логин</a>
-				</li>
-			</ul>
-			 {% endif %}
-
-		</li>
-		<li> 
-			<div class="select">
-			<a class="navbar_title" href="{% url 'contact' %}">{% trans 'Как связаться' %}</a>
-			</div>
-		</li>
-		{% if user.is_staff %}
-		<li>
-			<div class="select">
-			<a class="navbar_title" href="{% url 'logout' %}">Выйти</a>
-			</div>
-		</li>
-		{% endif %}
-		{% if user.is_authenticated %}
-		<li>
-			<div class="select">
-			<p class="navbar_title">{% trans 'Привет' %}, {{request.user|title}}</p>
-			</div>
-		</li>
-		{% endif %}
-
-		<li>
-			<div class="select">
-					{% get_current_language as CURRENT_LANGUAGE %}
-					{% get_available_languages as AVAILABLE_LANGUAGES %}
-					{% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
-				<div class="navbar_title navbar_language">
-						{% for language in languages %}
-							<a href="/{{ language.code }}/"
-							  {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
-							  {{ language.code }}
-							  <!-- <img src="{% static 'img/language/lang__ky.png' %}" alt="ky">
-							  <img src="{% static 'img/language/lang__ru.png' %}" alt="ru"> -->
-							</a>
-						{% endfor %}
-				</div>
-			</div>
-		</li>
-
-	</ul>
-</nav>
-
-
-
 	<header class="header">
-		<div class="nav_logo">
-			<div class="nav_box">
-				<div class="nav_item"><a href="{% url 'home' %}">
-					<img class="logo" src="{% static 'img/logo_ru.svg' %}" alt="">
-				</a>
-				</div>
-
-				<div class="nav_item">
-					<h1 class="nav_title"><a href="{% url 'home' %}">{% trans 'Научная библиотека' %}</a></h1>
-				</div>
-			</div>
-				
-		</div>
+			<h1 class="header_title"><a href="{% url 'home' %}">{% trans 'Научная библиотека' %}</a></h1>	
 	</header>
 
-	
 	<script src="{% static '/js/app.js' %}"></script>
-
-	
