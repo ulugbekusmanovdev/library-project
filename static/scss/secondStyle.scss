@@ -1318,23 +1318,26 @@ iframe {
 			padding: 5px;
 			margin: 0 0 30px;
 		}
-
-		button {
-
-			padding: 5px;
+		.books_btn{
+			width: 100%;
+			padding: 5px 10px;
 			border: none;
-			border-radius: 15px;
-			background-color: #309AAC;
-
-
-			a {
-				font-size: 14px;
-				color: #fff;
-				text-decoration: none;
-			}
+			border-radius: 5px;
+			background-color: #403042;
+			cursor: pointer;
+			transition: .3s linear;
+		}
+		.books_btn:hover {
+			background-color: #9BC7D5;
+		}
+		.books_btn a{
+			text-decoration: none;
+			color: #fff;
+			font-weight: 600;
+		}
 		}
 	}
-}
+
 
 .books_box-only {
 	width: 25%;

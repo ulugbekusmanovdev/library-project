@@ -110,7 +110,11 @@
 								<h4>{{book.title}}</h4>
 								<p>Автор: {{book.author}}</p>
 								<p class="books_text">Категория: {{book.category.name}}</p>
-								<button><a href="{{ book.pdf.url }}">{% trans 'Читать' %}...</a></button>
+								<button class="books_btn">
+                                    <a href="{{ book.pdf.url }}">
+                                        {% trans 'Читать' %}
+                                      </a>
+                                </button>
 							</div>
 						</div>
 						{% endfor %}
