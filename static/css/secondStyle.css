@@ -1298,16 +1298,22 @@ iframe {
   padding: 5px;
   margin: 0 0 30px;
 }
-.books_content-only .books_item button {
-  padding: 5px;
+.books_content-only .books_item .books_btn {
+  width: 100%;
+  padding: 5px 10px;
   border: none;
-  border-radius: 15px;
-  background-color: #309AAC;
+  border-radius: 5px;
+  background-color: #403042;
+  cursor: pointer;
+  transition: 0.3s linear;
 }
-.books_content-only .books_item button a {
-  font-size: 14px;
-  color: #fff;
+.books_content-only .books_item .books_btn:hover {
+  background-color: #9BC7D5;
+}
+.books_content-only .books_item .books_btn a {
   text-decoration: none;
+  color: #fff;
+  font-weight: 600;
 }
 
 .books_box-only {
