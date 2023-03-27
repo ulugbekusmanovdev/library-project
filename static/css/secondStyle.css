@@ -1153,8 +1153,8 @@ iframe {
 }
 
 .books {
-  margin: 50px 0;
-  width: 100%;
+  margin: 50px auto;
+  width: 98%;
 }
 .books .books_title {
   text-align: center;
@@ -1167,7 +1167,7 @@ iframe {
   width: 100%;
 }
 .books .books_box {
-  width: 30%;
+  width: 25%;
   padding: 10px;
   border-right: 1px #333 solid;
 }
@@ -1200,7 +1200,7 @@ iframe {
   box-shadow: -2px -3px 3px #dee2e6, 2px 3px 3px #dee2e6, -2px 3px 3px #dee2e6, 2px -3px 3px #dee2e6;
 }
 .books .books_info {
-  width: 70%;
+  width: 75%;
 }
 .books .books_info .books_search {
   margin: 20px;
@@ -1215,20 +1215,24 @@ iframe {
   width: 100%;
 }
 .books .books_info .books_content {
+  border-radius: 5px;
   padding: 3px;
   margin: 10px 20px !important;
   background-color: #fff;
   width: 85% !important;
-  height: 400px !important;
+  height: 330px !important;
 }
 .books .books_info .books_content .books_img {
-  margin: 0 0 10px;
-  width: 100%;
-  height: 230px;
+  margin: 0 auto 10px;
+  width: 80%;
+  height: 200px;
 }
 .books .books_info .books_content .books_img img {
   width: 100%;
   height: 100%;
+}
+.books .books_info .books_content .books_item {
+  text-align: center;
 }
 .books .books_info .books_content .books_item h4 {
   font-size: 14px;
@@ -1241,18 +1245,24 @@ iframe {
 .books .books_info .books_content .books_item .books_text {
   font-size: 12px;
   padding: 5px;
-  margin: 0 0 30px;
+  margin: 0 0 10px;
 }
-.books .books_info .books_content .books_item button {
-  padding: 5px;
+.books .books_info .books_content .books_item .books_btn {
+  width: 100%;
+  padding: 5px 10px;
   border: none;
-  border-radius: 15px;
-  background-color: #309AAC;
+  border-radius: 5px;
+  background-color: #403042;
+  cursor: pointer;
+  transition: 0.3s linear;
 }
-.books .books_info .books_content .books_item button a {
-  font-size: 14px;
-  color: #fff;
+.books .books_info .books_content .books_item .books_btn:hover {
+  background-color: #9BC7D5;
+}
+.books .books_info .books_content .books_item .books_btn a {
   text-decoration: none;
+  color: #fff;
+  font-weight: 600;
 }
 
 .books_inner-only {
