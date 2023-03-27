@@ -13,7 +13,6 @@
 
 <!-- BOOKS-->
 <div class="bg" id="books">
-    <div class="sec-container">
         <div class="books">
             <h1 class="books_title">Книги</h1>
 
@@ -84,10 +83,6 @@
 
                 </div>
 
-
-
-
-
                 <!-- <div class="books_drop">
                         <ul>
                             <li>
@@ -100,7 +95,6 @@
                             {%endfor%}
                         </ul>
                     </div> -->
-            </div>
 
             <div class="books_info">
 
@@ -116,13 +110,18 @@
                                 <h4>{{book.title}}</h4>
                                 <p>Автор: {{book.author}}</p>
                                 <p class="books_text">Категория: {{book.category.name}}</p>
-                                <button><a href="{{ book.pdf.url }}">{% trans 'Читать' %}...</a></button>
+                                <button class="books_btn">
+                                    <a href="{{ book.pdf.url }}">
+                                        {% trans 'Читать' %}
+                                      </a>
+                                </button>
                             </div>
                         </div>
                         {% endfor %}
-                    </div>
                 </div>
             </div>
+        </div>
+
         </div>
     </div>
 </div>
