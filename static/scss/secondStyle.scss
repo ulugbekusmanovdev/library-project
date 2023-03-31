@@ -1094,47 +1094,61 @@ iframe {
 }
 
 // DROPDOWN
+/* Кнопка выпадающего списка */
 .dropbtn {
-	background-color: #9bc7d5;
+	text-align: center;
+	background-color: #3498DB;
 	color: white;
-	width: 100%;
-	padding: 14px;
-	font-size: 14px;
+	padding: 16px 40px;
+	font-size: 16px;
 	border: none;
+	cursor: pointer;
+}
+.dropbtn2{
+	padding: 16px 41px;
+}
+.dropbtn3{
+	padding: 16px 47px;
 }
 
+/* Кнопка выпадающего меню при наведении и фокусировке */
+.dropbtn:hover,
+.dropbtn:focus {
+	background-color: #2980B9;
+}
+
+/* Контейнер <div> - необходим для размещения выпадающего содержимого */
 .dropdown {
 	position: relative;
-	// display: inline-block;
+	display: inline-block;
 }
 
+/* Выпадающее содержимое (скрыто по умолчанию) */
 .dropdown-content {
 	display: none;
 	position: absolute;
 	background-color: #f1f1f1;
-	min-width: 100%;
+	min-width: 160px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
 }
 
+/* Ссылки внутри выпадающего списка */
 .dropdown-content a {
 	color: black;
-	padding: 5px;
-	font-size: 14px;
+	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
 }
 
+/* Изменение цвета выпадающих ссылок при наведении курсора */
 .dropdown-content a:hover {
-	background-color: #ddd;
+	background-color: #ddd
 }
 
-.dropdown:hover .dropdown-content {
+/* Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
+.showMenu {
 	display: block;
-}
-
-.dropdown:hover .dropbtn {
-	background-color: #3e8e41;
 }
 
 
@@ -1238,6 +1252,7 @@ iframe {
 
 			.books_item {
 				text-align: center;
+
 				h4 {
 					font-size: 14px;
 					padding: 5px 10px;
@@ -1254,7 +1269,8 @@ iframe {
 					padding: 5px;
 					margin: 0 0 10px;
 				}
-				.books_btn{
+
+				.books_btn {
 					width: 100%;
 					padding: 5px 10px;
 					border: none;
@@ -1263,10 +1279,12 @@ iframe {
 					cursor: pointer;
 					transition: .3s linear;
 				}
+
 				.books_btn:hover {
 					background-color: #9BC7D5;
 				}
-				.books_btn a{
+
+				.books_btn a {
 					text-decoration: none;
 					color: #fff;
 					font-weight: 600;
@@ -1318,7 +1336,8 @@ iframe {
 			padding: 5px;
 			margin: 0 0 30px;
 		}
-		.books_btn{
+
+		.books_btn {
 			width: 100%;
 			padding: 5px 10px;
 			border: none;
@@ -1327,16 +1346,18 @@ iframe {
 			cursor: pointer;
 			transition: .3s linear;
 		}
+
 		.books_btn:hover {
 			background-color: #9BC7D5;
 		}
-		.books_btn a{
+
+		.books_btn a {
 			text-decoration: none;
 			color: #fff;
 			font-weight: 600;
 		}
-		}
 	}
+}
 
 
 .books_box-only {

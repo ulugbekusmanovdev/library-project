@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -1110,46 +1111,63 @@ iframe {
   background-color: #3fc4db;
 }
 
+/* Кнопка выпадающего списка */
 .dropbtn {
-  background-color: #9bc7d5;
+  text-align: center;
+  background-color: #3498DB;
   color: white;
-  width: 100%;
-  padding: 14px;
-  font-size: 14px;
+  padding: 16px 40px;
+  font-size: 16px;
   border: none;
+  cursor: pointer;
 }
 
+.dropbtn2 {
+  padding: 16px 41px;
+}
+
+.dropbtn3 {
+  padding: 16px 47px;
+}
+
+/* Кнопка выпадающего меню при наведении и фокусировке */
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* Контейнер <div> - необходим для размещения выпадающего содержимого */
 .dropdown {
   position: relative;
+  display: inline-block;
 }
 
+/* Выпадающее содержимое (скрыто по умолчанию) */
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 100%;
+  min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
+/* Ссылки внутри выпадающего списка */
 .dropdown-content a {
   color: black;
-  padding: 5px;
-  font-size: 14px;
+  padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
 
+/* Изменение цвета выпадающих ссылок при наведении курсора */
 .dropdown-content a:hover {
   background-color: #ddd;
 }
 
-.dropdown:hover .dropdown-content {
+/* Показать выпадающее меню (используйте JS, чтобы добавить этот класс .dropdown-content содержимого, когда пользователь нажимает на кнопку выпадающего списка) */
+.showMenu {
   display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #3e8e41;
 }
 
 .books {
@@ -1564,12 +1582,12 @@ span {
     font-size: 16px;
   }
   .navbar_title,
-.news_text-home,
-.news_index-home {
+  .news_text-home,
+  .news_index-home {
     font-size: 14px;
   }
   .info_title,
-.partner_title {
+  .partner_title {
     font-size: 24px;
   }
   .news_info {
@@ -1581,8 +1599,8 @@ span {
     padding: 0 5px;
   }
   .news_text p,
-.news_text-info,
-.news_index {
+  .news_text-info,
+  .news_index {
     font-size: 14px;
   }
   .news_info-home {
@@ -1620,15 +1638,15 @@ span {
     padding: 0 !important;
   }
   .catalog_img,
-.direction_img,
-.library_entry-title,
-.library_entry-title img,
-.direction_img img {
+  .direction_img,
+  .library_entry-title,
+  .library_entry-title img,
+  .direction_img img {
     width: 100% !important;
     height: auto !important;
   }
   .good_know,
-.good {
+  .good {
     display: none;
   }
   .photo_box .photo_index {
@@ -1672,7 +1690,7 @@ span {
     height: 270px;
   }
   .info_box img,
-.info_box iframe {
+  .info_box iframe {
     height: 270px;
   }
   tr {
@@ -1779,7 +1797,7 @@ span {
     color: #fff;
   }
   .sidebar-logo i,
-.navbar .bx-menu {
+  .navbar .bx-menu {
     font-size: 25px;
     color: #fff;
   }
@@ -1814,7 +1832,7 @@ span {
     justify-content: space-between;
   }
   .links li:hover .htmlcss-arrow,
-.links li:hover .js-arrow {
+  .links li:hover .js-arrow {
     transform: rotate(0deg);
   }
   .navbar .links li .sub-menu .more-sub-menu {
@@ -1829,16 +1847,16 @@ span {
     display: none;
   }
   nav .navbar .links li:hover .htmlCss-sub-menu,
-nav .navbar .links li:hover .js-sub-menu {
+  nav .navbar .links li:hover .js-sub-menu {
     display: none;
   }
   .navbar .nav-links.show1 .links .htmlCss-sub-menu,
-.navbar .nav-links.show3 .links .js-sub-menu,
-.navbar .nav-links.show2 .links .more .more-sub-menu {
+  .navbar .nav-links.show3 .links .js-sub-menu,
+  .navbar .nav-links.show2 .links .more .more-sub-menu {
     display: block;
   }
   .navbar .nav-links.show1 .links .htmlcss-arrow,
-.navbar .nav-links.show3 .links .js-arrow {
+  .navbar .nav-links.show3 .links .js-arrow {
     transform: rotate(180deg);
   }
   .navbar .nav-links.show2 .links .more-arrow {
@@ -1862,8 +1880,8 @@ nav .navbar .links li:hover .js-sub-menu {
 }
 @media (max-width: 850px) {
   .news_index,
-.news_index-home,
-.news_index-info {
+  .news_index-home,
+  .news_index-info {
     font-size: 12px;
   }
   .news_info-home {
@@ -1879,10 +1897,10 @@ nav .navbar .links li:hover .js-sub-menu {
     font-size: 14px;
   }
   .news_name,
-.info_title,
-.partner_title,
-.response_title,
-.response_sub-title {
+  .info_title,
+  .partner_title,
+  .response_title,
+  .response_sub-title {
     font-size: 22px !important;
   }
   .news_text p {
@@ -1892,7 +1910,7 @@ nav .navbar .links li:hover .js-sub-menu {
     height: 240px;
   }
   .info_box img,
-.info_box iframe {
+  .info_box iframe {
     height: 240px;
   }
   .partner_item {
@@ -1924,10 +1942,10 @@ nav .navbar .links li:hover .js-sub-menu {
 }
 @media (max-width: 650px) {
   .news_name,
-.info_title,
-.partner_title,
-.response_title,
-.response_sub-title {
+  .info_title,
+  .partner_title,
+  .response_title,
+  .response_sub-title {
     font-size: 20px !important;
   }
   .news_view {
@@ -1954,7 +1972,7 @@ nav .navbar .links li:hover .js-sub-menu {
     height: 220px;
   }
   .info_box img,
-.info_box iframe {
+  .info_box iframe {
     height: 220px;
   }
   .info_grand {
