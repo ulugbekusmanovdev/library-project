@@ -9,7 +9,7 @@
         dots: true,
         infinite: true,
         speed: 300,
-        slidesToShow: 6,
+        slidesToShow: 4,
         arrows: true,
     })
 

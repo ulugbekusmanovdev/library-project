@@ -39,9 +39,28 @@ jsArrow.onclick = function() {
 }
 
 // READERS BOOKS
-let dropdownSub = document.querySelector('.dropdown-submenu a.test');
-  dropdownSub.on("click", function(e){
-    $(this).next('ul').toggle();
-    e.stopPropagation();
-    e.preventDefault();
-});
+/* Когда пользователь нажимает на кнопку,
+переключение между скрытием и отображением раскрывающегося содержимого */
+function myFunction1() {
+  document.getElementById("myDropdown1").classList.toggle("showMenu");
+}
+function myFunction2() {
+  document.getElementById("myDropdown2").classList.toggle("showMenu");
+}
+function myFunction3() {
+  document.getElementById("myDropdown3").classList.toggle("showMenu");
+}
+
+// Закройте выпадающее меню, если пользователь щелкает за его пределами
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('.showMenu')) {
+        openDropdown.classList.remove('.showMenu');
+      }
+    }
+  }
+}
