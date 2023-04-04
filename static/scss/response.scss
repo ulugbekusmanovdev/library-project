@@ -143,11 +143,6 @@
     height: auto !important;
   }
 
-  .good_know,
-  .good {
-    display: none;
-  }
-
   .photo_box {
     .photo_index {
       font-size: 14px;
@@ -171,6 +166,7 @@
 }
 
 @media (max-width: 1100px) {
+  
   .logo {
     display: none;
   }
@@ -193,6 +189,10 @@
 
   .books .books_info{
     width: 100%;
+  }
+  .good_know,
+  .good {
+    display: none;
   }
 
 }

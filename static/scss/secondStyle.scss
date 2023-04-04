@@ -393,11 +393,34 @@ span {
 .good_know {
 	text-align: center;
 	margin: 50px auto 100px;
-	width: 70%;
+	width: 80%;
+	.good_inner{
+		width: 100%;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		.good_item{
+			width: 20%;
+			margin: 10px;
+			a{
+				text-decoration: none;
+			}
+			img{
+				width: 100%;
+			}
+			p{
+				margin: 5px 0;
+			}
+		}
+	}
 
 	.good_title {
 		padding: 20px;
 		color: #309AAC;
+
+		a {
+			color: #309AAC;
+		}
 	}
 
 	td {
@@ -918,7 +941,7 @@ iframe {
 		display: flex;
 		width: 70%;
 
-		
+
 
 		.personal_info {
 			padding: 20px;
@@ -962,11 +985,13 @@ iframe {
 			p {
 				font-size: 14px;
 			}
-			.personal_item-form{
+
+			.personal_item-form {
 				display: flex;
 				flex-wrap: wrap;
 				align-items: center;
-				a{
+
+				a {
 					padding: 0;
 				}
 			}
@@ -1114,10 +1139,12 @@ iframe {
 	border: none;
 	cursor: pointer;
 }
-.dropbtn2{
+
+.dropbtn2 {
 	padding: 16px 41px;
 }
-.dropbtn3{
+
+.dropbtn3 {
 	padding: 16px 47px;
 }
 

@@ -572,10 +572,32 @@ span {
 .good_know {
   text-align: center;
   margin: 50px auto 100px;
-  width: 70%;
+  width: 80%;
+}
+.good_know .good_inner {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.good_know .good_inner .good_item {
+  width: 20%;
+  margin: 10px;
+}
+.good_know .good_inner .good_item a {
+  text-decoration: none;
+}
+.good_know .good_inner .good_item img {
+  width: 100%;
+}
+.good_know .good_inner .good_item p {
+  margin: 5px 0;
 }
 .good_know .good_title {
   padding: 20px;
+  color: #309AAC;
+}
+.good_know .good_title a {
   color: #309AAC;
 }
 .good_know td {
@@ -1662,10 +1684,6 @@ span {
     width: 100% !important;
     height: auto !important;
   }
-  .good_know,
-  .good {
-    display: none;
-  }
   .photo_box .photo_index {
     font-size: 14px;
   }
@@ -1697,6 +1715,10 @@ span {
   }
   .books .books_info {
     width: 100%;
+  }
+  .good_know,
+  .good {
+    display: none;
   }
 }
 @media (max-width: 1000px) {

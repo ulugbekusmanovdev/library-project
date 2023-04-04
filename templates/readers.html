@@ -36,8 +36,8 @@
                         <a href="#">Педагогические науки</a>
                         <a href="#">Искусствоведение</a>
                         <a href="#">Психологические науки</a>
-                    </div> 
-                </div> 
+                    </div>
+                </div>
 
                 <div class="dropdown">
                     <button onclick="myFunction2()" class="dropbtn dropbtn2">Естественные науки</button>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
 
-                
+
                 <div class="dropdown">
                     <button onclick="myFunction3()" class="dropbtn dropbtn3">Технические науки</button>
                     <div id="myDropdown3" class="dropdown-content">
@@ -201,10 +201,41 @@
             {% endfor %}
 
         </table>
+        <h2 class="good_title">
+            <a href="https://journal.oshsu.kg/index.php/index/index">Журналы
+            </a>
+        </h2>
 
+        <div class="good_inner">
+            <div class="good_item">
+                <a href="https://journal.oshsu.kg/index.php/vestnik" target="_blank">
+                    <img src="{% static 'img/journal/cover_issue_19_ru_RU.jpg' %}" alt="">
+                    <p>Вестник Ошского государственного университета</p>
+                </a>
+            </div>
+
+            <div class="good_item">
+                <a href="https://journal.oshsu.kg/index.php/tfij" target="_blank">
+                    <img src="{% static 'img/journal/cover_issue_17_ru_RU.jpg' %}" alt="">
+                    <p>Научный журнал теологического факультета ОшГУ</p>
+                </a>
+            </div>
+
+            <div class="good_item">
+                <a href="https://journal.oshsu.kg/index.php/agriculture" target="_blank">
+                    <img src="{% static 'img/journal/cover_issue_5_ru_RU.jpg' %}" alt="">
+                    <p>Вестник Ошского государственного университета. Сельское хозяйство: агрономия, ветеринария и зоотехния</p>
+                </a>
+            </div>
+
+            <div class="good_item">
+                <a href="https://journal.oshsu.kg/index.php/orientalstudies" target="_blank">
+                    <img src="{% static 'img/journal/cover_issue_7_ru_RU.jpg' %}" alt="">
+                    <p>Вопросы востоковедения</p>
+                </a>
+            </div>
+        </div>
         <table class="good_box">
-
-            <h2 class="good_title">Журналы</h2>
 
             {% for journal in journals %}
             <tr>
@@ -236,12 +267,6 @@
 
 
         </table>
-        <p>
-            <a href="https://journal.oshsu.kg/index.php/index/index">Ош Мамлекеттик Университетинин Илимий
-                Журналдары</a>
-        </p>
-
-
     </div>
 </div>
 
