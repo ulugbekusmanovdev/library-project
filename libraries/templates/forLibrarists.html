@@ -14,26 +14,24 @@
 		<h1 class="catalog_title">{% trans 'Библиотекарям' %}</h1>
 		<div class="personal">
 			<div class="personal_box">
-				<div class="personal_photo">
-					<img src="{{request.user.customer.profile_pic.url}}" alt="">
-					<div class="personal_icon">
-						<i class="bi bi-pencil-fill"></i>
-						<i class="bi bi-trash3-fill"></i>
-					</div>
-				</div>
+				
 				<form class="personal_info" method="POST" action="" enctype="multipart/form-data">
 					{% csrf_token %}
 					<div class="personal_item">
 						<h4>ФИО:</h4> {{form.name}}
 					</div>
-					<div class="personal_item">
+					<div class="personal_item">	
 						<h4>Номер:</h4>{{form.phone}}
 					</div>
 					<div class="personal_item">
 						<h4>Email:</h4>{{form.email}}
 					</div>
 					<div class="personal_item">
-						<h4>Фото:</h4>{{ form.profile_pic}}
+						<h4>Фото:</h4>
+						 <!-- <input type="file"> -->
+						 <div class="personal_item-form">
+						{{ form.profile_pic}}
+						 </div>
 					</div>
 					<div class="personal_item">
 						<h4>Факультет:</h4>{{form.faculty}}
@@ -43,7 +41,11 @@
 			</div>
 			<div class="personal_inner">
 				<div class="personal_block">
+					
 				<h3>{% trans 'Личный кабинет' %}</h3>
+				<div class="personal_photo">
+					<img src="{{request.user.customer.profile_pic.url}}" alt="">
+				</div>
 				<ul>
 					<li><a class="personal_title" target="_blank" href="http://avn.oshsu.kg/AVN_search_st.html">{% trans 'Проверка задолжности студента' %}</a></li>
 					<li><a class="personal_title" href="{% url 'videoLib' %}">{% trans 'Видеоуроки' %}</a></li>

@@ -9,6 +9,10 @@ body {
   min-height: 100vh;
 }
 
+.hi {
+  font-size: 14px;
+}
+
 .container {
   width: 85%;
   margin: 0 auto;
@@ -568,6 +572,11 @@ nav .navbar .links li:hover .js-sub-menu {
     width: 40%;
   }
 }
+@media (max-width: 1300px) {
+  nav .navbar .links li {
+    padding: 0 6px;
+  }
+}
 @media (max-width: 1200px) {
   nav .navbar .links li a {
     font-size: 15px;
@@ -684,6 +693,12 @@ nav .navbar .links li:hover .js-sub-menu {
   .video_box {
     width: 28% !important;
   }
+  .books .books_box {
+    width: 100%;
+  }
+  .books .books_info {
+    width: 100%;
+  }
 }
 @media (max-width: 1000px) {
   .header {
@@ -757,9 +772,17 @@ nav .navbar .links li:hover .js-sub-menu {
     font-size: 12px;
   }
 }
+@media (max-width: 980px) {
+  nav .navbar {
+    max-width: 94%;
+  }
+  nav .navbar .links li {
+    padding: 0 4px;
+  }
+}
 @media (max-width: 920px) {
   nav .navbar {
-    max-width: 95%;
+    max-width: 96%;
   }
   nav .navbar .logo a {
     font-size: 27px;
@@ -882,6 +905,15 @@ nav .navbar .links li:hover .js-sub-menu {
   }
   .video_box {
     width: 40% !important;
+  }
+  .personal {
+    flex-wrap: wrap-reverse;
+  }
+  .personal .personal_box {
+    width: 100%;
+  }
+  .personal .personal_inner {
+    width: 100%;
   }
   .footer_item {
     flex-wrap: wrap;

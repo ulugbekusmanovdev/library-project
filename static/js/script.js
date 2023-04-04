@@ -11,6 +11,20 @@
         speed: 300,
         slidesToShow: 4,
         arrows: true,
+        responsive: [
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 3,
+              }
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 2,
+              }
+            }
+          ]
     })
 
 })(jQuery)
