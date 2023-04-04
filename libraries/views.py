@@ -86,23 +86,6 @@ def forLibrarists(request):
     return render(request, 'forLibrarists.html', context)
 
            
-def readers(request):
-    category = request.GET.get('category')
-    if category == None:
-        books = Book.objects.all()
-    else:
-        books = Book.objects.filter(category__name=category)
-
-    categories = Category.objects.all()
-
-    reader = Readers.objects.all()
-
-    newspapers = Newspaper.objects.all() 
-    journals = Journal.objects.all()
-    context = {'books': books, 'categories': categories,
-               'reader': reader, 'newspapers' : newspapers, 'journals': journals}
-    
-    return render(request, 'readers.html', context)
 
 
 def search(request):
@@ -124,19 +107,7 @@ def infoLib(request):
     return render(request, 'infoLib.html', {'customers': customers})
 
 
-def books(request):
-    category = request.GET.get('category')
-    if category == None:
-        books = Book.objects.all()
-    else:
-        books = Book.objects.filter(category__name=category)
 
-    categories = Category.objects.all()
-    postlar = Paginator(categories, 4)
-    page_list = request.GET.get('page')
-    page = postlar.get_page(page_list)
-    context = {'books': books, 'categories': page}
-    return render(request, 'books.html', context)
 
 
 @login_required(login_url='login')

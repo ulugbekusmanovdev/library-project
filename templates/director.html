@@ -9,15 +9,16 @@
     <div class="director">
     <section class="ibo-us">
     <h1>Директор</h1>
-
+    {% for i in director %}
         <div class="ibo">
-          <img src="{% static 'img/structure/dir.jpg' %}" class="ibo_pic">
+          <img src="{{i.image.url}}" class="ibo_pic">
           <div class="ibo_text">
-            <h2>Эсекеева А.</h2>
-            <h5>Front-en</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita natus ad sed harum itaque ullam enim quas, veniam accusantium, quia animi id eos adipisci iusto molestias asperiores explicabo cum vero atque amet corporis! Soluta illum facere consequuntur magni. Ullam dolorem repudiandae cumque voluptate consequatur consectetur, eos provident necessitatibus reiciendis corrupti!</p>
+            <h2>{{i.name}}</h2>
+      
+              <p>{{ i.text }}</p>
               </div>
         </div>
+        {% endfor %}
       </section>
 
     </div>

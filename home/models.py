@@ -125,3 +125,30 @@ class Contact(models.Model):
     class Meta:
         verbose_name = 'Как связаться'
         verbose_name_plural = 'Как связаться'
+
+
+class Director(models.Model):
+    name = models.CharField(max_length=100, null=True, verbose_name='Имя')
+    text = models.TextField(blank=True, null=False, verbose_name="Информация")
+    image = models.ImageField(blank=True, null=True, default='profile1.png', verbose_name='Картинки')
+
+    def __str__(self):
+        return str(self.name)
+
+    class Meta:
+        verbose_name = 'Директор'
+        verbose_name_plural = 'Директор'
+
+class IBO(models.Model):
+    name = models.CharField(max_length=100, null=True, verbose_name='Имя')
+    title = models.CharField(max_length=100, null=True, verbose_name='Должность')
+    text = models.TextField(blank=True, null=False, verbose_name="Информация")
+    text1 = models.TextField(blank=True, null=False, verbose_name="Полное Информация")
+    image = models.ImageField(blank=True, null=True, default='/profiles/profile1.png', verbose_name='Картинки')
+
+    def __str__(self):
+        return str(self.name)
+
+    class Meta:
+        verbose_name = 'ИБО'
+        verbose_name_plural = 'ИБО'

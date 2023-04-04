@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Ads, Photo, Library, Video, PostImage, Catalog, Contact
+from .models import Ads, Photo, Library, Video, PostImage, Catalog, Contact, Director,IBO, Readers, Newspaper, Journal
 from news.models import News
+from libraries.models import Category, Book
 from libraries.decorators import allowed_users
+
+from django.core.paginator import Paginator
 
 
 # Create your views here.
@@ -51,6 +54,40 @@ def structure(request):
     return render(request, 'structure.html')
 
 
+def readers(request):
+    category = request.GET.get('category')
+    if category == None:
+        books = Book.objects.all()
+    else:
+        books = Book.objects.filter(category__name=category)
+
+    categories = Category.objects.all()
+
+    reader = Readers.objects.all()
+
+    newspapers = Newspaper.objects.all() 
+    journals = Journal.objects.all()
+    context = {'books': books, 'categories': categories,
+               'reader': reader, 'newspapers' : newspapers, 'journals': journals}
+    
+    return render(request, 'readers.html', context)
+
+
+def books(request):
+    category = request.GET.get('category')
+    if category == None:
+        books = Book.objects.all()
+    else:
+        books = Book.objects.filter(category__name=category)
+
+    categories = Category.objects.all()
+    postlar = Paginator(categories, 4)
+    page_list = request.GET.get('page')
+    page = postlar.get_page(page_list)
+    context = {'books': books, 'categories': page}
+    return render(request, 'books.html', context)
+
+
 def photo(request):
     photos = Photo.objects.all()
     context = {'photos': photos}
@@ -89,8 +126,11 @@ def video(request):
     videos = Video.objects.all()
     return render(request, 'video.html', {'videos': videos})
 
+
 def director(request):
-    return render(request, 'director.html')
+    director = Director.objects.all()
+    return render(request, 'director.html', {'director': director})
 
 def ibo(request):
-    return render(request, 'ibo.html')
+    ibo = IBO.objects.all()
+    return render(request, 'ibo.html', {'ibo':ibo})
