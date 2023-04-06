@@ -3,9 +3,10 @@
 
 
 /* NEWS */
-.news_bg{
+.news_bg {
 	background-color: #F0F4F8;
 }
+
 .news {
 	width: 87%;
 	margin: 0 auto;
@@ -126,10 +127,20 @@
 
 .news_title p {
 	padding: 15px 5px 0 5px;
+	text-transform: lowercase;
+}
+
+.news_title p::first-letter {
+	text-transform: uppercase;
 }
 
 .news_text-info {
 	text-align: center;
+	text-transform: lowercase;
+}
+
+.news_text-info::first-letter {
+	text-transform: uppercase;
 }
 
 .news_index {
@@ -179,7 +190,11 @@
 
 .news_title-home {
 	font-size: 20px;
+	text-transform: lowercase;
 	font-weight: 500;
+}
+.news_title-home::first-letter{
+	text-transform: uppercase;
 }
 
 .news_text-home {
@@ -288,9 +303,14 @@
 }
 
 .info_text {
+	text-transform: lowercase;
 	padding: 5px;
 	text-align: center;
 	color: #333;
+}
+
+.info_text::first-letter {
+	text-transform: uppercase;
 }
 
 .info_sub {

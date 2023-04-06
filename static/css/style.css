@@ -172,6 +172,12 @@ nav .navbar .links li:hover .js-sub-menu {
   display: none;
 }
 
+.counter {
+  top: 22%;
+  left: 5%;
+  position: absolute;
+}
+
 .header {
   width: 100%;
   margin: 100px 0 50px;
@@ -358,10 +364,20 @@ nav .navbar .links li:hover .js-sub-menu {
 
 .news_title p {
   padding: 15px 5px 0 5px;
+  text-transform: lowercase;
+}
+
+.news_title p::first-letter {
+  text-transform: uppercase;
 }
 
 .news_text-info {
   text-align: center;
+  text-transform: lowercase;
+}
+
+.news_text-info::first-letter {
+  text-transform: uppercase;
 }
 
 .news_index {
@@ -408,7 +424,12 @@ nav .navbar .links li:hover .js-sub-menu {
 
 .news_title-home {
   font-size: 20px;
+  text-transform: lowercase;
   font-weight: 500;
+}
+
+.news_title-home::first-letter {
+  text-transform: uppercase;
 }
 
 .news_text-home {
@@ -489,9 +510,14 @@ nav .navbar .links li:hover .js-sub-menu {
 }
 
 .info_text {
+  text-transform: lowercase;
   padding: 5px;
   text-align: center;
   color: #333;
+}
+
+.info_text::first-letter {
+  text-transform: uppercase;
 }
 
 .info_sub {

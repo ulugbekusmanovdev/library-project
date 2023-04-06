@@ -173,6 +173,12 @@ nav .navbar .links li:hover .js-sub-menu {
   display: none;
 }
 
+.counter {
+  top: 22%;
+  left: 5%;
+  position: absolute;
+}
+
 .header {
   width: 100%;
   margin: 100px 0 50px;
@@ -309,7 +315,7 @@ span {
 .news_view {
   margin: 50px 20px 10px 20px;
   width: 400px;
-  height: 300px;
+  height: auto;
 }
 
 .news_info {
@@ -451,7 +457,17 @@ span {
 }
 
 .news_text p {
+  font-weight: 500;
   padding: 5px;
+  text-transform: lowercase;
+}
+
+.news_text p::first-letter {
+  text-transform: uppercase;
+}
+
+.news_sub-text {
+  padding: 10px;
 }
 
 .news_post-only {
@@ -733,8 +749,13 @@ span {
   color: #666;
 }
 .photo h2 {
+  font-weight: 500;
   font-size: 18px;
+  text-transform: lowercase;
   padding: 0 10px;
+}
+.photo h2::first-letter {
+  text-transform: uppercase;
 }
 
 .photo_only {
@@ -835,8 +856,13 @@ span {
   text-decoration: none;
 }
 .video h2 {
+  font-weight: 500;
+  text-transform: lowercase;
   color: #000;
   font-size: 17px;
+}
+.video h2::first-letter {
+  text-transform: uppercase;
 }
 
 iframe {

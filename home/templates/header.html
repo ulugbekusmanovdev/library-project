@@ -1,100 +1,143 @@
-	{% load static %}
-	{% load i18n %}
-	
-	<nav>
-		<div class="navbar">
-		  <i class='bx bx-menu'></i>
-		  <div class="logo"><a href="{% url 'home' %}">
+{% load static %}
+{% load i18n %}
+
+<nav>
+	<div class="navbar">
+	  <i class='bx bx-menu'></i>
+	  <div class="logo"><a href="{% url 'home' %}">
+		<img class="logo" src="{% static 'img/logo_ru.svg' %}" alt="">
+	</a></div>
+	  <div class="nav-links">
+		<div class="sidebar-logo">
+		  <span class="logo-name"><a href="{% url 'home' %}">
 			<img class="logo" src="{% static 'img/logo_ru.svg' %}" alt="">
-		</a></div>
-		  <div class="nav-links">
-			<div class="sidebar-logo">
-			  <span class="logo-name"><a href="{% url 'home' %}">
-				<img class="logo" src="{% static 'img/logo_ru.svg' %}" alt="">
-			</a></span>
-			  <i class='bx bx-x'></i>
-			</div>
-			<ul class="links">
-			  <li><a data-scroll="home" href="{% url 'home' %}" >{% trans 'Главная' %}</a></li>
-			  <li>
-				<a data-scroll="about_us" href="{% url 'about' %}" >{% trans 'О библиотеке' %}</a>
-				<i class='bx bxs-chevron-down htmlcss-arrow arrow'></i>
-				<ul class="htmlCss-sub-menu sub-menu">
-					<li>
-						<a data-scroll="mission" href="{% url 'about' %}#mission" >{% trans 'Миссия' %}</a>
-					</li>
-					<li>
-						<a data-scroll="history" href="{% url 'about' %}#history">{% trans 'История' %}</a>
-					</li>
-					<li>
-						<a data-scroll="structure" href="{% url 'about' %}#structure">{% trans 'Структура' %}</a>
-					</li>
-				  <!-- <li class="more">
-					<span><a href="#">More</a>
-					  <i class='bx bxs-chevron-right arrow more-arrow'></i>
-					</span>
-					<ul class="more-sub-menu sub-menu">
-					  <li><a href="#">Neumorphism</a></li>
-					  <li><a href="#">Pre-loader</a></li>
-					  <li><a href="#">Glassmorphism</a></li>
-					</ul>
-				  </li> -->
-				</ul>
-			  </li>
-			  <li><a href="{% url 'catalogs' %}">{% trans 'Каталоги' %}</a></li>
-			  <li>
-				<a href="{% url 'readers' %}">{% trans 'Читателям' %}</a>
-				<i class='bx bxs-chevron-down js-arrow arrow '></i>
-				<ul class="js-sub-menu sub-menu">
-					<li>
-						<a data-scroll="books" href="{% url 'readers' %}#books">{% trans 'Книги' %}</a>
-					</li>
-					<li>
-						<a data-scroll="direction" href="{% url 'readers' %}#direction">{% trans 'Правила пользования' %}</a>
-					</li>
-					<!-- <li>
-						<a data-scroll="workSchedule" href="{% url 'readers' %}#workSchedule">{% trans 'Режим работы' %}</a>
-					</li> -->
-					<li>
-						<a data-scroll="good_to_know" href="{% url 'readers' %}#good_to_know">{% trans 'Периодический знание' %}</a>
-					</li>
-				</ul>
-			  </li>
-			 
-			  <li><a href="{% url 'forLibrarists' %}">{% trans 'Библиотекарям' %}</a></li>
-			  <li><a href="{% url 'contact' %}">{% trans 'Как связаться' %}</a></li>
-
-			  {% if user.is_staff %}
-			  <li><a href="{% url 'logout' %}">Выйти</a></li>
-			  {% endif %}
-
-			  {% if user.is_authenticated %}
-			  <li class="hi">{% trans 'Привет' %}, {{request.user|title}}</li>
-			  {% endif %}
-			
-			</ul>
-		  </div>
-
-		  <div class="search-box">
-			{% get_current_language as CURRENT_LANGUAGE %}
-                {% get_available_languages as AVAILABLE_LANGUAGES %}
-                {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
-            <div class="navbar_language">
-                    {% for language in languages %}
-                        <a href="/{{ language.code }}/"
-                          {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
-                          {{ language.code }}
-                          <!-- <img src="{% static 'img/language/lang__ky.png' %}" alt="ky">
-                          <img src="{% static 'img/language/lang__ru.png' %}" alt="ru"> -->
-                        </a>
-                    {% endfor %}
-            </div>
-		  </div>
+		</a></span>
+		  <i class='bx bx-x'></i>
 		</div>
-	  </nav>
+		<ul class="links">
+		  <li><a data-scroll="home" href="{% url 'home' %}" >{% trans 'Главная' %}</a></li>
+		  <li>
+			<a data-scroll="about_us" href="{% url 'about' %}" >{% trans 'О библиотеке' %}</a>
+			<i class='bx bxs-chevron-down htmlcss-arrow arrow'></i>
+			<ul class="htmlCss-sub-menu sub-menu">
+				<li>
+					<a data-scroll="mission" href="{% url 'about' %}#mission" >{% trans 'Миссия' %}</a>
+				</li>
+				<li>
+					<a data-scroll="history" href="{% url 'about' %}#history">{% trans 'История' %}</a>
+				</li>
+				<li>
+					<a data-scroll="structure" href="{% url 'about' %}#structure">{% trans 'Структура' %}</a>
+				</li>
+			  <!-- <li class="more">
+				<span><a href="#">More</a>
+				  <i class='bx bxs-chevron-right arrow more-arrow'></i>
+				</span>
+				<ul class="more-sub-menu sub-menu">
+				  <li><a href="#">Neumorphism</a></li>
+				  <li><a href="#">Pre-loader</a></li>
+				  <li><a href="#">Glassmorphism</a></li>
+				</ul>
+			  </li> -->
+			</ul>
+		  </li>
+		  <li><a href="{% url 'catalogs' %}">{% trans 'Каталоги' %}</a></li>
+		  <li>
+			<a href="{% url 'readers' %}">{% trans 'Читателям' %}</a>
+			<i class='bx bxs-chevron-down js-arrow arrow '></i>
+			<ul class="js-sub-menu sub-menu">
+				<li>
+					<a data-scroll="books" href="{% url 'readers' %}#books">{% trans 'Книги' %}</a>
+				</li>
+				<li>
+					<a data-scroll="direction" href="{% url 'readers' %}#direction">{% trans 'Правила пользования' %}</a>
+				</li>
+				<!-- <li>
+					<a data-scroll="workSchedule" href="{% url 'readers' %}#workSchedule">{% trans 'Режим работы' %}</a>
+				</li> -->
+				<li>
+					<a data-scroll="good_to_know" href="{% url 'readers' %}#good_to_know">{% trans 'Периодический знание' %}</a>
+				</li>
+			</ul>
+		  </li>
+		 
+		  <li><a href="{% url 'forLibrarists' %}">{% trans 'Библиотекарям' %}</a></li>
+		  <li><a href="{% url 'contact' %}">{% trans 'Как связаться' %}</a></li>
 
-	<header class="header">
-			<h1 class="header_title"><a href="{% url 'home' %}">{% trans 'Научная библиотека' %}</a></h1>	
-	</header>
+		  {% if user.is_staff %}
+		  <li><a href="{% url 'logout' %}">Выйти</a></li>
+		  {% endif %}
 
-	<script src="{% static '/js/app.js' %}"></script>
+		  {% if user.is_authenticated %}
+		  <li class="hi">{% trans 'Привет' %}, {{request.user|title}}</li>
+		  {% endif %}
+		
+		</ul>
+	  </div>
+
+	  <div class="search-box">
+		{% get_current_language as CURRENT_LANGUAGE %}
+			{% get_available_languages as AVAILABLE_LANGUAGES %}
+			{% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+		<div class="navbar_language">
+				{% for language in languages %}
+					<a href="/{{ language.code }}/"
+					  {% if language.code == CURRENT_LANGUAGE %} class="active"{% endif %}>
+					  {{ language.code }}
+					  <!-- <img src="{% static 'img/language/lang__ky.png' %}" alt="ky">
+					  <img src="{% static 'img/language/lang__ru.png' %}" alt="ru"> -->
+					</a>
+				{% endfor %}
+		</div>
+	  </div>
+	</div>
+  </nav>
+
+<header class="header">
+	<div class="counter">
+		
+<!-- Yandex.Metrika informer -->
+<a href="https://metrika.yandex.ru/stat/?id=93089869&amp;from=informer"
+target="_blank" rel="nofollow"><img src="https://informer.yandex.ru/informer/93089869/3_1_FFFFFFFF_EFEFEFFF_0_pageviews"
+style="width:88px; height:31px; border:0;" alt="Яндекс.Метрика" title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)" class="ym-advanced-informer" data-cid="93089869" data-lang="ru" /></a>
+<!-- /Yandex.Metrika informer -->
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function (d, w, c) {
+        (w[c] = w[c] || []).push(function() {
+            try {
+                w.yaCounter93089869 = new Ya.Metrika({
+                    id:93089869,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    webvisor:true
+                });
+            } catch(e) { }
+        });
+
+        var n = d.getElementsByTagName("script")[0],
+            x = "https://mc.yandex.ru/metrika/watch.js",
+            s = d.createElement("script"),
+            f = function () { n.parentNode.insertBefore(s, n); };
+        for (var i = 0; i < document.scripts.length; i++) {
+            if (document.scripts[i].src === x) { return; }
+        }
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = x;
+
+        if (w.opera == "[object Opera]") {
+            d.addEventListener("DOMContentLoaded", f, false);
+        } else { f(); }
+    })(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/93089869" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+	</div>
+	
+		<h1 class="header_title"><a href="{% url 'home' %}">{% trans 'Научная библиотека' %}</a></h1>	
+</header>
+
+<script src="{% static '/js/app.js' %}"></script>
