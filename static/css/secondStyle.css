@@ -174,7 +174,7 @@ nav .navbar .links li:hover .js-sub-menu {
 }
 
 .counter {
-  top: 22%;
+  top: 15%;
   left: 5%;
   position: absolute;
 }
@@ -404,8 +404,8 @@ span {
   width: 95%;
 }
 
-.news_slick-slider .slick-prev::before,
-.slick-next:before {
+.slick-prev::before,
+.slick-next::before {
   color: #000 !important;
 }
 
@@ -787,6 +787,7 @@ span {
   padding: 10px 0;
 }
 .photo_only .photo_content-only h2 {
+  font-size: 20px;
   padding: 10px 0;
 }
 .photo_only .photo_content-only p {
@@ -807,6 +808,9 @@ span {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+.photo_only .photo_text-only2 {
+  font-size: 16px;
 }
 
 .video {
@@ -1278,7 +1282,8 @@ iframe {
   box-shadow: -2px -3px 3px #dee2e6, 2px 3px 3px #dee2e6, -2px 3px 3px #dee2e6, 2px -3px 3px #dee2e6;
 }
 .books .books_info {
-  width: 75%;
+  width: 70%;
+  margin-left: 35px;
 }
 .books .books_info .books_search {
   margin: 20px;
